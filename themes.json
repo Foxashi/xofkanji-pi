@@ -1,0 +1,30 @@
+{
+  "default": {
+    "background": [0,0,0],
+    "top_bar": [40,40,40],
+    "kanji": [255,255,255],
+    "meaning": [255,215,0],
+    "onyomi": [50,205,50],
+    "kunyomi": [30,144,255]
+  },
+
+  "matrix": {
+    "background":[0,0,0],
+    "kanji":[0,255,0],
+    "meaning":[0,200,0],
+    "onyomi":[0,255,150],
+    "kunyomi":[0,150,255],
+    "pulse_color":[0,255,0],
+    "pulse_speed":3
+  },
+
+  "fate": {
+    "background":[15,5,5],
+    "top_bar":[40,10,10],
+    "kanji":[255,230,200],
+    "meaning":[255,200,120],
+    "onyomi":[255,120,120],
+    "kunyomi":[200,150,255],
+    "background_image": "fate.jpg"
+  }
+}

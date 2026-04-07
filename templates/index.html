@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanji Scanner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Modular JavaScript files -->
+    <script src="{{ url_for('static', filename='notifications.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='file-handler.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='results.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='api.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>🎌 Kanji Scanner</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="image-input">Image File</label>
+                <input type="file" id="image-input" name="image" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="direction-select">Text Direction</label>
+                <select id="direction-select" name="direction">
+                    <option value="horizontal">Horizontal (Left to Right)</option>
+                    <option value="vertical">Vertical (Top to Bottom)</option>
+                </select>
+            </div>
+
+            <button type="submit">✨ Scan & Add to Database</button>
+        </form>
+    </div>
+</body>
+</html>

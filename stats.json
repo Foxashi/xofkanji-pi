@@ -1,0 +1,6498 @@
+{
+  "駅": {
+    "shown": 10,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1771955909.845185
+  },
+  "国": {
+    "shown": 8,
+    "remembered": 2,
+    "failed": 5,
+    "interval": 3600,
+    "due": 1773387695.6178918
+  },
+  "収": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 5,
+    "interval": 900,
+    "due": 1773260826.1492531
+  },
+  "日": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1773416436.586884
+  },
+  "顧": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 4,
+    "interval": 900,
+    "due": 1773428498.8492393
+  },
+  "社": {
+    "shown": 13,
+    "remembered": 1,
+    "failed": 8,
+    "interval": 1800,
+    "due": 1773069844.643045
+  },
+  "放": {
+    "shown": 8,
+    "remembered": 1,
+    "failed": 5,
+    "interval": 900,
+    "due": 1773996244.864483
+  },
+  "助": {
+    "shown": 5,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1773074345.9921339
+  },
+  "安": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 120,
+    "due": 1773383052.8467708
+  },
+  "必": {
+    "shown": 10,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1773654196.7923362
+  },
+  "比": {
+    "shown": 9,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1772827962.2888896
+  },
+  "空": {
+    "shown": 13,
+    "remembered": 0,
+    "failed": 10,
+    "interval": 900,
+    "due": 1774977743.9419324
+  },
+  "残": {
+    "shown": 5,
+    "remembered": 0,
+    "failed": 4,
+    "interval": 900,
+    "due": 1771172972.6559815
+  },
+  "逃": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1771863685.9601395
+  },
+  "使": {
+    "shown": 13,
+    "remembered": 1,
+    "failed": 8,
+    "interval": 900,
+    "due": 1773773015.8925176
+  },
+  "支": {
+    "shown": 10,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1772205056.4376206
+  },
+  "評": {
+    "shown": 13,
+    "remembered": 0,
+    "failed": 11,
+    "interval": 900,
+    "due": 1773962523.6678984
+  },
+  "復": {
+    "shown": 12,
+    "remembered": 1,
+    "failed": 10,
+    "interval": 1800,
+    "due": 1773658047.2839532
+  },
+  "近": {
+    "shown": 10,
+    "remembered": 0,
+    "failed": 9,
+    "interval": 900,
+    "due": 1774524724.9163995
+  },
+  "限": {
+    "shown": 11,
+    "remembered": 1,
+    "failed": 7,
+    "interval": 900,
+    "due": 1775069996.591172
+  },
+  "謀": {
+    "shown": 12,
+    "remembered": 1,
+    "failed": 9,
+    "interval": 1800,
+    "due": 1773054800.894417
+  },
+  "多": {
+    "shown": 13,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1774108455.0282521
+  },
+  "左": {
+    "shown": 11,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1773391315.3395479
+  },
+  "任": {
+    "shown": 11,
+    "remembered": 0,
+    "failed": 9,
+    "interval": 900,
+    "due": 1774538228.6050265
+  },
+  "月": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1774109355.2077472
+  },
+  "人": {
+    "shown": 13,
+    "remembered": 0,
+    "failed": 13,
+    "interval": 900,
+    "due": 1773165138.8998625
+  },
+  "年": {
+    "shown": 9,
+    "remembered": 1,
+    "failed": 8,
+    "interval": 900,
+    "due": 1773604010.8516402
+  },
+  "大": {
+    "shown": 10,
+    "remembered": 0,
+    "failed": 10,
+    "interval": 900,
+    "due": 1772827062.1842308
+  },
+  "小": {
+    "shown": 6,
+    "remembered": 0,
+    "failed": 5,
+    "interval": 900,
+    "due": 1775069096.4032633
+  },
+  "中": {
+    "shown": 8,
+    "remembered": 1,
+    "failed": 6,
+    "interval": 900,
+    "due": 1773346717.91129
+  },
+  "山": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1771757668.7850974
+  },
+  "川": {
+    "shown": 6,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1774598235.7735238
+  },
+  "木": {
+    "shown": 9,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1773949920.989352
+  },
+  "水": {
+    "shown": 9,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1772384521.835827
+  },
+  "火": {
+    "shown": 6,
+    "remembered": 0,
+    "failed": 5,
+    "interval": 900,
+    "due": 1771607053.695212
+  },
+  "土": {
+    "shown": 15,
+    "remembered": 1,
+    "failed": 13,
+    "interval": 900,
+    "due": 1774117456.8192687
+  },
+  "金": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 5,
+    "interval": 900,
+    "due": 1774535527.8102949
+  },
+  "本": {
+    "shown": 8,
+    "remembered": 1,
+    "failed": 4,
+    "interval": 1800,
+    "due": 1773069839.5229318
+  },
+  "先": {
+    "shown": 15,
+    "remembered": 1,
+    "failed": 13,
+    "interval": 900,
+    "due": 1773939118.8116698
+  },
+  "生": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1773497250.5213454
+  },
+  "男": {
+    "shown": 11,
+    "remembered": 0,
+    "failed": 9,
+    "interval": 900,
+    "due": 1774526525.359139
+  },
+  "女": {
+    "shown": 16,
+    "remembered": 3,
+    "failed": 12,
+    "interval": 900,
+    "due": 1773963423.8571904
+  },
+  "子": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1774554016.2540982
+  },
+  "上": {
+    "shown": 6,
+    "remembered": 1,
+    "failed": 3,
+    "interval": 900,
+    "due": 1773170540.033931
+  },
+  "下": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 5,
+    "interval": 900,
+    "due": 1772279374.0878613
+  },
+  "右": {
+    "shown": 10,
+    "remembered": 0,
+    "failed": 10,
+    "interval": 900,
+    "due": 1775202936.635065
+  },
+  "口": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1774687859.9426463
+  },
+  "目": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 1800,
+    "due": 1772793320.047041
+  },
+  "耳": {
+    "shown": 12,
+    "remembered": 0,
+    "failed": 10,
+    "interval": 900,
+    "due": 1774510321.0604725
+  },
+  "手": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1771781087.7457626
+  },
+  "足": {
+    "shown": 11,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1772560783.8164697
+  },
+  "力": {
+    "shown": 8,
+    "remembered": 1,
+    "failed": 7,
+    "interval": 900,
+    "due": 1774534627.6279774
+  },
+  "白": {
+    "shown": 11,
+    "remembered": 1,
+    "failed": 10,
+    "interval": 900,
+    "due": 1773778417.663753
+  },
+  "黒": {
+    "shown": 11,
+    "remembered": 1,
+    "failed": 9,
+    "interval": 900,
+    "due": 1773865663.1393435
+  },
+  "赤": {
+    "shown": 8,
+    "remembered": 1,
+    "failed": 6,
+    "interval": 900,
+    "due": 1774104854.2666142
+  },
+  "青": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1774449293.2369995
+  },
+  "天": {
+    "shown": 8,
+    "remembered": 1,
+    "failed": 6,
+    "interval": 1800,
+    "due": 1773054756.7785964
+  },
+  "雨": {
+    "shown": 9,
+    "remembered": 1,
+    "failed": 8,
+    "interval": 900,
+    "due": 1774549301.7322726
+  },
+  "石": {
+    "shown": 12,
+    "remembered": 0,
+    "failed": 11,
+    "interval": 900,
+    "due": 1773076146.3679647
+  },
+  "花": {
+    "shown": 11,
+    "remembered": 1,
+    "failed": 9,
+    "interval": 900,
+    "due": 1774810388.9922934
+  },
+  "学": {
+    "shown": 9,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1771957819.991826
+  },
+  "校": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1772364718.654838
+  },
+  "会": {
+    "shown": 9,
+    "remembered": 0,
+    "failed": 9,
+    "interval": 900,
+    "due": 1772821661.3128154
+  },
+  "作": {
+    "shown": 11,
+    "remembered": 1,
+    "failed": 7,
+    "interval": 1800,
+    "due": 1773054691.9261875
+  },
+  "買": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 5,
+    "interval": 900,
+    "due": 1773339516.4445465
+  },
+  "売": {
+    "shown": 6,
+    "remembered": 0,
+    "failed": 5,
+    "interval": 900,
+    "due": 1774463974.9578803
+  },
+  "書": {
+    "shown": 9,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1774985052.0263548
+  },
+  "読": {
+    "shown": 5,
+    "remembered": 1,
+    "failed": 3,
+    "interval": 900,
+    "due": 1772812659.8249996
+  },
+  "聞": {
+    "shown": 4,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1771025485.07628
+  },
+  "話": {
+    "shown": 5,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1772379121.2578557
+  },
+  "思": {
+    "shown": 11,
+    "remembered": 0,
+    "failed": 9,
+    "interval": 900,
+    "due": 1771524151.2113633
+  },
+  "知": {
+    "shown": 12,
+    "remembered": 1,
+    "failed": 11,
+    "interval": 900,
+    "due": 1774377302.757052
+  },
+  "新": {
+    "shown": 12,
+    "remembered": 3,
+    "failed": 5,
+    "interval": 3600,
+    "due": 1773391173.7686229
+  },
+  "古": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1774556716.9310453
+  },
+  "長": {
+    "shown": 8,
+    "remembered": 1,
+    "failed": 6,
+    "interval": 1800,
+    "due": 1773389348.4653869
+  },
+  "短": {
+    "shown": 14,
+    "remembered": 0,
+    "failed": 13,
+    "interval": 900,
+    "due": 1774116556.6732635
+  },
+  "少": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1774193046.546407
+  },
+  "早": {
+    "shown": 8,
+    "remembered": 1,
+    "failed": 6,
+    "interval": 900,
+    "due": 1773068317.4028437
+  },
+  "遅": {
+    "shown": 10,
+    "remembered": 0,
+    "failed": 9,
+    "interval": 900,
+    "due": 1774194847.0089436
+  },
+  "遠": {
+    "shown": 6,
+    "remembered": 0,
+    "failed": 5,
+    "interval": 900,
+    "due": 1774197547.735222
+  },
+  "高": {
+    "shown": 10,
+    "remembered": 0,
+    "failed": 9,
+    "interval": 900,
+    "due": 1774531926.7501237
+  },
+  "重": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1773175040.964303
+  },
+  "軽": {
+    "shown": 10,
+    "remembered": 0,
+    "failed": 5,
+    "interval": 900,
+    "due": 1771968621.6092153
+  },
+  "楽": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1773953521.7493582
+  },
+  "苦": {
+    "shown": 9,
+    "remembered": 0,
+    "failed": 9,
+    "interval": 900,
+    "due": 1773847908.803346
+  },
+  "病": {
+    "shown": 5,
+    "remembered": 0,
+    "failed": 4,
+    "interval": 900,
+    "due": 1771768486.7323403
+  },
+  "元": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1774599244.8556073
+  },
+  "気": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1772282074.556095
+  },
+  "体": {
+    "shown": 12,
+    "remembered": 0,
+    "failed": 9,
+    "interval": 900,
+    "due": 1772895788.5445929
+  },
+  "心": {
+    "shown": 12,
+    "remembered": 0,
+    "failed": 9,
+    "interval": 900,
+    "due": 1772729361.3492482
+  },
+  "顔": {
+    "shown": 6,
+    "remembered": 0,
+    "failed": 4,
+    "interval": 900,
+    "due": 1771965921.3523033
+  },
+  "声": {
+    "shown": 11,
+    "remembered": 2,
+    "failed": 7,
+    "interval": 3600,
+    "due": 1773386545.3882084
+  },
+  "旅": {
+    "shown": 6,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1771963221.0230715
+  },
+  "道": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1773505352.6412103
+  },
+  "海": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1771435852.5623336
+  },
+  "酒": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1772652708.369548
+  },
+  "魚": {
+    "shown": 14,
+    "remembered": 3,
+    "failed": 10,
+    "interval": 900,
+    "due": 1774106654.6771271
+  },
+  "肉": {
+    "shown": 13,
+    "remembered": 1,
+    "failed": 10,
+    "interval": 1800,
+    "due": 1773658032.6529884
+  },
+  "米": {
+    "shown": 8,
+    "remembered": 1,
+    "failed": 5,
+    "interval": 900,
+    "due": 1775201136.008048
+  },
+  "飯": {
+    "shown": 10,
+    "remembered": 0,
+    "failed": 9,
+    "interval": 900,
+    "due": 1773423638.3773496
+  },
+  "表": {
+    "shown": 14,
+    "remembered": 1,
+    "failed": 12,
+    "interval": 900,
+    "due": 1773508953.752679
+  },
+  "裏": {
+    "shown": 6,
+    "remembered": 1,
+    "failed": 4,
+    "interval": 1800,
+    "due": 1773054640.6636505
+  },
+  "各": {
+    "shown": 9,
+    "remembered": 1,
+    "failed": 8,
+    "interval": 1800,
+    "due": 1773385891.6137242
+  },
+  "式": {
+    "shown": 9,
+    "remembered": 0,
+    "failed": 9,
+    "interval": 900,
+    "due": 1774376402.554567
+  },
+  "要": {
+    "shown": 8,
+    "remembered": 1,
+    "failed": 7,
+    "interval": 1800,
+    "due": 1773389311.0093975
+  },
+  "真": {
+    "shown": 11,
+    "remembered": 0,
+    "failed": 11,
+    "interval": 900,
+    "due": 1774856877.2090003
+  },
+  "向": {
+    "shown": 14,
+    "remembered": 1,
+    "failed": 11,
+    "interval": 900,
+    "due": 1773682165.2533352
+  },
+  "投": {
+    "shown": 13,
+    "remembered": 0,
+    "failed": 11,
+    "interval": 900,
+    "due": 1774195747.2230804
+  },
+  "受": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1770903186.9755206
+  },
+  "取": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1772204156.3059525
+  },
+  "選": {
+    "shown": 10,
+    "remembered": 1,
+    "failed": 7,
+    "interval": 900,
+    "due": 1774373701.6336894
+  },
+  "守": {
+    "shown": 6,
+    "remembered": 3,
+    "failed": 3,
+    "interval": 7200,
+    "due": 1773662506.8568177
+  },
+  "約": {
+    "shown": 8,
+    "remembered": 1,
+    "failed": 7,
+    "interval": 1800,
+    "due": 1773389349.6460621
+  },
+  "続": {
+    "shown": 11,
+    "remembered": 1,
+    "failed": 8,
+    "interval": 900,
+    "due": 1773173240.717745
+  },
+  "加": {
+    "shown": 15,
+    "remembered": 1,
+    "failed": 10,
+    "interval": 1800,
+    "due": 1773069842.6715922
+  },
+  "減": {
+    "shown": 6,
+    "remembered": 1,
+    "failed": 4,
+    "interval": 900,
+    "due": 1774734649.3222864
+  },
+  "増": {
+    "shown": 15,
+    "remembered": 1,
+    "failed": 12,
+    "interval": 1800,
+    "due": 1773384742.5588884
+  },
+  "迷": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1773071645.2958765
+  },
+  "返": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1773168739.6135087
+  },
+  "追": {
+    "shown": 13,
+    "remembered": 1,
+    "failed": 11,
+    "interval": 900,
+    "due": 1773954421.9421842
+  },
+  "止": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1774118356.993147
+  },
+  "進": {
+    "shown": 11,
+    "remembered": 1,
+    "failed": 8,
+    "interval": 900,
+    "due": 1774822992.7331223
+  },
+  "戻": {
+    "shown": 6,
+    "remembered": 0,
+    "failed": 5,
+    "interval": 900,
+    "due": 1773779317.95706
+  },
+  "移": {
+    "shown": 11,
+    "remembered": 1,
+    "failed": 8,
+    "interval": 1800,
+    "due": 1773054630.2914772
+  },
+  "計": {
+    "shown": 11,
+    "remembered": 0,
+    "failed": 10,
+    "interval": 900,
+    "due": 1773689367.347541
+  },
+  "調": {
+    "shown": 9,
+    "remembered": 1,
+    "failed": 7,
+    "interval": 900,
+    "due": 1772443843.3122554
+  },
+  "試": {
+    "shown": 8,
+    "remembered": 1,
+    "failed": 7,
+    "interval": 900,
+    "due": 1773578804.2680373
+  },
+  "急": {
+    "shown": 6,
+    "remembered": 1,
+    "failed": 5,
+    "interval": 900,
+    "due": 1773955322.1518478
+  },
+  "静": {
+    "shown": 6,
+    "remembered": 1,
+    "failed": 4,
+    "interval": 1800,
+    "due": 1773054724.687489
+  },
+  "確": {
+    "shown": 7,
+    "remembered": 1,
+    "failed": 5,
+    "interval": 1800,
+    "due": 1773384743.9762871
+  },
+  "規": {
+    "shown": 9,
+    "remembered": 1,
+    "failed": 5,
+    "interval": 900,
+    "due": 1774553115.9208949
+  },
+  "警": {
+    "shown": 4,
+    "remembered": 0,
+    "failed": 4,
+    "interval": 900,
+    "due": 1772038609.8191922
+  },
+  "費": {
+    "shown": 9,
+    "remembered": 1,
+    "failed": 6,
+    "interval": 900,
+    "due": 1774528325.8852062
+  },
+  "録": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1771707993.0577502
+  },
+  "参": {
+    "shown": 11,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1774522924.3893492
+  },
+  "達": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1774700629.8253922
+  },
+  "供": {
+    "shown": 13,
+    "remembered": 0,
+    "failed": 9,
+    "interval": 900,
+    "due": 1774819391.6663775
+  },
+  "示": {
+    "shown": 6,
+    "remembered": 0,
+    "failed": 5,
+    "interval": 900,
+    "due": 1771774787.2301853
+  },
+  "判": {
+    "shown": 12,
+    "remembered": 0,
+    "failed": 12,
+    "interval": 900,
+    "due": 1774371000.839212
+  },
+  "許": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1773167839.435205
+  },
+  "責": {
+    "shown": 10,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1772830662.8885798
+  },
+  "修": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1773345817.6708121
+  },
+  "因": {
+    "shown": 9,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1772902989.6969314
+  },
+  "技": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1774122857.889157
+  },
+  "断": {
+    "shown": 16,
+    "remembered": 1,
+    "failed": 14,
+    "interval": 900,
+    "due": 1773509854.0523708
+  },
+  "武": {
+    "shown": 9,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1773517056.1773221
+  },
+  "態": {
+    "shown": 9,
+    "remembered": 0,
+    "failed": 9,
+    "interval": 900,
+    "due": 1774505819.8902283
+  },
+  "準": {
+    "shown": 5,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1772033660.3530138
+  },
+  "管": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1772736883.386989
+  },
+  "職": {
+    "shown": 9,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1773774816.5048668
+  },
+  "構": {
+    "shown": 6,
+    "remembered": 1,
+    "failed": 3,
+    "interval": 1800,
+    "due": 1772788438.0338752
+  },
+  "認": {
+    "shown": 11,
+    "remembered": 0,
+    "failed": 10,
+    "interval": 900,
+    "due": 1773957122.5578282
+  },
+  "設": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1773079747.123174
+  },
+  "展": {
+    "shown": 11,
+    "remembered": 0,
+    "failed": 10,
+    "interval": 900,
+    "due": 1773164238.804985
+  },
+  "維": {
+    "shown": 9,
+    "remembered": 1,
+    "failed": 6,
+    "interval": 900,
+    "due": 1774444791.9105108
+  },
+  "概": {
+    "shown": 10,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1772811759.7137623
+  },
+  "憲": {
+    "shown": 7,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1773519756.7512987
+  },
+  "索": {
+    "shown": 4,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1771176573.306955
+  },
+  "慮": {
+    "shown": 8,
+    "remembered": 0,
+    "failed": 8,
+    "interval": 900,
+    "due": 1774180442.7388842
+  },
+  "顕": {
+    "shown": 6,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1771860085.3615582
+  },
+  "罰": {
+    "shown": 9,
+    "remembered": 0,
+    "failed": 7,
+    "interval": 900,
+    "due": 1774446592.5149145
+  },
+  "裁": {
+    "shown": 4,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1771445753.8975842
+  },
+  "王": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774733748.9789944
+  },
+  "犬": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1772807258.9869509
+  },
+  "猫": {
+    "shown": 4,
+    "remembered": 2,
+    "failed": 1,
+    "interval": 3600,
+    "due": 1773391109.529308
+  },
+  "狐": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774514822.1583426
+  },
+  "蛇": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 1800,
+    "due": 1773054424.361544
+  },
+  "狼": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774176841.6126401
+  },
+  "一": {
+    "shown": 6,
+    "remembered": 2,
+    "failed": 4,
+    "interval": 900,
+    "due": 1774179542.5117948
+  },
+  "二": {
+    "shown": 4,
+    "remembered": 1,
+    "failed": 2,
+    "interval": 900,
+    "due": 1772969011.3834176
+  },
+  "三": {
+    "shown": 4,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1775072697.2052162
+  },
+  "四": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773609412.1937022
+  },
+  "五": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1775200235.7101681
+  },
+  "六": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774522024.1066277
+  },
+  "七": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773349418.5054364
+  },
+  "八": {
+    "shown": 4,
+    "remembered": 0,
+    "failed": 4,
+    "interval": 900,
+    "due": 1775199335.3945658
+  },
+  "九": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774558517.5489194
+  },
+  "十": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774550415.316302
+  },
+  "北": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773965224.2209308
+  },
+  "南": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772445643.5320213
+  },
+  "西": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 1800,
+    "due": 1773389366.5607536
+  },
+  "東": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772445643.5320334
+  },
+  "霊": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773054626.4978492
+  },
+  "鮮": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772445643.5344303
+  },
+  "幹": {
+    "shown": 4,
+    "remembered": 0,
+    "failed": 4,
+    "interval": 900,
+    "due": 1774209251.23542
+  },
+  "宮": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 1800,
+    "due": 1773054635.018369
+  },
+  "昭": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773386235.1618674
+  },
+  "万": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772784766.0960824
+  },
+  "千": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773054349.6086311
+  },
+  "名": {
+    "shown": 7,
+    "remembered": 2,
+    "failed": 5,
+    "interval": 900,
+    "due": 1774375502.2402787
+  },
+  "前": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773845060.9093246
+  },
+  "出": {
+    "shown": 3,
+    "remembered": 2,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773608512.0179927
+  },
+  "電": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773947220.4504497
+  },
+  "車": {
+    "shown": 4,
+    "remembered": 1,
+    "failed": 3,
+    "interval": 900,
+    "due": 1775071797.0303702
+  },
+  "休": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773495449.9888074
+  },
+  "行": {
+    "shown": 5,
+    "remembered": 2,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774531026.5646348
+  },
+  "来": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774110255.4005182
+  },
+  "語": {
+    "shown": 4,
+    "remembered": 1,
+    "failed": 3,
+    "interval": 900,
+    "due": 1774861945.059272
+  },
+  "朝": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772784766.0964112
+  },
+  "冬": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772784766.0964198
+  },
+  "秋": {
+    "shown": 4,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774096752.5569968
+  },
+  "夏": {
+    "shown": 5,
+    "remembered": 1,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774730147.8902752
+  },
+  "春": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772784766.0964463
+  },
+  "事": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772784766.0964556
+  },
+  "夜": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773174140.8381855
+  },
+  "界": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772784766.096473
+  },
+  "町": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774512121.4164066
+  },
+  "料": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773385861.6070642
+  },
+  "理": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773414636.0764565
+  },
+  "地": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773175941.0755723
+  },
+  "帰": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772784766.0965157
+  },
+  "始": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773595008.3577797
+  },
+  "歌": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773959823.1065588
+  },
+  "週": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773054646.0296342
+  },
+  "物": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773171440.25633
+  },
+  "広": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773051820.8791974
+  },
+  "終": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773342216.9073792
+  },
+  "味": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772784766.0985396
+  },
+  "冷": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773344917.463175
+  },
+  "雪": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 2,
+    "interval": 900,
+    "due": 1775198435.0751958
+  },
+  "感": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1773595908.5332918
+  },
+  "眠": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774860465.8391175
+  },
+  "世": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773432999.9666305
+  },
+  "消": {
+    "shown": 2,
+    "remembered": 2,
+    "failed": 0,
+    "interval": 3600,
+    "due": 1773659835.5544786
+  },
+  "例": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773385888.2178562
+  },
+  "落": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773674063.0133832
+  },
+  "光": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772784766.0988917
+  },
+  "夢": {
+    "shown": 5,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1774111155.5836427
+  },
+  "変": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773053337.1480327
+  },
+  "伝": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1774515722.3152945
+  },
+  "初": {
+    "shown": 6,
+    "remembered": 0,
+    "failed": 6,
+    "interval": 900,
+    "due": 1774984151.680858
+  },
+  "末": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773077046.6152554
+  },
+  "溶": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772784766.0989943
+  },
+  "羽": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 1800,
+    "due": 1773385873.8331008
+  },
+  "触": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773054791.454825
+  },
+  "雲": {
+    "shown": 3,
+    "remembered": 2,
+    "failed": 0,
+    "interval": 3600,
+    "due": 1773387696.7006145
+  },
+  "玉": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774207450.6701
+  },
+  "翼": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 2,
+    "interval": 1800,
+    "due": 1773658039.6609242
+  },
+  "僕": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773341316.7497995
+  },
+  "傷": {
+    "shown": 4,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1774704230.8866887
+  },
+  "遺": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773847008.5103025
+  },
+  "姿": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772784766.0991518
+  },
+  "獄": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773054617.365904
+  },
+  "眩": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772784766.0991685
+  },
+  "揺": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773489037.470686
+  },
+  "鏡": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773350318.6248932
+  },
+  "洪": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1772784766.099193
+  },
+  "噌": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773599509.6279955
+  },
+  "霧": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774205650.2191386
+  },
+  "次": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.071789
+  },
+  "持": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773054753.0031257
+  },
+  "性": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774825693.4912736
+  },
+  "時": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774540929.4411619
+  },
+  "区": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773385870.2357745
+  },
+  "毅": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0718265
+  },
+  "独": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0718334
+  },
+  "抽": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0718398
+  },
+  "屋": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0718458
+  },
+  "泥": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0718524
+  },
+  "主": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773053332.3976884
+  },
+  "卓": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0718648
+  },
+  "共": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774809488.6620815
+  },
+  "肌": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0718763
+  },
+  "除": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0718825
+  },
+  "寺": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0718887
+  },
+  "硝": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0718954
+  },
+  "騙": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.071901
+  },
+  "了": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774525625.1042855
+  },
+  "過": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774703330.5824137
+  },
+  "紳": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0719197
+  },
+  "補": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773936418.2410152
+  },
+  "軍": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0719311
+  },
+  "流": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774729247.5809555
+  },
+  "畠": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0719433
+  },
+  "僅": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.071949
+  },
+  "氷": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.071955
+  },
+  "全": {
+    "shown": 3,
+    "remembered": 2,
+    "failed": 0,
+    "interval": 3600,
+    "due": 1773660253.0553875
+  },
+  "則": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0719676
+  },
+  "窯": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0719733
+  },
+  "眼": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0719795
+  },
+  "薄": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0719852
+  },
+  "銘": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.071991
+  },
+  "渦": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.071997
+  },
+  "巴": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.072003
+  },
+  "農": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0720088
+  },
+  "骨": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0720146
+  },
+  "革": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0720205
+  },
+  "双": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0720267
+  },
+  "帯": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773054625.2654877
+  },
+  "随": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0720387
+  },
+  "吾": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0720448
+  },
+  "模": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0720506
+  },
+  "濾": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0720563
+  },
+  "識": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773945420.0389566
+  },
+  "福": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0720685
+  },
+  "馬": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773680364.7430425
+  },
+  "聖": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0720806
+  },
+  "棚": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774731048.2403953
+  },
+  "製": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0720928
+  },
+  "岡": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0720992
+  },
+  "牧": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774980550.6137602
+  },
+  "飼": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774701530.0053327
+  },
+  "瑞": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0721173
+  },
+  "引": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774610361.9484286
+  },
+  "昌": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773051825.6262395
+  },
+  "徐": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0721357
+  },
+  "串": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0721416
+  },
+  "祥": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0721474
+  },
+  "泡": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0721533
+  },
+  "孔": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0721593
+  },
+  "明": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774816690.8174667
+  },
+  "用": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0721724
+  },
+  "丸": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0721781
+  },
+  "競": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0721843
+  },
+  "避": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0721903
+  },
+  "量": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774183143.543463
+  },
+  "色": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774716811.057719
+  },
+  "臨": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0722098
+  },
+  "伴": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0722163
+  },
+  "路": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.072223
+  },
+  "局": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.072229
+  },
+  "和": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.072235
+  },
+  "旬": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0722408
+  },
+  "如": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0722466
+  },
+  "部": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0722525
+  },
+  "環": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774125558.4822125
+  },
+  "穴": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0722647
+  },
+  "忘": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0722709
+  },
+  "准": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.072277
+  },
+  "条": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0722835
+  },
+  "代": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.072289
+  },
+  "記": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773941819.3169324
+  },
+  "臣": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0723011
+  },
+  "想": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773051821.7787716
+  },
+  "所": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0723133
+  },
+  "由": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774699729.539912
+  },
+  "衝": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774696128.3994317
+  },
+  "信": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773500851.4863234
+  },
+  "当": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0723372
+  },
+  "公": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774814890.4212549
+  },
+  "穫": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0723505
+  },
+  "叉": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.072357
+  },
+  "相": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0723825
+  },
+  "角": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0723886
+  },
+  "提": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0723946
+  },
+  "級": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0724003
+  },
+  "箇": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773863238.4990005
+  },
+  "雷": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773051819.760836
+  },
+  "私": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0724182
+  },
+  "突": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0724244
+  },
+  "打": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0724301
+  },
+  "交": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773390415.1038723
+  },
+  "趣": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773598609.3076556
+  },
+  "札": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.072448
+  },
+  "史": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.072454
+  },
+  "攻": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773687566.8432686
+  },
+  "尺": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0724657
+  },
+  "称": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773049449.0724716
+  },
+  "弄": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773605811.373226
+  },
+  "等": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5224829
+  },
+  "失": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5224988
+  },
+  "候": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.522509
+  },
+  "航": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5225189
+  },
+  "周": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.522529
+  },
+  "内": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5225394
+  },
+  "還": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774113856.1279635
+  },
+  "入": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774121057.5709648
+  },
+  "艇": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5225677
+  },
+  "稀": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5225775
+  },
+  "旧": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774817591.105588
+  },
+  "列": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5225987
+  },
+  "帳": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.522608
+  },
+  "旨": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5226178
+  },
+  "池": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773386236.6101315
+  },
+  "店": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5226374
+  },
+  "御": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773432099.6884644
+  },
+  "属": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5226564
+  },
+  "画": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 2,
+    "interval": 900,
+    "due": 1775074497.7319005
+  },
+  "応": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.522675
+  },
+  "吉": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774518423.140996
+  },
+  "状": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5226946
+  },
+  "宗": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5227053
+  },
+  "軸": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5227149
+  },
+  "寂": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5227242
+  },
+  "親": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.522734
+  },
+  "皿": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5227437
+  },
+  "董": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5227537
+  },
+  "附": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774177741.92532
+  },
+  "呈": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774097652.774553
+  },
+  "回": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774693427.639098
+  },
+  "凡": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5227923
+  },
+  "葉": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774555816.7164187
+  },
+  "虹": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.522813
+  },
+  "舎": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5228233
+  },
+  "久": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.522833
+  },
+  "笑": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5228426
+  },
+  "駆": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5228522
+  },
+  "杉": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5228617
+  },
+  "恨": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.522871
+  },
+  "陣": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5228806
+  },
+  "査": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774821192.0968287
+  },
+  "否": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5229003
+  },
+  "欄": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773657103.4751532
+  },
+  "節": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 1800,
+    "due": 1774602760.4766662
+  },
+  "余": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5229292
+  },
+  "糧": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5229387
+  },
+  "塵": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5229478
+  },
+  "冗": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5229573
+  },
+  "箕": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5229673
+  },
+  "難": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774689826.3865285
+  },
+  "筐": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5229888
+  },
+  "遇": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.5229995
+  },
+  "奈": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773050013.523009
+  },
+  "酷": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7781687
+  },
+  "携": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7781847
+  },
+  "問": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773674963.1746087
+  },
+  "情": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7782006
+  },
+  "言": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7782087
+  },
+  "音": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773386227.0254717
+  },
+  "刻": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.778255
+  },
+  "械": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7782648
+  },
+  "在": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774552215.6491783
+  },
+  "野": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7782876
+  },
+  "寝": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7783022
+  },
+  "痴": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7783139
+  },
+  "成": {
+    "shown": 4,
+    "remembered": 1,
+    "failed": 3,
+    "interval": 900,
+    "due": 1774178642.1924636
+  },
+  "後": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774206550.4452703
+  },
+  "場": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774978750.0655596
+  },
+  "愚": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7783566
+  },
+  "阿": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7783825
+  },
+  "戦": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7783952
+  },
+  "何": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774541829.7668147
+  },
+  "以": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7784083
+  },
+  "既": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.778414
+  },
+  "権": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7784245
+  },
+  "現": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7784312
+  },
+  "然": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7784429
+  },
+  "機": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773054798.5710297
+  },
+  "考": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774702430.3756003
+  },
+  "魔": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.778462
+  },
+  "午": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773518856.6031876
+  },
+  "題": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773866563.328117
+  },
+  "銭": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773053350.5548925
+  },
+  "押": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7785075
+  },
+  "毎": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7785137
+  },
+  "曜": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.77852
+  },
+  "良": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7785263
+  },
+  "勤": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.778532
+  },
+  "方": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.778549
+  },
+  "該": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773693868.7333388
+  },
+  "詞": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7785618
+  },
+  "与": {
+    "shown": 2,
+    "remembered": 2,
+    "failed": 0,
+    "interval": 3600,
+    "due": 1773391108.9191158
+  },
+  "起": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774559417.7498965
+  },
+  "義": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773054702.2869148
+  },
+  "通": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1775567693.2835298
+  },
+  "台": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774185844.4061415
+  },
+  "暴": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773384739.3199413
+  },
+  "利": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7786257
+  },
+  "及": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.778636
+  },
+  "邪": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773054788.5664568
+  },
+  "借": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7786524
+  },
+  "忍": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773053340.3260076
+  },
+  "原": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774119257.1791954
+  },
+  "吐": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7786758
+  },
+  "報": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7786818
+  },
+  "鹿": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773051507.7786953
+  },
+  "的": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774509420.7518518
+  },
+  "予": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774181342.8973756
+  },
+  "分": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773692968.423845
+  },
+  "般": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774690726.6951547
+  },
+  "択": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773382932.0141501
+  },
+  "観": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773382932.0141575
+  },
+  "訪": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773382932.0141702
+  },
+  "殆": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774189445.3127391
+  },
+  "託": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774175941.3352144
+  },
+  "工": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773382932.0141957
+  },
+  "肢": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773775716.7734745
+  },
+  "導": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773382932.0142138
+  },
+  "隊": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773382932.0142245
+  },
+  "締": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774516622.5719242
+  },
+  "抜": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773581504.8709223
+  },
+  "富": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774823892.9672167
+  },
+  "才": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773389321.611951
+  },
+  "志": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773382932.0142798
+  },
+  "厳": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774445692.1840632
+  },
+  "自": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773382932.0142927
+  },
+  "井": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774022115.2704873
+  },
+  "税": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773382932.0143142
+  },
+  "将": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773600409.930246
+  },
+  "仕": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773384750.0850146
+  },
+  "教": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773382932.0143332
+  },
+  "季": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773587806.3985891
+  },
+  "見": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774539128.9224522
+  },
+  "種": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773382932.0143578
+  },
+  "創": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773383852.6710012
+  },
+  "伺": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774822092.4462497
+  },
+  "愛": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1775210579.6155965
+  },
+  "今": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773383852.6710303
+  },
+  "囲": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774732848.7420516
+  },
+  "段": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773383852.6710432
+  },
+  "普": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774506720.1081572
+  },
+  "輸": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774521123.9022272
+  },
+  "絢": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773385876.901372
+  },
+  "間": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774530126.365576
+  },
+  "燕": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774120157.3681927
+  },
+  "芝": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774107554.852045
+  },
+  "際": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773383852.6711004
+  },
+  "孝": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773951721.3758945
+  },
+  "刀": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773383852.6711175
+  },
+  "較": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773383852.6711242
+  },
+  "謙": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773383852.6711307
+  },
+  "癖": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773383852.6711373
+  },
+  "潮": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773383852.6711445
+  },
+  "有": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774200248.4375317
+  },
+  "影": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1774513921.9132586
+  },
+  "仙": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773592307.5927074
+  },
+  "幸": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774211051.6236029
+  },
+  "汗": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773413735.7839015
+  },
+  "松": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773668551.513281
+  },
+  "涯": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773577904.1161213
+  },
+  "英": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773850609.5904272
+  },
+  "飽": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774112955.9545932
+  },
+  "衣": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773383852.6712394
+  },
+  "彰": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774536428.1022232
+  },
+  "滞": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773383852.671254
+  },
+  "素": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773383852.6712606
+  },
+  "科": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773385899.7384655
+  },
+  "誠": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773585105.6371312
+  },
+  "対": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1774815790.636876
+  },
+  "吹": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773383852.6712937
+  },
+  "違": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773692068.1339269
+  },
+  "編": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774811289.3373578
+  },
+  "商": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773940018.974566
+  },
+  "具": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773383852.6713228
+  },
+  "士": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774706031.310129
+  },
+  "惑": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774517522.8503497
+  },
+  "散": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773384061.66058
+  },
+  "集": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773384061.6605911
+  },
+  "敬": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 2,
+    "interval": 1800,
+    "due": 1774602755.8285995
+  },
+  "立": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774820291.869767
+  },
+  "別": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774099453.2093174
+  },
+  "源": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1775565892.8621871
+  },
+  "熱": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774513021.6706383
+  },
+  "再": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773384061.6606386
+  },
+  "深": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773384061.6606445
+  },
+  "改": {
+    "shown": 3,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774193946.7825122
+  },
+  "偏": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773384061.6606662
+  },
+  "談": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773384061.6606722
+  },
+  "映": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773384061.6606827
+  },
+  "食": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773384061.660689
+  },
+  "尊": {
+    "shown": 5,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1774448392.9690993
+  },
+  "欲": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774523824.689572
+  },
+  "烈": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773384061.6607175
+  },
+  "意": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773384061.660728
+  },
+  "星": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774192146.3759398
+  },
+  "特": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774370100.617246
+  },
+  "文": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774203849.6036327
+  },
+  "品": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774818491.363046
+  },
+  "位": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773678564.1770685
+  },
+  "率": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773995344.6830206
+  },
+  "司": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774199348.2784255
+  },
+  "合": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5224953
+  },
+  "半": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5225024
+  },
+  "朋": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5225093
+  },
+  "坪": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773588706.6779575
+  },
+  "宣": {
+    "shown": 4,
+    "remembered": 1,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774519323.3619213
+  },
+  "竹": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.522551
+  },
+  "順": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.522562
+  },
+  "噴": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5225685
+  },
+  "送": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.522575
+  },
+  "決": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774126458.6385033
+  },
+  "囚": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5225961
+  },
+  "只": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773514355.2969456
+  },
+  "嘆": {
+    "shown": 4,
+    "remembered": 0,
+    "failed": 4,
+    "interval": 900,
+    "due": 1774279290.0819798
+  },
+  "簡": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774208350.9880784
+  },
+  "旗": {
+    "shown": 4,
+    "remembered": 0,
+    "failed": 4,
+    "interval": 900,
+    "due": 1774726546.7178645
+  },
+  "党": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773943619.725726
+  },
+  "興": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5226376
+  },
+  "忠": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5226436
+  },
+  "誉": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773426339.1706612
+  },
+  "財": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774725646.3835297
+  },
+  "妊": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5226657
+  },
+  "紋": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773389336.963097
+  },
+  "直": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5226784
+  },
+  "恒": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5226874
+  },
+  "狂": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773655997.175827
+  },
+  "耕": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5227053
+  },
+  "坊": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774596435.3643
+  },
+  "紅": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774504919.725965
+  },
+  "葵": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773852410.1465838
+  },
+  "功": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5227504
+  },
+  "泣": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774186744.5629976
+  },
+  "損": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773993272.130329
+  },
+  "束": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774210151.3924057
+  },
+  "給": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5227792
+  },
+  "恥": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774554916.510019
+  },
+  "器": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5228024
+  },
+  "夫": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774983251.3461766
+  },
+  "埋": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774540029.1804442
+  },
+  "紀": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5228212
+  },
+  "障": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5228276
+  },
+  "駿": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5228374
+  },
+  "燃": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774114756.327492
+  },
+  "便": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774724638.9680653
+  },
+  "召": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773769414.9029257
+  },
+  "折": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773960723.317242
+  },
+  "巡": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.522875
+  },
+  "岸": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387195.5228815
+  },
+  "陸": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387508.9769094
+  },
+  "暗": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774520223.6667283
+  },
+  "佑": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774728347.2709465
+  },
+  "湊": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774278282.7122333
+  },
+  "晶": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773606711.6897054
+  },
+  "典": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1774861941.1357071
+  },
+  "蛍": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387508.9769566
+  },
+  "喉": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387508.9769666
+  },
+  "喧": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774532827.058539
+  },
+  "悪": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387508.976983
+  },
+  "閉": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387508.9769893
+  },
+  "琶": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1774981450.798427
+  },
+  "香": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773686666.6522038
+  },
+  "伯": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773525158.3251991
+  },
+  "逢": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1774808335.842081
+  },
+  "定": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773958922.9025576
+  },
+  "蛋": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387508.9770267
+  },
+  "販": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774187644.8276186
+  },
+  "坦": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387508.9770393
+  },
+  "邊": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773524257.9980226
+  },
+  "軌": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773690267.7045548
+  },
+  "者": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773392215.568561
+  },
+  "壮": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774537328.351561
+  },
+  "肘": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387508.977076
+  },
+  "家": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387508.9770865
+  },
+  "鶴": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387508.977093
+  },
+  "謗": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774533727.332584
+  },
+  "林": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387508.977811
+  },
+  "基": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387508.977818
+  },
+  "竿": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774184043.8450503
+  },
+  "業": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773507153.2362223
+  },
+  "番": {
+    "shown": 1,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773389351.5579746
+  },
+  "堪": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773935518.073891
+  },
+  "之": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773387508.9778519
+  },
+  "埼": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1775209679.3047907
+  },
+  "蘭": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1775202036.272691
+  },
+  "江": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6608133
+  },
+  "図": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773938218.6006353
+  },
+  "幼": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773940919.1537704
+  },
+  "笛": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6608434
+  },
+  "連": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774551315.4706242
+  },
+  "納": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6608582
+  },
+  "団": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6608658
+  },
+  "昔": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774123758.065665
+  },
+  "油": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773777517.4663439
+  },
+  "筆": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774697028.7102163
+  },
+  "着": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773577003.9510505
+  },
+  "到": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6609025
+  },
+  "写": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6609182
+  },
+  "民": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773864762.8151808
+  },
+  "机": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6609504
+  },
+  "包": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6609585
+  },
+  "央": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6609697
+  },
+  "好": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773583305.2017922
+  },
+  "洗": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6609895
+  },
+  "薫": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6610012
+  },
+  "離": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773506252.924278
+  },
+  "答": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.661017
+  },
+  "統": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6610248
+  },
+  "唱": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6610322
+  },
+  "敵": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773768514.718726
+  },
+  "叩": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6610475
+  },
+  "単": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774731948.4819615
+  },
+  "誰": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774717828.570468
+  },
+  "豆": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.66107
+  },
+  "爺": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6610854
+  },
+  "症": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6610937
+  },
+  "講": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6611009
+  },
+  "員": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773421837.808419
+  },
+  "旭": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6611156
+  },
+  "側": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774115656.5226238
+  },
+  "細": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 1800,
+    "due": 1774861944.6817498
+  },
+  "衛": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774204749.8684745
+  },
+  "層": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6611526
+  },
+  "培": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773691167.9083831
+  },
+  "捉": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774692527.3017192
+  },
+  "栓": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773596808.7702599
+  },
+  "球": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6642725
+  },
+  "護": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774813089.9136333
+  },
+  "洒": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773694768.9237013
+  },
+  "爾": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773867463.5536666
+  },
+  "胃": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6643083
+  },
+  "租": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6643155
+  },
+  "検": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773574099.6430862
+  },
+  "閣": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773593207.8252141
+  },
+  "軒": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6643384
+  },
+  "汰": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6643457
+  },
+  "息": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6643531
+  },
+  "匹": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774202048.986274
+  },
+  "田": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773934617.8754551
+  },
+  "肖": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6643796
+  },
+  "秘": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6643896
+  },
+  "注": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.664402
+  },
+  "褒": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6644096
+  },
+  "拉": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1774372801.4252083
+  },
+  "針": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773491848.9874637
+  },
+  "琴": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 0,
+    "interval": 1800,
+    "due": 1773658043.9027827
+  },
+  "項": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.66444
+  },
+  "秒": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6644492
+  },
+  "況": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6644568
+  },
+  "得": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6644683
+  },
+  "倫": {
+    "shown": 3,
+    "remembered": 0,
+    "failed": 3,
+    "interval": 900,
+    "due": 1775197376.2956953
+  },
+  "征": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774511221.2548316
+  },
+  "佐": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774695228.2009504
+  },
+  "演": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6644967
+  },
+  "殺": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6645045
+  },
+  "靖": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773942719.5270777
+  },
+  "洛": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6645236
+  },
+  "可": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.664532
+  },
+  "反": {
+    "shown": 2,
+    "remembered": 1,
+    "failed": 1,
+    "interval": 1800,
+    "due": 1774602864.7793782
+  },
+  "融": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6645513
+  },
+  "克": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.664559
+  },
+  "圭": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773422738.0462868
+  },
+  "同": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773391315.6645792
+  },
+  "致": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773655097.2450914
+  },
+  "議": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773655097.2451308
+  },
+  "不": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1773958022.7304242
+  },
+  "禄": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773655097.2451437
+  },
+  "秀": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774465044.605581
+  },
+  "暇": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773655097.2451634
+  },
+  "暖": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773655097.2451694
+  },
+  "張": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773655097.2451754
+  },
+  "訴": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773655097.2451847
+  },
+  "倶": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1773994444.4607491
+  },
+  "赴": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773991472.026797
+  },
+  "制": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773991472.0268085
+  },
+  "甘": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774601045.2745054
+  },
+  "服": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1773991472.0268216
+  },
+  "隔": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774598344.9274566
+  },
+  "客": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774598344.9274766
+  },
+  "届": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774824793.2256339
+  },
+  "弓": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774598344.9274924
+  },
+  "詩": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774598344.9274986
+  },
+  "胡": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774598344.9275045
+  },
+  "條": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774598344.9275107
+  },
+  "剖": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774598344.9275167
+  },
+  "血": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774598344.9275227
+  },
+  "視": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774598344.9275284
+  },
+  "玲": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774598344.9275346
+  },
+  "汐": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774598344.9275439
+  },
+  "府": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0250294
+  },
+  "獲": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0250535
+  },
+  "結": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0250611
+  },
+  "乗": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0250692
+  },
+  "竜": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025084
+  },
+  "境": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0250938
+  },
+  "県": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0250998
+  },
+  "阪": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025106
+  },
+  "園": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0251122
+  },
+  "営": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0251179
+  },
+  "草": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0251243
+  },
+  "没": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0251305
+  },
+  "住": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0251362
+  },
+  "察": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025145
+  },
+  "勢": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0251548
+  },
+  "温": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0251608
+  },
+  "運": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0251667
+  },
+  "街": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0251727
+  },
+  "動": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0251787
+  },
+  "発": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0251844
+  },
+  "能": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0251904
+  },
+  "捕": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0251963
+  },
+  "官": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774813990.1651208
+  },
+  "施": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025208
+  },
+  "市": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025214
+  },
+  "撃": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.02522
+  },
+  "宅": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0252264
+  },
+  "泉": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025236
+  },
+  "城": {
+    "shown": 2,
+    "remembered": 0,
+    "failed": 2,
+    "interval": 900,
+    "due": 1775070896.7922957
+  },
+  "居": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0252516
+  },
+  "整": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0252578
+  },
+  "敷": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0252633
+  },
+  "探": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0252697
+  },
+  "保": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0252755
+  },
+  "果": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025282
+  },
+  "数": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774812189.6596692
+  },
+  "也": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0252936
+  },
+  "診": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0252998
+  },
+  "頭": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025317
+  },
+  "術": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025323
+  },
+  "訳": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0253289
+  },
+  "域": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0253346
+  },
+  "留": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1775566793.0599256
+  },
+  "韓": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774982351.0944526
+  },
+  "処": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1775208379.1533196
+  },
+  "格": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0253632
+  },
+  "件": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0253696
+  },
+  "習": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0253751
+  },
+  "資": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025385
+  },
+  "占": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025396
+  },
+  "務": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0254047
+  },
+  "形": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025411
+  },
+  "永": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0254202
+  },
+  "点": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0254266
+  },
+  "完": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0254326
+  },
+  "最": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0254388
+  },
+  "象": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1775073597.5167432
+  },
+  "実": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0254505
+  },
+  "期": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0254567
+  },
+  "紛": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0254626
+  },
+  "外": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025468
+  },
+  "去": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025474
+  },
+  "働": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.02548
+  },
+  "超": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0254858
+  },
+  "法": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0254974
+  },
+  "強": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0255036
+  },
+  "争": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0255096
+  },
+  "卒": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774694327.9155064
+  },
+  "適": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0255253
+  },
+  "庭": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025531
+  },
+  "援": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0255373
+  },
+  "省": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0255435
+  },
+  "切": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0255492
+  },
+  "厚": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0255587
+  },
+  "総": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0255647
+  },
+  "含": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0255704
+  },
+  "算": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025576
+  },
+  "様": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1775068075.1983979
+  },
+  "庁": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.025588
+  },
+  "徹": {
+    "shown": 1,
+    "remembered": 0,
+    "failed": 1,
+    "interval": 900,
+    "due": 1774698829.194113
+  },
+  "政": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0255992
+  },
+  "底": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0256073
+  },
+  "求": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0256166
+  },
+  "労": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1774610314.0256226
+  },
+  "指": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.369498
+  },
+  "解": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.3695345
+  },
+  "嘘": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.3695426
+  },
+  "死": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.3695495
+  },
+  "描": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.369556
+  },
+  "君": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.3695621
+  },
+  "憶": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.3695686
+  },
+  "弾": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.3695753
+  },
+  "絡": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.3695812
+  },
+  "伸": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.3695884
+  },
+  "夕": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.3695948
+  },
+  "類": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.369601
+  },
+  "酔": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.3696082
+  },
+  "採": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.3696144
+  },
+  "壊": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.3696241
+  },
+  "旋": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.36963
+  },
+  "造": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.3696363
+  },
+  "律": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775201136.3696427
+  },
+  "朽": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7196867
+  },
+  "虚": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7197008
+  },
+  "首": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.719712
+  },
+  "像": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.719719
+  },
+  "此": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7197258
+  },
+  "退": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.719732
+  },
+  "宙": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7197375
+  },
+  "耐": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7197435
+  },
+  "舞": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.719751
+  },
+  "根": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.719757
+  },
+  "背": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7197638
+  },
+  "清": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7197702
+  },
+  "浄": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7197762
+  },
+  "望": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.719782
+  },
+  "希": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7197883
+  },
+  "悲": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7197948
+  },
+  "鐘": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.719801
+  },
+  "掲": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7198067
+  },
+  "妄": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7198129
+  },
+  "鳴": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.719819
+  },
+  "踊": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7198253
+  },
+  "神": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7198308
+  },
+  "罠": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.719837
+  },
+  "糸": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7198434
+  },
+  "塔": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.719849
+  },
+  "凌": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7198553
+  },
+  "削": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202036.7198615
+  },
+  "炉": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202643.955169
+  },
+  "誓": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202643.955191
+  },
+  "命": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202643.9551973
+  },
+  "走": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202643.955204
+  },
+  "渡": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202643.955211
+  },
+  "紙": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202643.9552174
+  },
+  "抱": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202643.955224
+  },
+  "孤": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202643.9552305
+  },
+  "待": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202643.955237
+  },
+  "震": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202643.9552433
+  },
+  "憐": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775202643.9552495
+  },
+  "洞": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775207879.1926498
+  },
+  "促": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775207879.1926703
+  },
+  "栖": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775207879.192682
+  },
+  "組": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775207879.1926885
+  },
+  "奥": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775207879.1926954
+  },
+  "摂": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775207879.1927056
+  },
+  "精": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775207879.1927116
+  },
+  "複": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775207879.1927245
+  },
+  "徴": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775207879.1927307
+  },
+  "字": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775207879.1927366
+  },
+  "恐": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775209679.7203953
+  },
+  "陰": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775209679.72042
+  },
+  "怖": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775209679.7204287
+  },
+  "痛": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775209679.7204354
+  },
+  "弱": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775209679.7204416
+  },
+  "太": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3808427
+  },
+  "闇": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3808696
+  },
+  "冒": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.380876
+  },
+  "吸": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3808825
+  },
+  "往": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3808901
+  },
+  "無": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3808966
+  },
+  "奇": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.380903
+  },
+  "転": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3809085
+  },
+  "漂": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3809144
+  },
+  "勇": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3809211
+  },
+  "尽": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3809278
+  },
+  "妙": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3809342
+  },
+  "喝": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3809402
+  },
+  "込": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3809464
+  },
+  "鼓": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3809524
+  },
+  "悟": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.380959
+  },
+  "身": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3809655
+  },
+  "陽": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3809712
+  },
+  "波": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.380977
+  },
+  "誇": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3809826
+  },
+  "面": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3809884
+  },
+  "螺": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3809943
+  },
+  "岩": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3810005
+  },
+  "険": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3810065
+  },
+  "覚": {
+    "shown": 0,
+    "remembered": 0,
+    "failed": 0,
+    "interval": 900,
+    "due": 1775566793.3810127
+  }
+}
