@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import hashlib
+import json
 import os
 import ssl
 import threading
@@ -9,11 +10,23 @@ import pygame
 import pylast
 from config import LASTFM_UPDATE_TIME
 
-# ---------- LASTFM ----------
+LASTFM_CONFIG_FILE = "lastfm_config.json"
+
+def load_lastfm_config():
+    if os.path.exists(LASTFM_CONFIG_FILE):
+        with open(LASTFM_CONFIG_FILE, "r") as f:
+            return json.load(f)
+    return {"api_key": "", "api_secret": "", "username": ""}
+
+def save_lastfm_config(cfg):
+    with open(LASTFM_CONFIG_FILE, "w") as f:
+        json.dump(cfg, f, indent=2)
+
+_cfg = load_lastfm_config()
 network = pylast.LastFMNetwork(
-    api_key="",
-    api_secret="",
-    username=""
+    api_key=_cfg.get("api_key", ""),
+    api_secret=_cfg.get("api_secret", ""),
+    username=_cfg.get("username", "")
 )
 
 current_song = {"artist": "", "title": "", "is_playing": False, "album_art": None}
@@ -79,5 +92,4 @@ def lastfm_thread():
 
         time.sleep(LASTFM_UPDATE_TIME)
 
-# Start the Last.fm thread
 threading.Thread(target=lastfm_thread, daemon=True).start()

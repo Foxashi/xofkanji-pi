@@ -6,10 +6,13 @@ from config import STATS_FILE, FAILED_INTERVAL
 
 # ---------- LOAD / SAVE STATS ----------
 def load_stats():
-    if not os.path.exists(STATS_FILE):
+    if not os.path.exists(STATS_FILE) or os.path.getsize(STATS_FILE) == 0:
         return {}
     with open(STATS_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
+        try:
+            return json.load(f)
+        except json.JSONDecodeError:
+            return {}
 
 def save_stats(stats):
     with open(STATS_FILE, "w", encoding="utf-8") as f:

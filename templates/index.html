@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>🎌 Kanji Scanner</h2>
+        <h2><img class="title-icon" src="{{ url_for('static', filename='icons/japan.svg') }}" alt=""> Kanji Scanner</h2>
         <form action="/upload" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="image-input">Image File</label>
@@ -31,6 +31,7 @@
 
             <button type="submit">✨ Scan & Add to Database</button>
         </form>
+        <a href="/dashboard" class="nav-item" style="text-align:center; margin-top: 20px;"><img class="title-icon" src="{{ url_for('static', filename='icons/dashboard.svg') }}" alt=""> Dashboard</a>
     </div>
 </body>
 </html>

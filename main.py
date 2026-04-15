@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 import argparse
+import json
 import math
+import os
+import signal
 import pygame
 import time
 from datetime import datetime
@@ -56,9 +59,31 @@ if not KANJI_LIST:
 theme_names = list(themes.THEMES.keys())
 theme_index = 0
 
+DISPLAY_STATE_FILE = "display_state.json"
+
+def shutdown(signum=None, frame=None):
+    global running
+    running = False
+
+signal.signal(signal.SIGTERM, shutdown)
+
+def write_display_state(kanji_entry):
+    state = {
+        "kanji": kanji_entry.get("kanji", ""),
+        "onyomi": kanji_entry.get("onyomi", ""),
+        "kunyomi": kanji_entry.get("kunyomi", ""),
+        "meaning": kanji_entry.get("meaning", ""),
+        "level": kanji_entry.get("level", ""),
+        "timestamp": time.time(),
+        "pid": os.getpid()
+    }
+    with open(DISPLAY_STATE_FILE, "w") as f:
+        json.dump(state, f)
+
 current = pick_due_kanji(KANJI_LIST, stats)
 stats[current["kanji"]]["shown"] += 1
 save_stats(stats)
+write_display_state(current)
 
 last_change = time.time()
 last_theme_reload = time.time()
@@ -90,6 +115,7 @@ while running:
             current = pick_due_kanji(KANJI_LIST, stats)
             stats[current["kanji"]]["shown"] += 1
             save_stats(stats)
+            write_display_state(current)
 
             last_change = time.time()
 
@@ -112,6 +138,7 @@ while running:
         current = pick_due_kanji(KANJI_LIST, stats)
         stats[current["kanji"]]["shown"] += 1
         save_stats(stats)
+        write_display_state(current)
 
         last_change = time.time()
 
@@ -210,3 +237,6 @@ while running:
     clock.tick(15)
 
 pygame.quit()
+
+if os.path.exists(DISPLAY_STATE_FILE):
+    os.remove(DISPLAY_STATE_FILE)

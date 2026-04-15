@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漢字 Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dash.css') }}">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-wrapper">
+
+        <aside class="sidebar container">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">漢字</div>
+                <span class="sidebar-subtitle">Dashboard</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active" data-section="overview">
+                    <img class="nav-icon-svg" src="{{ url_for('static', filename='icons/overview.svg') }}" alt=""> Overview
+                </a>
+                <a href="#lastfm" class="nav-item" data-section="lastfm">
+                    <img class="nav-icon-svg" src="{{ url_for('static', filename='icons/lastfm.svg') }}" alt=""> Last.fm
+                </a>
+                <a href="#display" class="nav-item" data-section="display">
+                    <span class="nav-icon">画</span> Display
+                </a>
+                <div class="nav-divider"></div>
+                <a href="/" class="nav-item">
+                    <img class="nav-icon-svg" src="{{ url_for('static', filename='icons/scanner.svg') }}" alt=""> Scanner
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <section id="overview" class="dash-section">
+                <header class="top-header container">
+                    <div class="header-title">
+                        <h2 style="margin-bottom: 0;">Overview</h2>
+                        <span class="header-sub" id="last-updated"></span>
+                    </div>
+                </header>
+
+                <div class="stats-grid">
+                    <div class="stat-card container">
+                        <div class="stat-accent accent-purple"></div>
+                        <div class="stat-body">
+                            <h3>Total Kanji</h3>
+                            <p class="stat-value" id="stat-total">—</p>
+                        </div>
+                        <span class="stat-kanji">字</span>
+                    </div>
+                    <div class="stat-card container">
+                        <div class="stat-accent accent-blue"></div>
+                        <div class="stat-body">
+                            <h3>Times Shown</h3>
+                            <p class="stat-value" id="stat-shown">—</p>
+                        </div>
+                        <span class="stat-kanji">見</span>
+                    </div>
+                    <div class="stat-card container">
+                        <div class="stat-accent accent-green"></div>
+                        <div class="stat-body">
+                            <h3>Remembered</h3>
+                            <p class="stat-value" id="stat-remembered">—</p>
+                        </div>
+                        <span class="stat-kanji">覚</span>
+                    </div>
+                    <div class="stat-card container">
+                        <div class="stat-accent accent-red"></div>
+                        <div class="stat-body">
+                            <h3>Failed</h3>
+                            <p class="stat-value" id="stat-failed">—</p>
+                        </div>
+                        <span class="stat-kanji">忘</span>
+                    </div>
+                    <div class="stat-card container">
+                        <div class="stat-accent accent-yellow"></div>
+                        <div class="stat-body">
+                            <h3>Accuracy</h3>
+                            <p class="stat-value" id="stat-accuracy">—</p>
+                        </div>
+                        <span class="stat-kanji">的</span>
+                    </div>
+                    <div class="stat-card container">
+                        <div class="stat-accent accent-orange"></div>
+                        <div class="stat-body">
+                            <h3>Due Now</h3>
+                            <p class="stat-value" id="stat-due">—</p>
+                        </div>
+                        <span class="stat-kanji">待</span>
+                    </div>
+                </div>
+
+                <section class="level-breakdown container">
+                    <h3 class="section-title">JLPT Distribution</h3>
+                    <div id="level-bars" class="level-bars"></div>
+                </section>
+            </section>
+
+            <section id="lastfm" class="dash-section" style="display:none;">
+                <header class="top-header container">
+                    <div class="header-title">
+                        <h2 style="margin-bottom: 0;">Last.fm Integration</h2>
+                        <span class="header-sub">Now playing on your kanji display</span>
+                    </div>
+                </header>
+
+                <div class="settings-card container">
+                    <p class="settings-description">Connect your Last.fm account to show the currently playing track on the kanji display. You'll need to restart the display app after saving.</p>
+                    <form id="lastfm-form">
+                        <div class="form-group">
+                            <label for="lastfm-key">API Key</label>
+                            <input type="text" id="lastfm-key" placeholder="e.g. a1b2c3d4e5f6..." autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastfm-secret">API Secret</label>
+                            <input type="password" id="lastfm-secret" placeholder="e.g. f6e5d4c3b2a1..." autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastfm-user">Username</label>
+                            <input type="text" id="lastfm-user" placeholder="Your Last.fm username" autocomplete="off">
+                        </div>
+                        <button type="submit">Save Settings</button>
+                    </form>
+                    <div id="lastfm-msg" class="form-message" style="display:none;"></div>
+                </div>
+            </section>
+
+            <section id="display" class="dash-section" style="display:none;">
+                <header class="top-header container">
+                    <div class="header-title">
+                        <h2 style="margin-bottom: 0;">Display Control</h2>
+                        <span class="header-sub">Manage the kanji display on your Pi</span>
+                    </div>
+                </header>
+
+                <div class="display-panel container">
+                    <div class="display-status-row">
+                        <div class="display-status">
+                            <span class="status-dot" id="display-dot"></span>
+                            <span class="status-label" id="display-status-text">Checking...</span>
+                        </div>
+                        <div class="display-controls">
+                            <button type="button" class="control-btn restart-btn" id="btn-restart">Restart</button>
+                            <button type="button" class="control-btn stop-btn" id="btn-stop">Stop</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="current-kanji-card container" id="current-kanji-card" style="display:none;">
+                    <div class="current-kanji-display">
+                        <span class="current-kanji-char" id="current-kanji"></span>
+                    </div>
+                    <div class="current-kanji-details">
+                        <div class="kanji-detail-row">
+                            <span class="kanji-detail-label">Level</span>
+                            <span class="kanji-detail-value" id="current-level"></span>
+                        </div>
+                        <div class="kanji-detail-row">
+                            <span class="kanji-detail-label">On'yomi</span>
+                            <span class="kanji-detail-value" id="current-onyomi"></span>
+                        </div>
+                        <div class="kanji-detail-row">
+                            <span class="kanji-detail-label">Kun'yomi</span>
+                            <span class="kanji-detail-value" id="current-kunyomi"></span>
+                        </div>
+                        <div class="kanji-detail-row">
+                            <span class="kanji-detail-label">Meaning</span>
+                            <span class="kanji-detail-value" id="current-meaning"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="display-offline-card container" id="display-offline-card" style="display:none;">
+                    <p>The display app is not running. Press <strong>Restart</strong> to start it.</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='dash.js') }}"></script>
+</body>
+</html>
