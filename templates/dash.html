@@ -25,6 +25,9 @@
                 <a href="#display" class="nav-item" data-section="display">
                     <span class="nav-icon">画</span> Display
                 </a>
+                <a href="#recent" class="nav-item" data-section="recent">
+                    <span class="nav-icon">新</span> Recent
+                </a>
                 <div class="nav-divider"></div>
                 <a href="/" class="nav-item">
                     <img class="nav-icon-svg" src="{{ url_for('static', filename='icons/scanner.svg') }}" alt=""> Scanner
@@ -175,6 +178,19 @@
 
                 <div class="display-offline-card container" id="display-offline-card" style="display:none;">
                     <p>The display app is not running. Press <strong>Restart</strong> to start it.</p>
+                </div>
+            </section>
+
+            <section id="recent" class="dash-section" style="display:none;">
+                <header class="top-header container">
+                    <div class="header-title">
+                        <h2 style="margin-bottom: 0;">Recently Added</h2>
+                        <span class="header-sub">Last 10 kanji added by the scanner</span>
+                    </div>
+                </header>
+
+                <div class="recent-list container" id="recent-list">
+                    <p class="recent-empty">Loading...</p>
                 </div>
             </section>
 

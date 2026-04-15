@@ -178,9 +178,41 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btn-restart").addEventListener("click", (e) => { e.preventDefault(); sendDisplayAction("restart"); });
     document.getElementById("btn-stop").addEventListener("click", (e) => { e.preventDefault(); sendDisplayAction("stop"); });
 
+    async function loadRecent() {
+        try {
+            const res = await fetch("/api/recent-kanji");
+            const data = await res.json();
+            const container = document.getElementById("recent-list");
+
+            if (!data.recent || data.recent.length === 0) {
+                container.innerHTML = '<p class="recent-empty">No kanji scanned yet.</p>';
+                return;
+            }
+
+            let html = '<div class="recent-grid">';
+            data.recent.forEach(k => {
+                const lvl = (k.level || "Unknown").toLowerCase();
+                const readings = [k.onyomi, k.kunyomi].filter(Boolean).join(" ・ ");
+                html += '<div class="recent-row">' +
+                    '<span class="recent-char">' + k.kanji + '</span>' +
+                    '<div class="recent-info">' +
+                        '<div class="recent-meaning">' + (k.meaning || "") + '</div>' +
+                        '<div class="recent-readings">' + readings + '</div>' +
+                    '</div>' +
+                    '<span class="recent-level recent-level-' + lvl + '">' + (k.level || "?") + '</span>' +
+                '</div>';
+            });
+            html += '</div>';
+            container.innerHTML = html;
+        } catch (err) {
+            console.error("Recent kanji fetch failed:", err);
+        }
+    }
+
     loadStats();
     loadLastfm();
     loadDisplay();
+    loadRecent();
     setInterval(loadStats, REFRESH_INTERVAL);
     setInterval(loadDisplay, REFRESH_INTERVAL);
 });

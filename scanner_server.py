@@ -194,6 +194,13 @@ def kill_display(pid):
         pass
     time.sleep(0.5)
 
+@app.route('/api/recent-kanji')
+def api_recent_kanji():
+    db = load_kanji_db()
+    kanji_list = db.get("kanji", [])
+    recent = kanji_list[-10:][::-1]
+    return jsonify({"recent": recent})
+
 @app.route('/api/display', methods=['GET'])
 def api_display_state():
     pid = get_display_pid()
