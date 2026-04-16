@@ -83,14 +83,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const row = document.createElement("div");
             row.className = "level-row " + cls;
+            row.style.cursor = "pointer";
             row.innerHTML =
                 '<span class="level-label">' + level + '</span>' +
                 '<div class="level-bar-bg">' +
                     '<div class="level-bar-fill" style="width: ' + pct + '%"></div>' +
                 '</div>' +
                 '<span class="level-count">' + count + '</span>';
+            row.addEventListener("click", () => openLevelModal(level));
             container.appendChild(row);
         });
+    }
+
+    async function openLevelModal(level) {
+        const modal = document.getElementById("level-modal");
+        const title = document.getElementById("level-modal-title");
+        const body = document.getElementById("level-modal-body");
+
+        title.textContent = level + " Kanji";
+        body.innerHTML = '<p class="recent-empty">Loading...</p>';
+        modal.style.display = "flex";
+
+        try {
+            const res = await fetch("/api/kanji-by-level/" + encodeURIComponent(level));
+            const data = await res.json();
+
+            if (!data.kanji || data.kanji.length === 0) {
+                body.innerHTML = '<p class="recent-empty">No kanji found.</p>';
+                return;
+            }
+
+            let html = '<div class="modal-kanji-grid">';
+            data.kanji.forEach(k => {
+                const readings = [k.onyomi, k.kunyomi].filter(Boolean).join(" ・ ");
+                const total = k.remembered + k.failed;
+                const acc = total > 0 ? Math.round(k.remembered / total * 100) : 0;
+                const accClass = total === 0 ? "" : (acc >= 70 ? "acc-good" : (acc >= 40 ? "acc-mid" : "acc-bad"));
+
+                html += '<div class="modal-kanji-row">' +
+                    '<span class="modal-kanji-char">' + k.kanji + '</span>' +
+                    '<div class="modal-kanji-info">' +
+                        '<div class="modal-kanji-meaning">' + (k.meaning || "") + '</div>' +
+                        '<div class="modal-kanji-readings">' + readings + '</div>' +
+                    '</div>' +
+                    '<div class="modal-kanji-stats">' +
+                        (total > 0 ? '<span class="modal-kanji-acc ' + accClass + '">' + acc + '%</span>' : '<span class="modal-kanji-acc">New</span>') +
+                    '</div>' +
+                '</div>';
+            });
+            html += '</div>';
+            body.innerHTML = html;
+        } catch (err) {
+            body.innerHTML = '<p class="recent-empty">Failed to load kanji.</p>';
+            console.error("Level kanji fetch failed:", err);
+        }
     }
 
     async function loadLastfm() {
@@ -208,6 +254,15 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Recent kanji fetch failed:", err);
         }
     }
+
+    document.getElementById("level-modal-close").addEventListener("click", () => {
+        document.getElementById("level-modal").style.display = "none";
+    });
+    document.getElementById("level-modal").addEventListener("click", (e) => {
+        if (e.target === e.currentTarget) {
+            e.currentTarget.style.display = "none";
+        }
+    });
 
     loadStats();
     loadLastfm();

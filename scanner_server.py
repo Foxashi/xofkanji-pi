@@ -194,6 +194,29 @@ def kill_display(pid):
         pass
     time.sleep(0.5)
 
+@app.route('/api/kanji-by-level/<level>')
+def api_kanji_by_level(level):
+    db = load_kanji_db()
+    stats = {}
+    if os.path.exists(STATS_FILE) and os.path.getsize(STATS_FILE) > 0:
+        with open(STATS_FILE, "r", encoding="utf-8") as f:
+            stats = json.load(f)
+
+    result = []
+    for k in db.get("kanji", []):
+        if k.get("level", "Unknown") == level:
+            s = stats.get(k["kanji"], {})
+            result.append({
+                "kanji": k["kanji"],
+                "onyomi": k.get("onyomi", ""),
+                "kunyomi": k.get("kunyomi", ""),
+                "meaning": k.get("meaning", ""),
+                "shown": s.get("shown", 0),
+                "remembered": s.get("remembered", 0),
+                "failed": s.get("failed", 0)
+            })
+    return jsonify({"level": level, "kanji": result})
+
 @app.route('/api/recent-kanji')
 def api_recent_kanji():
     db = load_kanji_db()
