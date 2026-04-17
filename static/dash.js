@@ -302,9 +302,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     function normalizeReading(str) {
-        // Normalize: trim, collapse whitespace, replace various separators with ・
+        // Normalize: trim, collapse whitespace, replace various separators with ・, strip dots
         return str.trim()
-            .replace(/[\s,、，/／・]+/g, "・")
+            .replace(/[\s,、，/／・.．·]+/g, "・")
             .replace(/^・|・$/g, "");
     }
 
@@ -317,12 +317,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (normInput === normExpected) return true;
 
-        // Compare as sets of individual readings
-        const inputParts = normInput.split("・").filter(Boolean).sort();
-        const expectedParts = normExpected.split("・").filter(Boolean).sort();
+        // Pass if at least one input reading matches any expected reading
+        const inputParts = normInput.split("・").filter(Boolean);
+        const expectedParts = normExpected.split("・").filter(Boolean);
 
-        if (inputParts.length !== expectedParts.length) return false;
-        return inputParts.every((v, i) => v === expectedParts[i]);
+        return inputParts.some(ip => expectedParts.includes(ip));
     }
 
     function updatePracticeStats() {
