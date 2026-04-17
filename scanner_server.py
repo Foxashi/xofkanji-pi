@@ -4,6 +4,7 @@ import json
 import re
 import signal
 import subprocess
+import tempfile
 import requests
 import time
 from flask import Flask, request, jsonify, render_template
@@ -33,8 +34,14 @@ def load_kanji_db():
     return {"kanji": []}
 
 def save_kanji_db(db):
-    with open(KANJI_FILE, "w", encoding="utf-8") as f:
+    dir_name = os.path.dirname(KANJI_FILE) or '.'
+    with tempfile.NamedTemporaryFile('w', dir=dir_name, suffix='.tmp',
+                                     delete=False, encoding='utf-8') as f:
         json.dump(db, f, ensure_ascii=False, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+        tmp_path = f.name
+    os.replace(tmp_path, KANJI_FILE)
 
 def extract_kanji_from_image(image, direction="horizontal"):
     img = image.convert('L')

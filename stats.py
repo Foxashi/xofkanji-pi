@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import os
+import tempfile
 import time
 from config import STATS_FILE, FAILED_INTERVAL
 
@@ -15,8 +16,14 @@ def load_stats():
             return {}
 
 def save_stats(stats):
-    with open(STATS_FILE, "w", encoding="utf-8") as f:
+    dir_name = os.path.dirname(STATS_FILE) or '.'
+    with tempfile.NamedTemporaryFile('w', dir=dir_name, suffix='.tmp',
+                                     delete=False, encoding='utf-8') as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+        tmp_path = f.name
+    os.replace(tmp_path, STATS_FILE)
 
 def init_kanji(stats, k):
     if k not in stats:
