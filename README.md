@@ -7,16 +7,24 @@ How it looks:
 
 What is it able to do:
 
--> Display a random kanji with its meanings, readings and level
--> Display the current song that I'm listening to or the last song that I listened to thanks to LastFM
--> Scan kanji using a website that's hosted on the local network
--> See almost everything on the dashboard
--> Practice typing kanji on the dashboard
+* Display a random kanji with its meanings, readings and level
+  
+* Display the current song that I'm listening to or the last song that I listened to thanks to LastFM
+  
+* Scan kanji using a website that's hosted on the local network
+  
+* See almost everything on the dashboard
+  
+* Practice typing kanji on the dashboard
 
 Hardware:
 
--> Raspberry Pi Zero 2 WH (yes the project is very limited when it comes to resources)
--> A cheap TFT screen that supports touchscreen (it's from ELEGOO I think lol...)
--> Aluminium case that prevents overheating + thermal pads
--> Cable that has an ON/OFF switch
--> Random powerbank I found in a drawer
+*  Raspberry Pi Zero 2 WH (yes the project is very limited when it comes to resources)
+  
+* A cheap TFT screen that supports touchscreen (it's from ELEGOO I think lol...)
+  
+* Aluminium case that prevents overheating + thermal pads
+  
+* Cable that has an ON/OFF switch
+  
+* Random powerbank I found in a drawer
