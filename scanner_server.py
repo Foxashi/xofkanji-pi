@@ -224,6 +224,16 @@ def api_kanji_by_level(level):
             })
     return jsonify({"level": level, "kanji": result})
 
+@app.route('/api/random-kanji')
+def api_random_kanji():
+    import random
+    db = load_kanji_db()
+    kanji_list = db.get("kanji", [])
+    if not kanji_list:
+        return jsonify({"error": "No kanji available"}), 404
+    entry = random.choice(kanji_list)
+    return jsonify(entry)
+
 @app.route('/api/recent-kanji')
 def api_recent_kanji():
     db = load_kanji_db()

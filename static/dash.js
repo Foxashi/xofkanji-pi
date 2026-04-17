@@ -270,4 +270,226 @@ document.addEventListener("DOMContentLoaded", () => {
     loadRecent();
     setInterval(loadStats, REFRESH_INTERVAL);
     setInterval(loadDisplay, REFRESH_INTERVAL);
+
+    // ========== Reading Practice ==========
+    const practiceState = {
+        current: null,
+        streak: 0,
+        correct: 0,
+        wrong: 0,
+        revealed: false
+    };
+
+    const practiceEls = {
+        kanji: document.getElementById("practice-kanji"),
+        meaning: document.getElementById("practice-meaning"),
+        level: document.getElementById("practice-level"),
+        onyomi: document.getElementById("practice-onyomi"),
+        kunyomi: document.getElementById("practice-kunyomi"),
+        onyomiCheck: document.getElementById("practice-onyomi-check"),
+        kunyomiCheck: document.getElementById("practice-kunyomi-check"),
+        streak: document.getElementById("practice-streak"),
+        correctEl: document.getElementById("practice-correct"),
+        wrongEl: document.getElementById("practice-wrong"),
+        accuracy: document.getElementById("practice-accuracy"),
+        submitBtn: document.getElementById("practice-submit"),
+        skipBtn: document.getElementById("practice-skip"),
+        nextBtn: document.getElementById("practice-next"),
+        answer: document.getElementById("practice-answer"),
+        answerOnyomi: document.getElementById("practice-answer-onyomi"),
+        answerKunyomi: document.getElementById("practice-answer-kunyomi"),
+        kanjiDisplay: document.querySelector(".practice-kanji-display")
+    };
+
+    function normalizeReading(str) {
+        // Normalize: trim, collapse whitespace, replace various separators with ・
+        return str.trim()
+            .replace(/[\s,、，/／・]+/g, "・")
+            .replace(/^・|・$/g, "");
+    }
+
+    function readingsMatch(input, expected) {
+        if (!expected) return true; // no expected reading = auto-pass
+        if (!input && expected) return false;
+
+        const normInput = normalizeReading(input);
+        const normExpected = normalizeReading(expected);
+
+        if (normInput === normExpected) return true;
+
+        // Compare as sets of individual readings
+        const inputParts = normInput.split("・").filter(Boolean).sort();
+        const expectedParts = normExpected.split("・").filter(Boolean).sort();
+
+        if (inputParts.length !== expectedParts.length) return false;
+        return inputParts.every((v, i) => v === expectedParts[i]);
+    }
+
+    function updatePracticeStats() {
+        practiceEls.streak.textContent = practiceState.streak;
+        practiceEls.correctEl.textContent = practiceState.correct;
+        practiceEls.wrongEl.textContent = practiceState.wrong;
+        const total = practiceState.correct + practiceState.wrong;
+        practiceEls.accuracy.textContent = total > 0
+            ? Math.round(practiceState.correct / total * 100) + "%"
+            : "\u2014";
+    }
+
+    function showAnswer() {
+        const k = practiceState.current;
+        practiceEls.answerOnyomi.textContent = k.onyomi || "\u2014";
+        practiceEls.answerKunyomi.textContent = k.kunyomi || "\u2014";
+        practiceEls.answer.style.display = "flex";
+    }
+
+    function setFieldResult(input, checkEl, isCorrect, isSkipped) {
+        input.classList.remove("correct", "wrong", "skipped");
+        checkEl.classList.remove("visible");
+        checkEl.textContent = "";
+
+        if (isSkipped) {
+            input.classList.add("skipped");
+            checkEl.textContent = "—";
+            checkEl.classList.add("visible");
+        } else if (isCorrect) {
+            input.classList.add("correct");
+            checkEl.textContent = "✓";
+            checkEl.style.color = "#a6da95";
+            checkEl.classList.add("visible");
+        } else {
+            input.classList.add("wrong");
+            checkEl.textContent = "✗";
+            checkEl.style.color = "#ed8796";
+            checkEl.classList.add("visible");
+        }
+    }
+
+    function lockInputs() {
+        practiceEls.onyomi.readOnly = true;
+        practiceEls.kunyomi.readOnly = true;
+        practiceState.revealed = true;
+        practiceEls.submitBtn.style.display = "none";
+        practiceEls.skipBtn.style.display = "none";
+        practiceEls.nextBtn.style.display = "";
+    }
+
+    function checkPractice() {
+        if (practiceState.revealed || !practiceState.current) return;
+
+        const k = practiceState.current;
+        const onOk = readingsMatch(practiceEls.onyomi.value, k.onyomi);
+        const kunOk = readingsMatch(practiceEls.kunyomi.value, k.kunyomi);
+
+        setFieldResult(practiceEls.onyomi, practiceEls.onyomiCheck, onOk, false);
+        setFieldResult(practiceEls.kunyomi, practiceEls.kunyomiCheck, kunOk, false);
+
+        if (onOk && kunOk) {
+            practiceState.correct++;
+            practiceState.streak++;
+        } else {
+            practiceState.wrong++;
+            practiceState.streak = 0;
+        }
+
+        updatePracticeStats();
+        showAnswer();
+        lockInputs();
+        practiceEls.nextBtn.focus();
+    }
+
+    function skipPractice() {
+        if (practiceState.revealed || !practiceState.current) return;
+
+        setFieldResult(practiceEls.onyomi, practiceEls.onyomiCheck, false, true);
+        setFieldResult(practiceEls.kunyomi, practiceEls.kunyomiCheck, false, true);
+
+        practiceState.wrong++;
+        practiceState.streak = 0;
+        updatePracticeStats();
+        showAnswer();
+        lockInputs();
+        practiceEls.nextBtn.focus();
+    }
+
+    async function loadPracticeKanji() {
+        practiceState.revealed = false;
+
+        // Reset UI
+        practiceEls.onyomi.value = "";
+        practiceEls.kunyomi.value = "";
+        practiceEls.onyomi.readOnly = false;
+        practiceEls.kunyomi.readOnly = false;
+        practiceEls.onyomi.classList.remove("correct", "wrong", "skipped");
+        practiceEls.kunyomi.classList.remove("correct", "wrong", "skipped");
+        practiceEls.onyomiCheck.classList.remove("visible");
+        practiceEls.kunyomiCheck.classList.remove("visible");
+        practiceEls.answer.style.display = "none";
+        practiceEls.submitBtn.style.display = "";
+        practiceEls.skipBtn.style.display = "";
+        practiceEls.nextBtn.style.display = "none";
+
+        try {
+            const res = await fetch("/api/random-kanji");
+            const data = await res.json();
+            practiceState.current = data;
+
+            practiceEls.kanji.textContent = data.kanji;
+            practiceEls.meaning.textContent = data.meaning || "";
+            practiceEls.level.textContent = data.level || "";
+
+            // Animate
+            practiceEls.kanjiDisplay.classList.remove("animate");
+            void practiceEls.kanjiDisplay.offsetWidth; // trigger reflow
+            practiceEls.kanjiDisplay.classList.add("animate");
+
+            practiceEls.onyomi.focus();
+        } catch (err) {
+            console.error("Practice kanji fetch failed:", err);
+        }
+    }
+
+    if (practiceEls.submitBtn) {
+        practiceEls.submitBtn.addEventListener("click", checkPractice);
+        practiceEls.skipBtn.addEventListener("click", skipPractice);
+        practiceEls.nextBtn.addEventListener("click", loadPracticeKanji);
+
+        // Keyboard shortcuts
+        document.addEventListener("keydown", (e) => {
+            // Only handle when practice section is visible
+            const section = document.getElementById("practice");
+            if (!section || section.style.display === "none") return;
+
+            if (e.key === "Enter") {
+                if (practiceState.revealed) {
+                    loadPracticeKanji();
+                } else {
+                    checkPractice();
+                }
+                e.preventDefault();
+            }
+
+            if (e.key === "Escape" && !practiceState.revealed) {
+                skipPractice();
+                e.preventDefault();
+            }
+        });
+
+        // Tab between fields
+        practiceEls.onyomi.addEventListener("keydown", (e) => {
+            if (e.key === "Tab" && !e.shiftKey) {
+                e.preventDefault();
+                practiceEls.kunyomi.focus();
+            }
+        });
+
+        // Load first kanji when practice section becomes visible
+        const practiceNav = document.querySelector('.nav-item[data-section="practice"]');
+        if (practiceNav) {
+            practiceNav.addEventListener("click", () => {
+                if (!practiceState.current) {
+                    loadPracticeKanji();
+                }
+            });
+        }
+    }
 });

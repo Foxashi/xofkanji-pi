@@ -28,6 +28,9 @@
                 <a href="#recent" class="nav-item" data-section="recent">
                     <span class="nav-icon">新</span> Recent
                 </a>
+                <a href="#practice" class="nav-item" data-section="practice">
+                    <span class="nav-icon">打</span> Practice
+                </a>
                 <div class="nav-divider"></div>
                 <a href="/" class="nav-item">
                     <img class="nav-icon-svg" src="{{ url_for('static', filename='icons/scanner.svg') }}" alt=""> Scanner
@@ -191,6 +194,76 @@
 
                 <div class="recent-list container" id="recent-list">
                     <p class="recent-empty">Loading...</p>
+                </div>
+            </section>
+
+            <section id="practice" class="dash-section" style="display:none;">
+                <header class="top-header container">
+                    <div class="header-title">
+                        <h2 style="margin-bottom: 0;">Reading Practice</h2>
+                        <span class="header-sub">Type the readings for each kanji</span>
+                    </div>
+                </header>
+
+                <div class="practice-area container">
+                    <div class="practice-stats-bar">
+                        <div class="practice-stat">
+                            <span class="practice-stat-label">Streak</span>
+                            <span class="practice-stat-value" id="practice-streak">0</span>
+                        </div>
+                        <div class="practice-stat">
+                            <span class="practice-stat-label">Correct</span>
+                            <span class="practice-stat-value practice-correct" id="practice-correct">0</span>
+                        </div>
+                        <div class="practice-stat">
+                            <span class="practice-stat-label">Wrong</span>
+                            <span class="practice-stat-value practice-wrong" id="practice-wrong">0</span>
+                        </div>
+                        <div class="practice-stat">
+                            <span class="practice-stat-label">Accuracy</span>
+                            <span class="practice-stat-value" id="practice-accuracy">—</span>
+                        </div>
+                    </div>
+
+                    <div class="practice-kanji-display">
+                        <span class="practice-kanji-char" id="practice-kanji">字</span>
+                        <span class="practice-meaning" id="practice-meaning">character</span>
+                        <span class="practice-level" id="practice-level">N5</span>
+                    </div>
+
+                    <div class="practice-inputs">
+                        <div class="practice-field">
+                            <label class="practice-label">On'yomi <span class="practice-hint">カタカナ</span></label>
+                            <div class="practice-input-row">
+                                <input type="text" id="practice-onyomi" class="practice-input" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                                <span class="practice-check" id="practice-onyomi-check"></span>
+                            </div>
+                        </div>
+                        <div class="practice-field">
+                            <label class="practice-label">Kun'yomi <span class="practice-hint">ひらがな</span></label>
+                            <div class="practice-input-row">
+                                <input type="text" id="practice-kunyomi" class="practice-input" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                                <span class="practice-check" id="practice-kunyomi-check"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-actions">
+                        <button type="button" class="practice-btn practice-submit" id="practice-submit">Check</button>
+                        <button type="button" class="practice-btn practice-skip" id="practice-skip">Skip</button>
+                        <button type="button" class="practice-btn practice-next" id="practice-next" style="display:none;">Next</button>
+                    </div>
+
+                    <div class="practice-answer" id="practice-answer" style="display:none;">
+                        <div class="practice-answer-row">
+                            <span class="practice-answer-label">On'yomi</span>
+                            <span class="practice-answer-value" id="practice-answer-onyomi"></span>
+                        </div>
+                        <div class="practice-answer-row">
+                            <span class="practice-answer-label">Kun'yomi</span>
+                            <span class="practice-answer-value" id="practice-answer-kunyomi"></span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
