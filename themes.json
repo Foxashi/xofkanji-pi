@@ -105,5 +105,161 @@
     "divider":[40,42,35],
     "music_playing":[180,165,130],
     "music_paused":[70,72,60]
+  },
+
+  "nier replicant": {
+    "background":[18,16,12],
+    "top_bar":[28,25,20],
+    "kanji":[225,215,190],
+    "meaning":[180,160,110],
+    "onyomi":[170,180,150],
+    "kunyomi":[140,130,105],
+    "time":[200,190,160],
+    "divider":[50,46,38],
+    "music_playing":[210,200,165],
+    "music_paused":[80,75,60]
+  },
+
+  "mgs4": {
+    "background":[14,18,16],
+    "top_bar":[22,28,25],
+    "kanji":[180,195,190],
+    "meaning":[100,140,120],
+    "onyomi":[80,120,105],
+    "kunyomi":[65,95,85],
+    "time":[140,170,155],
+    "divider":[35,45,40],
+    "music_playing":[100,140,120],
+    "music_paused":[50,65,58]
+  },
+
+  "nemesis": {
+    "background":[8,5,5],
+    "top_bar":[20,12,10],
+    "kanji":[200,180,160],
+    "meaning":[160,40,30],
+    "onyomi":[140,100,60],
+    "kunyomi":[100,75,50],
+    "time":[180,50,35],
+    "divider":[45,25,20],
+    "music_playing":[160,40,30],
+    "music_paused":[65,40,35]
+  },
+
+  "death stranding": {
+    "background":[12,14,18],
+    "top_bar":[20,22,28],
+    "kanji":[190,200,210],
+    "meaning":[60,150,180],
+    "onyomi":[130,140,155],
+    "kunyomi":[95,105,120],
+    "time":[70,170,200],
+    "divider":[35,38,48],
+    "music_playing":[60,150,180],
+    "music_paused":[55,60,75]
+  },
+
+  "gg strive": {
+    "background":[10,5,5],
+    "top_bar":[25,10,10],
+    "kanji":[255,240,220],
+    "meaning":[220,50,50],
+    "onyomi":[255,180,50],
+    "kunyomi":[255,120,40],
+    "time":[255,220,80],
+    "divider":[55,25,20],
+    "music_playing":[220,50,50],
+    "music_paused":[80,40,35]
+  },
+
+  "gg xrd": {
+    "background":[4,10,6],
+    "top_bar":[10,20,12],
+    "kanji":[220,255,230],
+    "meaning":[0,230,120],
+    "onyomi":[200,50,40],
+    "kunyomi":[180,140,50],
+    "time":[0,200,100],
+    "divider":[18,40,24],
+    "music_playing":[0,230,120],
+    "music_paused":[30,60,38]
+  },
+
+  "cyberpunk 2077": {
+    "background":[12,10,2],
+    "top_bar":[22,18,4],
+    "kanji":[255,240,0],
+    "meaning":[0,210,255],
+    "onyomi":[255,60,100],
+    "kunyomi":[200,180,40],
+    "time":[255,240,0],
+    "divider":[45,40,10],
+    "music_playing":[0,210,255],
+    "music_paused":[80,72,20]
+  },
+
+  "divinity os2": {
+    "background":[12,8,5],
+    "top_bar":[24,16,10],
+    "kanji":[230,210,170],
+    "meaning":[200,140,40],
+    "onyomi":[180,80,30],
+    "kunyomi":[140,100,50],
+    "time":[220,170,60],
+    "divider":[50,35,22],
+    "music_playing":[200,140,40],
+    "music_paused":[70,55,35]
+  },
+
+  "baldurs gate 3": {
+    "background":[8,6,12],
+    "top_bar":[18,14,25],
+    "kanji":[220,210,230],
+    "meaning":[200,160,50],
+    "onyomi":[160,60,180],
+    "kunyomi":[100,80,140],
+    "time":[220,180,60],
+    "divider":[40,32,50],
+    "music_playing":[200,160,50],
+    "music_paused":[60,50,75]
+  },
+
+  "blazblue cf": {
+    "background":[5,5,14],
+    "top_bar":[10,10,28],
+    "kanji":[180,200,255],
+    "meaning":[0,100,255],
+    "onyomi":[80,180,255],
+    "kunyomi":[50,120,200],
+    "time":[120,200,255],
+    "divider":[20,22,50],
+    "music_playing":[0,100,255],
+    "music_paused":[40,40,80]
+  },
+
+  "max payne 3": {
+    "background":[8,6,4],
+    "top_bar":[18,14,10],
+    "kanji":[220,200,180],
+    "meaning":[255,140,30],
+    "onyomi":[160,130,100],
+    "kunyomi":[120,100,80],
+    "time":[255,160,40],
+    "divider":[45,35,28],
+    "music_playing":[255,140,30],
+    "music_paused":[65,55,42]
+  },
+
+  "street fighter 6": {
+    "background":[5,5,8],
+    "top_bar":[15,12,20],
+    "kanji":[255,255,255],
+    "meaning":[0,180,240],
+    "onyomi":[240,60,80],
+    "kunyomi":[255,200,40],
+    "time":[0,180,240],
+    "divider":[30,28,40],
+    "music_playing":[240,60,80],
+    "music_paused":[50,48,65]
   }
 }
