@@ -289,9 +289,26 @@ def api_random_kanji():
     import random
     db = load_kanji_db()
     kanji_list = db.get("kanji", [])
-    if not kanji_list:
+
+    stats = {}
+    if os.path.exists(STATS_FILE) and os.path.getsize(STATS_FILE) > 0:
+        try:
+            with open(STATS_FILE, "r", encoding="utf-8") as f:
+                stats = json.load(f)
+        except json.JSONDecodeError:
+            pass
+
+    levels = request.args.get("levels", "")
+    if levels:
+        level_set = set(levels.split(","))
+        kanji_list = [k for k in kanji_list if k.get("level", "Unknown") in level_set]
+
+    seen = [k for k in kanji_list if k["kanji"] in stats]
+    pool = seen if seen else kanji_list
+
+    if not pool:
         return jsonify({"error": "No kanji available"}), 404
-    entry = random.choice(kanji_list)
+    entry = random.choice(pool)
     return jsonify(entry)
 
 @app.route('/api/recent-kanji')

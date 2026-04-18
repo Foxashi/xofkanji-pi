@@ -39,5 +39,71 @@
     "divider":[91,96,120],
     "music_playing":[166,218,149],
     "music_paused":[147,154,183]
+  },
+
+  "black metal": {
+    "background":[5,5,5],
+    "top_bar":[15,15,15],
+    "kanji":[190,190,190],
+    "meaning":[120,120,120],
+    "onyomi":[100,100,100],
+    "kunyomi":[80,80,80],
+    "time":[160,160,160],
+    "divider":[40,40,40],
+    "music_playing":[150,150,150],
+    "music_paused":[60,60,60]
+  },
+
+  "summer": {
+    "background":[15,25,50],
+    "top_bar":[10,18,40],
+    "kanji":[255,245,225],
+    "meaning":[255,180,80],
+    "onyomi":[100,210,180],
+    "kunyomi":[80,170,255],
+    "time":[255,120,130],
+    "divider":[40,60,100],
+    "music_playing":[255,200,100],
+    "music_paused":[80,100,140]
+  },
+
+  "drakengard 3": {
+    "background":[10,5,15],
+    "top_bar":[20,10,28],
+    "kanji":[240,230,245],
+    "meaning":[200,60,80],
+    "onyomi":[180,140,200],
+    "kunyomi":[120,90,160],
+    "time":[220,80,100],
+    "divider":[50,30,60],
+    "music_playing":[200,60,80],
+    "music_paused":[80,60,100]
+  },
+
+  "tsukihime": {
+    "background":[8,12,30],
+    "top_bar":[12,18,42],
+    "kanji":[200,220,255],
+    "meaning":[180,50,60],
+    "onyomi":[100,140,220],
+    "kunyomi":[70,100,180],
+    "time":[220,230,255],
+    "divider":[30,40,80],
+    "music_playing":[180,50,60],
+    "music_paused":[60,70,120],
+    "background_image": "themes_images/tsukihime.jpg"
+  },
+
+  "おしえてV感覚": {
+    "background":[12,14,10],
+    "top_bar":[22,24,18],
+    "kanji":[210,195,170],
+    "meaning":[160,140,100],
+    "onyomi":[140,155,120],
+    "kunyomi":[120,110,90],
+    "time":[190,175,150],
+    "divider":[40,42,35],
+    "music_playing":[180,165,130],
+    "music_paused":[70,72,60]
   }
 }

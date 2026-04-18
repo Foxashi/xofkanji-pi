@@ -617,6 +617,60 @@
     gap: 0;
 }
 
+/* Level selector */
+.practice-level-selector {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    width: 100%;
+    justify-content: center;
+}
+
+.practice-level-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgb(110, 115, 141);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.practice-level-pills {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.level-pill {
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(91, 96, 120, 0.3);
+    border-radius: 20px;
+    background: transparent;
+    color: rgb(147, 154, 183);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+    margin: 0;
+    box-shadow: none;
+}
+
+.level-pill:hover {
+    border-color: rgba(198, 160, 246, 0.4);
+    color: #cad3f5;
+    transform: none;
+    box-shadow: none;
+}
+
+.level-pill.active {
+    background: rgba(198, 160, 246, 0.15);
+    border-color: rgba(198, 160, 246, 0.4);
+    color: #c6a0f6;
+}
+
 /* Top stats bar */
 .practice-stats-bar {
     display: flex;

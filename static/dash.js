@@ -347,8 +347,29 @@ document.addEventListener("DOMContentLoaded", () => {
         streak: 0,
         correct: 0,
         wrong: 0,
-        revealed: false
+        revealed: false,
+        levels: []
     };
+
+    document.querySelectorAll(".level-pill").forEach(pill => {
+        pill.addEventListener("click", () => {
+            const level = pill.dataset.level;
+            if (level === "all") {
+                practiceState.levels = [];
+                document.querySelectorAll(".level-pill").forEach(p => p.classList.remove("active"));
+                pill.classList.add("active");
+            } else {
+                document.querySelector('.level-pill[data-level="all"]').classList.remove("active");
+                pill.classList.toggle("active");
+                const active = document.querySelectorAll('.level-pill.active:not([data-level="all"])');
+                practiceState.levels = Array.from(active).map(p => p.dataset.level);
+                if (practiceState.levels.length === 0) {
+                    document.querySelector('.level-pill[data-level="all"]').classList.add("active");
+                }
+            }
+            loadPracticeKanji();
+        });
+    });
 
     const practiceEls = {
         kanji: document.getElementById("practice-kanji"),
@@ -498,7 +519,10 @@ document.addEventListener("DOMContentLoaded", () => {
         practiceEls.nextBtn.style.display = "none";
 
         try {
-            const res = await fetch("/api/random-kanji");
+            const url = practiceState.levels.length > 0
+                ? "/api/random-kanji?levels=" + encodeURIComponent(practiceState.levels.join(","))
+                : "/api/random-kanji";
+            const res = await fetch(url);
             const data = await res.json();
             practiceState.current = data;
 
