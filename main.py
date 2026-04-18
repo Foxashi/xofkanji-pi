@@ -28,6 +28,16 @@ args = parser.parse_args()
 
 if args.theme:
     set_theme(args.theme)
+else:
+    _saved = None
+    if os.path.exists("theme_state.json"):
+        try:
+            with open("theme_state.json", "r", encoding="utf-8") as _f:
+                _saved = json.load(_f).get("theme")
+        except (json.JSONDecodeError, OSError):
+            pass
+    if _saved:
+        set_theme(_saved)
 
 # ---------- INITIALIZE ----------
 stats = load_stats()
@@ -60,12 +70,32 @@ theme_names = list(themes.THEMES.keys())
 theme_index = 0
 
 DISPLAY_STATE_FILE = "display_state.json"
+THEME_STATE_FILE = "theme_state.json"
 
 def shutdown(signum=None, frame=None):
     global running
     running = False
 
 signal.signal(signal.SIGTERM, shutdown)
+
+def get_current_theme_name():
+    for name, t in themes.THEMES.items():
+        if t is themes.current_theme:
+            return name
+    return "default"
+
+def read_theme_state():
+    if os.path.exists(THEME_STATE_FILE):
+        try:
+            with open(THEME_STATE_FILE, "r", encoding="utf-8") as f:
+                return json.load(f).get("theme", "default")
+        except (json.JSONDecodeError, OSError):
+            pass
+    return None
+
+def write_theme_state(name):
+    with open(THEME_STATE_FILE, "w", encoding="utf-8") as f:
+        json.dump({"theme": name}, f)
 
 def write_display_state(kanji_entry):
     state = {
@@ -74,6 +104,7 @@ def write_display_state(kanji_entry):
         "kunyomi": kanji_entry.get("kunyomi", ""),
         "meaning": kanji_entry.get("meaning", ""),
         "level": kanji_entry.get("level", ""),
+        "theme": get_current_theme_name(),
         "timestamp": time.time(),
         "pid": os.getpid()
     }
@@ -81,7 +112,6 @@ def write_display_state(kanji_entry):
         json.dump(state, f)
 
 current = pick_due_kanji(KANJI_LIST, stats)
-stats[current["kanji"]]["shown"] += 1
 save_stats(stats)
 write_display_state(current)
 
@@ -94,6 +124,11 @@ while running:
     # ---------- HOT RELOAD THEMES ----------
     if time.time() - last_theme_reload > THEME_RELOAD_INTERVAL:
         themes.THEMES = load_themes()
+        wanted = read_theme_state()
+        if wanted and wanted != get_current_theme_name() and wanted in themes.THEMES:
+            set_theme(wanted)
+            theme_names = list(themes.THEMES.keys())
+            theme_index = theme_names.index(wanted) if wanted in theme_names else 0
         last_theme_reload = time.time()
 
     # ---------- HOT RELOAD KANJI ----------
@@ -106,14 +141,12 @@ while running:
     for e in pygame.event.get():
         if e.type in (pygame.MOUSEBUTTONDOWN, pygame.FINGERDOWN):
             s = stats[current["kanji"]]
+            s["shown"] += 1
             s["remembered"] += 1
             s["interval"] = min(s["interval"] * 2, MAX_INTERVAL)
             s["due"] = time.time() + s["interval"]
 
-            save_stats(stats)
-
             current = pick_due_kanji(KANJI_LIST, stats)
-            stats[current["kanji"]]["shown"] += 1
             save_stats(stats)
             write_display_state(current)
 
@@ -126,17 +159,16 @@ while running:
             elif e.key == pygame.K_t:
                 theme_index = (theme_index + 1) % len(theme_names)
                 set_theme(theme_names[theme_index])
+                write_theme_state(theme_names[theme_index])
 
     if time.time() - last_change > KANJI_CHANGE_TIME:
         s = stats[current["kanji"]]
+        s["shown"] += 1
         s["failed"] += 1
         s["interval"] = FAILED_INTERVAL
         s["due"] = time.time() + FAILED_INTERVAL
 
-        save_stats(stats)
-
         current = pick_due_kanji(KANJI_LIST, stats)
-        stats[current["kanji"]]["shown"] += 1
         save_stats(stats)
         write_display_state(current)
 
@@ -235,6 +267,14 @@ while running:
 
     pygame.display.update()
     clock.tick(15)
+
+# Record the current kanji as failed on shutdown (user didn't remember it)
+s = stats[current["kanji"]]
+s["shown"] += 1
+s["failed"] += 1
+s["interval"] = FAILED_INTERVAL
+s["due"] = time.time() + FAILED_INTERVAL
+save_stats(stats)
 
 pygame.quit()
 

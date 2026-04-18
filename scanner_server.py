@@ -16,6 +16,8 @@ KANJI_FILE = "kanji.json"
 STATS_FILE = "stats.json"
 LASTFM_CONFIG_FILE = "lastfm_config.json"
 DISPLAY_STATE_FILE = "display_state.json"
+THEMES_FILE = "themes.json"
+THEME_STATE_FILE = "theme_state.json"
 DISPLAY_SCRIPT = "main.py"
 
 if os.path.exists(DISPLAY_STATE_FILE):
@@ -153,6 +155,64 @@ def api_lastfm_save():
         json.dump(cfg, f, indent=2)
 
     return jsonify({"success": True, "message": "Last.fm settings saved. Restart the display app to apply."})
+
+@app.route('/api/themes')
+def api_themes():
+    themes = {}
+    if os.path.exists(THEMES_FILE) and os.path.getsize(THEMES_FILE) > 0:
+        try:
+            with open(THEMES_FILE, "r", encoding="utf-8") as f:
+                themes = json.load(f)
+        except json.JSONDecodeError:
+            pass
+
+    active = "default"
+    if os.path.exists(THEME_STATE_FILE):
+        try:
+            with open(THEME_STATE_FILE, "r", encoding="utf-8") as f:
+                active = json.load(f).get("theme", "default")
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    theme_list = []
+    for name, props in themes.items():
+        theme_list.append({
+            "name": name,
+            "colors": {k: props[k] for k in props if isinstance(props[k], list) and len(props[k]) == 3},
+            "has_background_image": bool(props.get("background_image"))
+        })
+
+    return jsonify({"themes": theme_list, "active": active})
+
+@app.route('/api/theme', methods=['POST'])
+def api_set_theme():
+    data = request.get_json()
+    if not data or "theme" not in data:
+        return jsonify({"success": False, "message": "No theme specified"}), 400
+
+    theme_name = data["theme"]
+
+    themes = {}
+    if os.path.exists(THEMES_FILE) and os.path.getsize(THEMES_FILE) > 0:
+        try:
+            with open(THEMES_FILE, "r", encoding="utf-8") as f:
+                themes = json.load(f)
+        except json.JSONDecodeError:
+            pass
+
+    if theme_name not in themes:
+        return jsonify({"success": False, "message": "Theme not found"}), 404
+
+    dir_name = os.path.dirname(THEME_STATE_FILE) or '.'
+    with tempfile.NamedTemporaryFile('w', dir=dir_name, suffix='.tmp',
+                                     delete=False, encoding='utf-8') as f:
+        json.dump({"theme": theme_name}, f)
+        f.flush()
+        os.fsync(f.fileno())
+        tmp_path = f.name
+    os.replace(tmp_path, THEME_STATE_FILE)
+
+    return jsonify({"success": True, "message": f"Theme set to '{theme_name}'"})
 
 def is_display_process(pid):
     try:
