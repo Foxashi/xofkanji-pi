@@ -36,22 +36,22 @@ else:
                 _saved = json.load(_f).get("theme")
         except (json.JSONDecodeError, OSError):
             pass
-    if _saved:
-        set_theme(_saved)
+    if _saved and _saved in themes.THEMES:
+        themes.current_theme = themes.THEMES[_saved]
 
 # ---------- INITIALIZE ----------
 stats = load_stats()
 KANJI_LIST = load_kanji()
 last_reload = time.time()
 
-# Load initial theme assets
-themes.load_theme_assets()
-
 # Initialize Pygame
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.NOFRAME)
 pygame.mouse.set_visible(False)
 clock = pygame.time.Clock()
+
+# Load theme assets (needs pygame initialized for image loading)
+themes.load_theme_assets()
 
 # Load fonts
 KANJI_FONT = theme_font("kanji_font_size", 140)

@@ -25,6 +25,19 @@
     "meaning":[255,200,120],
     "onyomi":[255,120,120],
     "kunyomi":[200,150,255],
-    "background_image": "fate.jpg"
+    "background_image": "themes_images/fate.jpg"
+  },
+
+  "catppuccin": {
+    "background":[36,39,58],
+    "top_bar":[30,32,48],
+    "kanji":[202,211,245],
+    "meaning":[238,212,159],
+    "onyomi":[166,218,149],
+    "kunyomi":[138,173,244],
+    "time":[198,160,246],
+    "divider":[91,96,120],
+    "music_playing":[166,218,149],
+    "music_paused":[147,154,183]
   }
 }
