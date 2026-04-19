@@ -1,0 +1,304 @@
+/* Practice */
+.practice-area {
+    padding: 30px 40px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+/* Level selector */
+.practice-level-selector {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    width: 100%;
+    justify-content: center;
+}
+
+.practice-level-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgb(110, 115, 141);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.practice-level-pills {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.level-pill {
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(91, 96, 120, 0.3);
+    border-radius: 20px;
+    background: transparent;
+    color: rgb(147, 154, 183);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+    margin: 0;
+    box-shadow: none;
+}
+
+.level-pill:hover {
+    border-color: rgba(198, 160, 246, 0.4);
+    color: #cad3f5;
+    transform: none;
+    box-shadow: none;
+}
+
+.level-pill.active {
+    background: rgba(198, 160, 246, 0.15);
+    border-color: rgba(198, 160, 246, 0.4);
+    color: #c6a0f6;
+}
+
+/* Top stats bar */
+.practice-stats-bar {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.practice-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.practice-stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgb(110, 115, 141);
+    font-weight: 600;
+}
+
+.practice-stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #cad3f5;
+    font-variant-numeric: tabular-nums;
+}
+
+.practice-stat-value.practice-correct { color: #a6da95; }
+.practice-stat-value.practice-wrong { color: #ed8796; }
+
+/* Kanji display */
+.practice-kanji-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 36px;
+    gap: 8px;
+    position: relative;
+}
+
+.practice-kanji-char {
+    font-size: 120px;
+    font-weight: 700;
+    color: #cad3f5;
+    line-height: 1;
+    transition: opacity 0.25s ease;
+    user-select: none;
+}
+
+.practice-meaning {
+    font-size: 16px;
+    color: rgb(147, 154, 183);
+    font-weight: 500;
+}
+
+.practice-level {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    background: rgba(198, 160, 246, 0.12);
+    color: #c6a0f6;
+    letter-spacing: 0.5px;
+}
+
+/* Input area */
+.practice-inputs {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 480px;
+    margin-bottom: 24px;
+}
+
+.practice-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.practice-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgb(147, 154, 183);
+}
+
+.practice-hint {
+    font-weight: 400;
+    color: rgb(110, 115, 141);
+    font-size: 10px;
+    letter-spacing: 0.5px;
+}
+
+.practice-input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.practice-input {
+    flex: 1;
+    padding: 12px 14px;
+    font-size: 18px;
+    font-family: inherit;
+    border: 2px solid rgba(91, 96, 120, 0.35);
+    border-radius: 8px;
+    background: rgba(30, 32, 48, 0.6);
+    color: #cad3f5;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.practice-input:focus {
+    outline: none;
+    border-color: #c6a0f6;
+    background: rgba(30, 32, 48, 0.85);
+    box-shadow: 0 0 0 3px rgba(198, 160, 246, 0.12);
+}
+
+.practice-input.correct {
+    border-color: #a6da95;
+    background: rgba(166, 218, 149, 0.06);
+    box-shadow: 0 0 0 3px rgba(166, 218, 149, 0.1);
+}
+
+.practice-input.wrong {
+    border-color: #ed8796;
+    background: rgba(237, 135, 150, 0.06);
+    box-shadow: 0 0 0 3px rgba(237, 135, 150, 0.1);
+}
+
+.practice-input.skipped {
+    border-color: #eed49f;
+    background: rgba(238, 212, 159, 0.06);
+}
+
+.practice-check {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.practice-check.visible { opacity: 1; }
+
+/* Action buttons */
+.practice-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.practice-btn {
+    padding: 10px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+}
+
+.practice-btn:active { transform: scale(0.97); }
+
+.practice-submit {
+    background: rgba(198, 160, 246, 0.15);
+    color: #c6a0f6;
+    border: 1px solid rgba(198, 160, 246, 0.3);
+}
+.practice-submit:hover { background: rgba(198, 160, 246, 0.25); }
+
+.practice-skip {
+    background: rgba(91, 96, 120, 0.15);
+    color: rgb(147, 154, 183);
+    border: 1px solid rgba(91, 96, 120, 0.25);
+}
+.practice-skip:hover { background: rgba(91, 96, 120, 0.25); }
+
+.practice-next {
+    background: rgba(138, 173, 244, 0.15);
+    color: #8aadf4;
+    border: 1px solid rgba(138, 173, 244, 0.3);
+}
+.practice-next:hover { background: rgba(138, 173, 244, 0.25); }
+
+/* Answer reveal */
+.practice-answer {
+    width: 100%;
+    max-width: 480px;
+    background: rgba(91, 96, 120, 0.08);
+    border: 1px solid rgba(91, 96, 120, 0.18);
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+
+.practice-answer-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.practice-answer-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgb(110, 115, 141);
+    font-weight: 600;
+}
+
+.practice-answer-value {
+    font-size: 18px;
+    color: #cad3f5;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Fade-in for new kanji */
+@keyframes practice-fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.practice-kanji-display.animate {
+    animation: practice-fade-in 0.3s ease;
+}

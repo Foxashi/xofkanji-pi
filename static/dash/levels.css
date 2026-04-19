@@ -1,0 +1,210 @@
+/* Level breakdown */
+.level-breakdown {
+    padding: 30px;
+}
+
+.section-title {
+    color: rgb(147, 154, 183);
+    margin-bottom: 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.level-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.level-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: background 0.2s;
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin: -4px -8px;
+}
+
+.level-row:hover {
+    background: rgba(91, 96, 120, 0.12);
+}
+
+.level-label {
+    font-weight: 700;
+    font-size: 13px;
+    width: 70px;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+}
+
+.level-bar-bg {
+    flex: 1;
+    height: 24px;
+    background: rgba(91, 96, 120, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.level-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 2px;
+}
+
+.level-count {
+    font-size: 13px;
+    color: rgb(147, 154, 183);
+    width: 36px;
+    text-align: right;
+    flex-shrink: 0;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Level colors — Catppuccin Macchiato */
+.level-n5 { color: #a6da95; }
+.level-n5 .level-bar-fill { background: #a6da95; }
+.level-n4 { color: #8aadf4; }
+.level-n4 .level-bar-fill { background: #8aadf4; }
+.level-n3 { color: #eed49f; }
+.level-n3 .level-bar-fill { background: #eed49f; }
+.level-n2 { color: #f5a97f; }
+.level-n2 .level-bar-fill { background: #f5a97f; }
+.level-n1 { color: #ed8796; }
+.level-n1 .level-bar-fill { background: #ed8796; }
+.level-unknown { color: #b8c0e0; }
+.level-unknown .level-bar-fill { background: #6e738d; }
+
+/* Level modal */
+.level-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.level-modal {
+    background: #1e2030;
+    border: 1px solid rgba(91, 96, 120, 0.4);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 560px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+}
+
+.level-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(91, 96, 120, 0.25);
+    flex-shrink: 0;
+}
+
+.level-modal-header h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #cad3f5;
+    margin: 0;
+}
+
+.level-modal-close {
+    background: none;
+    border: none;
+    color: rgb(147, 154, 183);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 4px;
+    line-height: 1;
+    transition: color 0.2s;
+    box-shadow: none;
+    margin: 0;
+}
+
+.level-modal-close:hover {
+    color: #cad3f5;
+    transform: none;
+    box-shadow: none;
+}
+
+.level-modal-body {
+    padding: 16px 24px 24px;
+    overflow-y: auto;
+}
+
+.modal-kanji-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.modal-kanji-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(91, 96, 120, 0.15);
+}
+
+.modal-kanji-row:last-child {
+    border-bottom: none;
+}
+
+.modal-kanji-char {
+    font-size: 36px;
+    font-weight: 700;
+    color: #cad3f5;
+    width: 52px;
+    text-align: center;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.modal-kanji-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.modal-kanji-meaning {
+    font-size: 15px;
+    font-weight: 600;
+    color: #cad3f5;
+    margin-bottom: 3px;
+}
+
+.modal-kanji-readings {
+    font-size: 13px;
+    color: rgb(147, 154, 183);
+}
+
+.modal-kanji-stats {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.modal-kanji-acc {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: rgba(91, 96, 120, 0.2);
+    color: rgb(147, 154, 183);
+}
+
+.modal-kanji-acc.acc-good { background: rgba(166, 218, 149, 0.15); color: #a6da95; }
+.modal-kanji-acc.acc-mid { background: rgba(238, 212, 159, 0.15); color: #eed49f; }
+.modal-kanji-acc.acc-bad { background: rgba(237, 135, 150, 0.15); color: #ed8796; }
