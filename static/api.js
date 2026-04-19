@@ -37,10 +37,10 @@ const API = ((form, fileInput) => {
 
     function submitToServer() {
         const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
+        const originalText = submitBtn.innerHTML;
 
         submitBtn.disabled = true;
-        submitBtn.textContent = '⏳ Scanning...';
+        submitBtn.innerHTML = '<img class="submit-icon-svg" src="/static/icons/wait.svg" alt=""> Scanning...';
         fileInput.disabled = true;
         document.getElementById('direction-select').disabled = true;
 
@@ -88,7 +88,7 @@ const API = ((form, fileInput) => {
 
         function resetForm() {
             submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
+            submitBtn.innerHTML = originalText;
             fileInput.disabled = false;
             document.getElementById('direction-select').disabled = false;
         }

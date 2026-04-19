@@ -50,6 +50,8 @@
 }
 
 .image-preview {
+    position: relative;
+    z-index: 1;
     margin-top: 16px;
     display: flex;
     flex-direction: column;
