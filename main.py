@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+
+
 import argparse
 import json
 import math
@@ -268,7 +270,6 @@ while running:
     pygame.display.update()
     clock.tick(15)
 
-# Record the current kanji as failed on shutdown (user didn't remember it)
 s = stats[current["kanji"]]
 s["shown"] += 1
 s["failed"] += 1

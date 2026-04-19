@@ -6,13 +6,20 @@
     border-bottom: 1px solid rgba(91, 96, 120, 0.3);
 }
 
+.sidebar-logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
 .sidebar-logo {
-    font-size: 42px;
+    font-size: 26px;
     font-weight: 800;
     color: #c6a0f6;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     line-height: 1;
-    margin-bottom: 6px;
 }
 
 .sidebar-subtitle {

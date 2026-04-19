@@ -1,0 +1,142 @@
+.scanner-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.scanner-card {
+    max-width: 520px;
+    width: 100%;
+    padding: 40px;
+}
+
+.scanner-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(91, 96, 120, 0.3);
+}
+
+.scanner-brand { display: flex; flex-direction: column; }
+
+.scanner-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.scanner-logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #c6a0f6;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.scanner-subtitle {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgb(147, 154, 183);
+    margin-top: 4px;
+}
+
+.scanner-dash-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: rgb(147, 154, 183);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(91, 96, 120, 0.3);
+    transition: all 0.2s ease;
+}
+
+.scanner-dash-link:hover {
+    color: #c6a0f6;
+    border-color: rgba(198, 160, 246, 0.4);
+    background: rgba(198, 160, 246, 0.08);
+}
+
+.scanner-dash-link .nav-icon-svg {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) saturate(100%) invert(68%) sepia(7%) saturate(765%) hue-rotate(194deg) brightness(90%) contrast(87%);
+    transition: filter 0.2s ease;
+}
+
+.scanner-dash-link:hover .nav-icon-svg {
+    filter: brightness(0) saturate(100%) invert(73%) sepia(30%) saturate(678%) hue-rotate(216deg) brightness(101%) contrast(93%);
+}
+
+.scanner-options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.label-icon-svg {
+    width: 14px;
+    height: 14px;
+    max-width: 14px;
+    max-height: 14px;
+    vertical-align: -2px;
+    margin-right: 4px;
+    filter: brightness(0) saturate(100%) invert(68%) sepia(7%) saturate(765%) hue-rotate(194deg) brightness(90%) contrast(87%);
+}
+
+.scanner-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+    color: #cad3f5;
+    background: rgba(198, 160, 246, 0.15);
+    border: 1px solid rgba(198, 160, 246, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: none;
+    margin: 0;
+}
+
+.scanner-submit:hover {
+    background: rgba(198, 160, 246, 0.25);
+    border-color: rgba(198, 160, 246, 0.5);
+    transform: none;
+    box-shadow: none;
+}
+
+.scanner-submit:active { transform: scale(0.98); }
+
+.scanner-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submit-icon { font-size: 16px; }
+
+.submit-icon-svg {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) saturate(100%) invert(83%) sepia(10%) saturate(476%) hue-rotate(194deg) brightness(96%) contrast(92%);
+}
