@@ -1,4 +1,3 @@
-// Notifications module
 const Notifications = (() => {
     function showError(message) {
         removeNotification();

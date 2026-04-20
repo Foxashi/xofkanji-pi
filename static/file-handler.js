@@ -1,4 +1,3 @@
-// File handler module - Singleton pattern
 const FileHandler = (() => {
     let form = null;
     let fileInput = null;

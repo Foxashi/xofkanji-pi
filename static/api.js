@@ -1,4 +1,3 @@
-// API and form submission module
 const API = ((form, fileInput) => {
     const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 

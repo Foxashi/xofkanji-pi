@@ -1,4 +1,3 @@
-// Results display module - Singleton pattern
 const Results = (() => {
     let form = null;
 
