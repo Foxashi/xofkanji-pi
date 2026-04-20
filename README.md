@@ -29,4 +29,4 @@ Hardware:
   
 * Random powerbank I found in a drawer
 
-<img width="1080" height="1075" alt="image" src="https://github.com/user-attachments/assets/ed6b2b40-4598-497f-b176-aeca94e2e2bc" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/ed6b2b40-4598-497f-b176-aeca94e2e2bc" />
