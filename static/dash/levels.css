@@ -103,6 +103,11 @@
     max-height: 80vh;
     display: flex;
     flex-direction: column;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
 }
 

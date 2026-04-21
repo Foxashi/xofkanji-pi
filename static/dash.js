@@ -1,7 +1,7 @@
 import { loadStats } from './dash/stats.js';
 import { loadLastfm, initLastfmForm } from './dash/lastfm.js';
 import { loadDisplay, initDisplayButtons } from './dash/display.js';
-import { loadThemes } from './dash/themes.js';
+import { loadThemes, initCreateTheme } from './dash/themes.js';
 import { loadRecent } from './dash/recent.js';
 import { initPractice } from './dash/practice.js';
 
@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initDisplayButtons();
     loadRecent();
     loadThemes();
+    initCreateTheme();
     initPractice();
 
     setInterval(loadStats, REFRESH_INTERVAL);

@@ -63,3 +63,67 @@ export async function setTheme(name) {
         console.error('Theme set failed:', err);
     }
 }
+
+function hexToRgb(hex) {
+    if (!hex || hex[0] !== '#') return null;
+    const r = parseInt(hex.slice(1,3), 16);
+    const g = parseInt(hex.slice(3,5), 16);
+    const b = parseInt(hex.slice(5,7), 16);
+    return [r,g,b];
+}
+
+export function initCreateTheme() {
+    const btn = document.getElementById('btn-create-theme');
+    const modal = document.getElementById('create-theme-modal');
+    const close = document.getElementById('create-theme-close');
+    const cancel = document.getElementById('create-theme-cancel');
+    const form = document.getElementById('create-theme-form');
+    if (!btn || !modal || !form) return;
+
+    const openModal = () => { modal.style.display = 'block'; };
+    const closeModal = () => { modal.style.display = 'none'; form.reset(); };
+
+    btn.addEventListener('click', openModal);
+    close.addEventListener('click', closeModal);
+    cancel.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('theme-name').value.trim();
+        if (!name) return alert('Please provide a theme name');
+
+        const colors = {
+            background: document.getElementById('color-background').value,
+            top_bar: document.getElementById('color-topbar').value,
+            kanji: document.getElementById('color-kanji').value,
+            meaning: document.getElementById('color-meaning').value,
+            onyomi: document.getElementById('color-onyomi').value,
+            kunyomi: document.getElementById('color-kunyomi').value
+        };
+
+        const fileInput = document.getElementById('background-image');
+        const fd = new FormData();
+        fd.append('name', name);
+        // send colors as hex strings; server will normalize
+        fd.append('colors', JSON.stringify(colors));
+        if (fileInput && fileInput.files && fileInput.files[0]) {
+            fd.append('background_image', fileInput.files[0]);
+        }
+
+        try {
+            const res = await fetch('/api/themes', { method: 'POST', body: fd });
+            const data = await res.json();
+            if (res.ok && data.success) {
+                closeModal();
+                // refresh theme grid
+                setTimeout(() => loadThemes(), 300);
+            } else {
+                alert(data.message || 'Failed to create theme');
+            }
+        } catch (err) {
+            console.error('Create theme failed', err);
+            alert('Failed to create theme');
+        }
+    });
+}

@@ -63,6 +63,18 @@
     box-shadow: none;
 }
 
+.header-actions .control-btn {
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 0;
+    box-shadow: none;
+}
+
 .restart-btn {
     background: rgba(138, 173, 244, 0.15);
     color: #8aadf4;

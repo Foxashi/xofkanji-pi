@@ -8,6 +8,7 @@ import tempfile
 import requests
 import time
 from flask import Flask, request, jsonify, render_template
+from werkzeug.utils import secure_filename
 from PIL import Image, ImageEnhance
 import pytesseract
 
@@ -213,6 +214,93 @@ def api_set_theme():
     os.replace(tmp_path, THEME_STATE_FILE)
 
     return jsonify({"success": True, "message": f"Theme set to '{theme_name}'"})
+
+
+@app.route('/api/themes', methods=['POST'])
+def api_create_theme():
+    name = None
+    colors = {}
+    bg_file = None
+
+    if request.content_type and request.content_type.startswith('multipart/form-data'):
+        name = request.form.get('name', '').strip()
+        colors_raw = request.form.get('colors', '')
+        bg_file = request.files.get('background_image')
+        try:
+            if colors_raw:
+                colors = json.loads(colors_raw)
+        except Exception:
+            colors = {}
+    else:
+        data = request.get_json() or {}
+        name = (data.get('name') or '').strip()
+        colors = data.get('colors', {})
+
+    if not name:
+        return jsonify({"success": False, "message": "Theme name is required"}), 400
+
+    # sanitize name for filenames and keys
+    safe_name = re.sub(r'[^a-zA-Z0-9 _\-]', '', name)
+    # load existing themes
+    themes = {}
+    if os.path.exists(THEMES_FILE) and os.path.getsize(THEMES_FILE) > 0:
+        try:
+            with open(THEMES_FILE, 'r', encoding='utf-8') as f:
+                themes = json.load(f)
+        except json.JSONDecodeError:
+            themes = {}
+
+    if name in themes:
+        return jsonify({"success": False, "message": "A theme with that name already exists"}), 409
+
+    theme_obj = {}
+    # normalize color values: allow hex '#rrggbb' or arrays
+    def normalize_color(v):
+        if isinstance(v, str) and v.startswith('#') and len(v) == 7:
+            try:
+                r = int(v[1:3], 16)
+                g = int(v[3:5], 16)
+                b = int(v[5:7], 16)
+                return [r, g, b]
+            except Exception:
+                return None
+        if isinstance(v, list) and len(v) == 3:
+            return [int(v[0]), int(v[1]), int(v[2])]
+        return None
+
+    for k, v in (colors or {}).items():
+        nc = normalize_color(v)
+        if nc:
+            theme_obj[k] = nc
+
+    # handle background image upload
+    if bg_file and bg_file.filename:
+        images_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'themes_images')
+        os.makedirs(images_dir, exist_ok=True)
+        filename = secure_filename(bg_file.filename)
+        save_name = f"{safe_name.replace(' ', '_')}_{filename}"
+        save_path = os.path.join(images_dir, save_name)
+        try:
+            bg_file.save(save_path)
+            # store path relative to project root for existing theme usage
+            theme_obj['background_image'] = os.path.join('themes_images', save_name)
+        except Exception as e:
+            return jsonify({"success": False, "message": f"Failed to save image: {e}"}), 500
+
+    # add theme and write atomically
+    themes[name] = theme_obj
+    dir_name = os.path.dirname(THEMES_FILE) or '.'
+    try:
+        with tempfile.NamedTemporaryFile('w', dir=dir_name, suffix='.tmp', delete=False, encoding='utf-8') as f:
+            json.dump(themes, f, ensure_ascii=False, indent=2)
+            f.flush()
+            os.fsync(f.fileno())
+            tmp_path = f.name
+        os.replace(tmp_path, THEMES_FILE)
+    except Exception as e:
+        return jsonify({"success": False, "message": f"Failed to save theme: {e}"}), 500
+
+    return jsonify({"success": True, "message": "Theme created"})
 
 def is_display_process(pid):
     try:
