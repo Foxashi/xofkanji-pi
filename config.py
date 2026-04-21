@@ -3,6 +3,7 @@ import os
 
 # ---------- FORCE X11 ----------
 os.environ["DISPLAY"] = ":0"
+# for some reason the touchscreen I'm using on the GPIO pins doesn't work with wayland so I have to force xorg to run the app properly
 
 # ---------- CONFIG ----------
 SCREEN_WIDTH = 480
