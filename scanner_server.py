@@ -239,7 +239,6 @@ def api_create_theme():
     if not name:
         return jsonify({"success": False, "message": "Theme name is required"}), 400
 
-    # sanitize name for filenames and keys
     safe_name = re.sub(r'[^a-zA-Z0-9 _\-]', '', name)
     # load existing themes
     themes = {}
@@ -273,8 +272,6 @@ def api_create_theme():
         if nc:
             theme_obj[k] = nc
 
-    # pulse feature removed: do not persist pulse_speed
-
     # handle background image upload
     if bg_file and bg_file.filename:
         images_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'themes_images')
@@ -289,7 +286,6 @@ def api_create_theme():
         except Exception as e:
             return jsonify({"success": False, "message": f"Failed to save image: {e}"}), 500
 
-    # add theme and write atomically
     themes[name] = theme_obj
     dir_name = os.path.dirname(THEMES_FILE) or '.'
     try:
