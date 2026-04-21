@@ -273,6 +273,8 @@ def api_create_theme():
         if nc:
             theme_obj[k] = nc
 
+    # pulse feature removed: do not persist pulse_speed
+
     # handle background image upload
     if bg_file and bg_file.filename:
         images_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'themes_images')

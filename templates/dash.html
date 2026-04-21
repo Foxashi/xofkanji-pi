@@ -314,7 +314,7 @@
             </div>
             <div class="level-modal-body">
                 <form id="create-theme-form">
-                    <div class="form-group">
+                    <div class="form-group full">
                         <label for="theme-name">Name</label>
                         <input type="text" id="theme-name" required>
                     </div>
@@ -348,13 +348,33 @@
                             <input type="color" id="color-kunyomi" value="#1e90ff">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="color-time">Time</label>
+                            <input type="color" id="color-time" value="#c6a0f6">
+                        </div>
+                        <div class="form-group">
+                            <label for="color-divider">Divider</label>
+                            <input type="color" id="color-divider" value="#5b6078">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="color-music-playing">Music (playing)</label>
+                            <input type="color" id="color-music-playing" value="#a6da95">
+                        </div>
+                        <div class="form-group">
+                            <label for="color-music-paused">Music (paused)</label>
+                            <input type="color" id="color-music-paused" value="#939ab7">
+                        </div>
+                    </div>
+                    <div class="form-group full">
                         <label for="background-image">Background Image (optional)</label>
                         <input type="file" id="background-image" accept="image/*">
                     </div>
-                    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px;">
-                        <button type="button" id="create-theme-cancel">Cancel</button>
-                        <button type="submit">Create</button>
+                        <div class="form-actions">
+                        <button type="button" id="create-theme-cancel" class="btn-secondary">Cancel</button>
+                        <button type="submit" class="control-btn create-btn">Create</button>
                     </div>
                 </form>
             </div>

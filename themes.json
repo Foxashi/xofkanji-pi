@@ -13,9 +13,7 @@
     "kanji":[0,255,0],
     "meaning":[0,200,0],
     "onyomi":[0,255,150],
-    "kunyomi":[0,150,255],
-    "pulse_color":[0,255,0],
-    "pulse_speed":3
+    "kunyomi":[0,150,255]
   },
 
   "fate": {

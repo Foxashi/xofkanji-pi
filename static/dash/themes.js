@@ -25,9 +25,13 @@ export async function loadThemes() {
             const onyomiColor = colors.onyomi || [50,205,50];
             const kunyomiColor = colors.kunyomi || [30,144,255];
             const topBar = colors.top_bar || [40,40,40];
+            const timeColor = colors.time || null;
+            const dividerColor = colors.divider || null;
+            const musicPlaying = colors.music_playing || null;
+            const musicPaused = colors.music_paused || null;
 
             card.innerHTML =
-                '<div class="theme-preview" style="background:' + rgb(bg) + '">' +
+                    '<div class="theme-preview" style="background:' + rgb(bg) + '">' +
                     '<div class="theme-preview-bar" style="background:' + rgb(topBar) + '"></div>' +
                     '<span class="theme-preview-kanji" style="color:' + rgb(kanjiColor) + '">漢</span>' +
                     '<div class="theme-preview-readings">' +
@@ -101,6 +105,17 @@ export function initCreateTheme() {
             onyomi: document.getElementById('color-onyomi').value,
             kunyomi: document.getElementById('color-kunyomi').value
         };
+
+            // optional extra colors
+            const timeEl = document.getElementById('color-time');
+            const dividerEl = document.getElementById('color-divider');
+            const musicPlayEl = document.getElementById('color-music-playing');
+            const musicPauseEl = document.getElementById('color-music-paused');
+
+            if (timeEl) colors.time = timeEl.value;
+            if (dividerEl) colors.divider = dividerEl.value;
+            if (musicPlayEl) colors.music_playing = musicPlayEl.value;
+            if (musicPauseEl) colors.music_paused = musicPauseEl.value;
 
         const fileInput = document.getElementById('background-image');
         const fd = new FormData();
