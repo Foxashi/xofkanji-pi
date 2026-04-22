@@ -1,7 +1,7 @@
 # xofkanji-pi
 My latest project and probably my biggest one since I'll have to present this at my school at the end of the year
 
-How it looks:
+How it looks (old screenshot):
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/2a79e156-8d3c-4c03-ab60-91874cefb8a0" />
 
