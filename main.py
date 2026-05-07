@@ -33,9 +33,9 @@ if args.theme:
     set_theme(args.theme)
 else:
     _saved = None
-    if os.path.exists("theme_state.json"):
+    if os.path.exists(THEME_STATE_FILE):
         try:
-            with open("theme_state.json", "r", encoding="utf-8") as _f:
+            with open(THEME_STATE_FILE, "r", encoding="utf-8") as _f:
                 _saved = json.load(_f).get("theme")
         except (json.JSONDecodeError, OSError):
             pass
