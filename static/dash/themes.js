@@ -84,13 +84,63 @@ export function initCreateTheme() {
     const form = document.getElementById('create-theme-form');
     if (!btn || !modal || !form) return;
 
-    const openModal = () => { modal.style.display = 'block'; };
-    const closeModal = () => { modal.style.display = 'none'; form.reset(); };
+    function syncAllHexInputs() {
+        form.querySelectorAll('.hex-input').forEach(hexInput => {
+            const colorInput = document.getElementById(hexInput.dataset.for);
+            if (colorInput) hexInput.value = colorInput.value.toUpperCase();
+        });
+    }
+
+    function updatePreview() {
+        const val = (id) => document.getElementById(id)?.value || '#000000';
+        const el = (id) => document.getElementById(id);
+        if (el('creator-preview-bg')) el('creator-preview-bg').style.background = val('color-background');
+        if (el('creator-preview-bar')) el('creator-preview-bar').style.background = val('color-topbar');
+        if (el('creator-preview-kanji')) el('creator-preview-kanji').style.color = val('color-kanji');
+        if (el('creator-preview-meaning')) el('creator-preview-meaning').style.color = val('color-meaning');
+        if (el('creator-preview-onyomi')) el('creator-preview-onyomi').style.color = val('color-onyomi');
+        if (el('creator-preview-kunyomi')) el('creator-preview-kunyomi').style.color = val('color-kunyomi');
+    }
+
+    const openModal = () => {
+        modal.style.display = 'flex';
+        syncAllHexInputs();
+        updatePreview();
+    };
+    const closeModal = () => {
+        modal.style.display = 'none';
+        form.reset();
+        syncAllHexInputs();
+        updatePreview();
+    };
 
     btn.addEventListener('click', openModal);
     close.addEventListener('click', closeModal);
     cancel.addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+    // Wire up color pickers ↔ hex inputs + live preview
+    form.querySelectorAll('.hex-input').forEach(hexInput => {
+        const colorInput = document.getElementById(hexInput.dataset.for);
+        if (!colorInput) return;
+
+        colorInput.addEventListener('input', () => {
+            hexInput.value = colorInput.value.toUpperCase();
+            updatePreview();
+        });
+
+        hexInput.addEventListener('input', () => {
+            const val = hexInput.value.trim();
+            if (/^#[0-9a-fA-F]{6}$/.test(val)) {
+                colorInput.value = val;
+                updatePreview();
+            }
+        });
+
+        hexInput.addEventListener('blur', () => {
+            hexInput.value = colorInput.value.toUpperCase();
+        });
+    });
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -106,21 +156,19 @@ export function initCreateTheme() {
             kunyomi: document.getElementById('color-kunyomi').value
         };
 
-            // optional extra colors
-            const timeEl = document.getElementById('color-time');
-            const dividerEl = document.getElementById('color-divider');
-            const musicPlayEl = document.getElementById('color-music-playing');
-            const musicPauseEl = document.getElementById('color-music-paused');
+        const timeEl = document.getElementById('color-time');
+        const dividerEl = document.getElementById('color-divider');
+        const musicPlayEl = document.getElementById('color-music-playing');
+        const musicPauseEl = document.getElementById('color-music-paused');
 
-            if (timeEl) colors.time = timeEl.value;
-            if (dividerEl) colors.divider = dividerEl.value;
-            if (musicPlayEl) colors.music_playing = musicPlayEl.value;
-            if (musicPauseEl) colors.music_paused = musicPauseEl.value;
+        if (timeEl) colors.time = timeEl.value;
+        if (dividerEl) colors.divider = dividerEl.value;
+        if (musicPlayEl) colors.music_playing = musicPlayEl.value;
+        if (musicPauseEl) colors.music_paused = musicPauseEl.value;
 
         const fileInput = document.getElementById('background-image');
         const fd = new FormData();
         fd.append('name', name);
-        // send colors as hex strings; server will normalize
         fd.append('colors', JSON.stringify(colors));
         if (fileInput && fileInput.files && fileInput.files[0]) {
             fd.append('background_image', fileInput.files[0]);
@@ -131,7 +179,6 @@ export function initCreateTheme() {
             const data = await res.json();
             if (res.ok && data.success) {
                 closeModal();
-                // refresh theme grid
                 setTimeout(() => loadThemes(), 300);
             } else {
                 alert(data.message || 'Failed to create theme');

@@ -318,65 +318,98 @@
                         <label for="theme-name">Name</label>
                         <input type="text" id="theme-name" required>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="color-background">Background</label>
+                    <div class="form-group full">
+                        <label>Preview</label>
+                        <div class="theme-preview creator-preview" id="creator-preview-bg">
+                            <div class="theme-preview-bar" id="creator-preview-bar"></div>
+                            <span class="theme-preview-kanji" id="creator-preview-kanji">漢</span>
+                            <div class="theme-preview-readings">
+                                <span id="creator-preview-onyomi">オン</span>
+                                <span id="creator-preview-kunyomi">くん</span>
+                            </div>
+                            <span class="theme-preview-meaning" id="creator-preview-meaning">meaning</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="color-background">Background</label>
+                        <div class="color-row">
                             <input type="color" id="color-background" value="#000000">
+                            <input type="text" class="hex-input" data-for="color-background" value="#000000" maxlength="7" spellcheck="false">
                         </div>
-                        <div class="form-group">
-                            <label for="color-topbar">Top Bar</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="color-topbar">Top Bar</label>
+                        <div class="color-row">
                             <input type="color" id="color-topbar" value="#282828">
+                            <input type="text" class="hex-input" data-for="color-topbar" value="#282828" maxlength="7" spellcheck="false">
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="color-kanji">Kanji</label>
+                    <div class="form-group">
+                        <label for="color-kanji">Kanji</label>
+                        <div class="color-row">
                             <input type="color" id="color-kanji" value="#ffffff">
+                            <input type="text" class="hex-input" data-for="color-kanji" value="#FFFFFF" maxlength="7" spellcheck="false">
                         </div>
-                        <div class="form-group">
-                            <label for="color-meaning">Meaning</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="color-meaning">Meaning</label>
+                        <div class="color-row">
                             <input type="color" id="color-meaning" value="#ffd700">
+                            <input type="text" class="hex-input" data-for="color-meaning" value="#FFD700" maxlength="7" spellcheck="false">
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="color-onyomi">On'yomi</label>
+                    <div class="form-group">
+                        <label for="color-onyomi">On'yomi</label>
+                        <div class="color-row">
                             <input type="color" id="color-onyomi" value="#32cd32">
+                            <input type="text" class="hex-input" data-for="color-onyomi" value="#32CD32" maxlength="7" spellcheck="false">
                         </div>
-                        <div class="form-group">
-                            <label for="color-kunyomi">Kun'yomi</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="color-kunyomi">Kun'yomi</label>
+                        <div class="color-row">
                             <input type="color" id="color-kunyomi" value="#1e90ff">
+                            <input type="text" class="hex-input" data-for="color-kunyomi" value="#1E90FF" maxlength="7" spellcheck="false">
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="color-time">Time</label>
+                    <div class="form-section full">Optional Colors</div>
+                    <div class="form-group">
+                        <label for="color-time">Time</label>
+                        <div class="color-row">
                             <input type="color" id="color-time" value="#c6a0f6">
-                        </div>
-                        <div class="form-group">
-                            <label for="color-divider">Divider</label>
-                            <input type="color" id="color-divider" value="#5b6078">
+                            <input type="text" class="hex-input" data-for="color-time" value="#C6A0F6" maxlength="7" spellcheck="false">
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="color-music-playing">Music (playing)</label>
-                            <input type="color" id="color-music-playing" value="#a6da95">
+                    <div class="form-group">
+                        <label for="color-divider">Divider</label>
+                        <div class="color-row">
+                            <input type="color" id="color-divider" value="#5b6078">
+                            <input type="text" class="hex-input" data-for="color-divider" value="#5B6078" maxlength="7" spellcheck="false">
                         </div>
-                        <div class="form-group">
-                            <label for="color-music-paused">Music (paused)</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="color-music-playing">Music Playing</label>
+                        <div class="color-row">
+                            <input type="color" id="color-music-playing" value="#a6da95">
+                            <input type="text" class="hex-input" data-for="color-music-playing" value="#A6DA95" maxlength="7" spellcheck="false">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="color-music-paused">Music Paused</label>
+                        <div class="color-row">
                             <input type="color" id="color-music-paused" value="#939ab7">
+                            <input type="text" class="hex-input" data-for="color-music-paused" value="#939AB7" maxlength="7" spellcheck="false">
                         </div>
                     </div>
                     <div class="form-group full">
                         <label for="background-image">Background Image (optional)</label>
                         <input type="file" id="background-image" accept="image/*">
                     </div>
-                        <div class="form-actions">
-                        <button type="button" id="create-theme-cancel" class="btn-secondary">Cancel</button>
-                        <button type="submit" class="control-btn create-btn">Create</button>
-                    </div>
                 </form>
+            </div>
+            <div class="form-actions">
+                <button type="button" id="create-theme-cancel" class="btn-secondary">Cancel</button>
+                <button type="submit" form="create-theme-form" class="control-btn create-btn">Create</button>
             </div>
         </div>
     </div>
