@@ -63,7 +63,7 @@ What started as "I wonder if I can show kanji on a small screen" turned into a f
 - **Vanilla JS** — frontend dashboard (no frameworks)
 - **Pygame** — drives the Pi display
 - **Last.fm API** — now playing integration
-- **Raspberry Pi OS Lite** — runs headless
+- **Raspbian** — to run everything
 
 ---
 
