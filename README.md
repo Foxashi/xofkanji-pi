@@ -6,6 +6,15 @@ What started as "I wonder if I can show kanji on a small screen" turned into a f
 
 ---
 
+## How to setup the project
+
+Simple! Just run this file:
+```sh
+./setup.sh
+```
+
+---
+
 ## How it looks
 
 > *Screenshot below is slightly outdated the UI has come a long way since.*
