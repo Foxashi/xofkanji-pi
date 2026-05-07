@@ -18,9 +18,12 @@ MAX_INTERVAL = 7 * 24 * 3600
 KANJI_RELOAD_INTERVAL = 30
 THEME_RELOAD_INTERVAL = 5
 
-STATS_FILE = "stats.json"
-KANJI_FILE = "kanji.json"
-THEMES_FILE = "themes.json"
+STATS_FILE = "db/stats.json"
+KANJI_FILE = "db/kanji.json"
+THEMES_FILE = "db/themes.json"
+LASTFM_CONFIG_FILE = "db/lastfm_config.json"
+DISPLAY_STATE_FILE = "display_state.json"
+THEME_STATE_FILE = "theme_state.json"
 
 # ---------- DEFAULT COLORS ----------
 WHITE = (255, 255, 255)

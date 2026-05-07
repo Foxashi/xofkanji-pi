@@ -8,9 +8,7 @@ import time
 import urllib.request
 import pygame
 import pylast
-from config import LASTFM_UPDATE_TIME
-
-LASTFM_CONFIG_FILE = "lastfm_config.json"
+from py.config import LASTFM_UPDATE_TIME, LASTFM_CONFIG_FILE
 
 def load_lastfm_config():
     if os.path.exists(LASTFM_CONFIG_FILE):

@@ -2,7 +2,7 @@
 import json
 import os
 import pygame
-from config import THEMES_FILE, SCREEN_WIDTH, SCREEN_HEIGHT
+from py.config import THEMES_FILE, SCREEN_WIDTH, SCREEN_HEIGHT
 
 # ---------- FONT LOADING ----------
 FONT_PATH = "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"

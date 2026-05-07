@@ -3,7 +3,7 @@ import json
 import os
 import tempfile
 import time
-from config import STATS_FILE, FAILED_INTERVAL
+from py.config import STATS_FILE, FAILED_INTERVAL
 
 # ---------- LOAD / SAVE STATS ----------
 def load_stats():

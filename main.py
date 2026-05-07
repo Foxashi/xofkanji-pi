@@ -10,18 +10,19 @@ import pygame
 import time
 from datetime import datetime
 
-from config import (
+from py.config import (
     SCREEN_WIDTH, SCREEN_HEIGHT, KANJI_CHANGE_TIME, THEME_RELOAD_INTERVAL,
     KANJI_RELOAD_INTERVAL, FAILED_INTERVAL, MAX_INTERVAL, BLACK, DARK_GRAY,
-    MEDIUM_GRAY, WHITE, YELLOW, GREEN, BLUE, LIGHT_GRAY, LEVEL_COLORS
+    MEDIUM_GRAY, WHITE, YELLOW, GREEN, BLUE, LIGHT_GRAY, LEVEL_COLORS,
+    DISPLAY_STATE_FILE, THEME_STATE_FILE
 )
-import themes
-from themes import T, set_theme, load_themes
-from stats import load_stats, save_stats
-from kanji import load_kanji, pick_due_kanji
-from pygame_utils import theme_font, truncate_text, load_font
-import lastfm
-from lastfm import ALBUM_ART_SIZE
+import py.themes as themes
+from py.themes import T, set_theme, load_themes
+from py.stats import load_stats, save_stats
+from py.kanji import load_kanji, pick_due_kanji
+from py.pygame_utils import theme_font, truncate_text, load_font
+import py.lastfm as lastfm
+from py.lastfm import ALBUM_ART_SIZE
 
 # ---------- ARGUMENTS ----------
 parser = argparse.ArgumentParser()
@@ -70,9 +71,6 @@ if not KANJI_LIST:
 
 theme_names = list(themes.THEMES.keys())
 theme_index = 0
-
-DISPLAY_STATE_FILE = "display_state.json"
-THEME_STATE_FILE = "theme_state.json"
 
 def shutdown(signum=None, frame=None):
     global running

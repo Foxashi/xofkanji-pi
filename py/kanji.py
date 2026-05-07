@@ -2,8 +2,8 @@
 import json
 import random
 import time
-from config import KANJI_FILE
-from stats import init_kanji
+from py.config import KANJI_FILE
+from py.stats import init_kanji
 
 # ---------- LOAD KANJI ----------
 def load_kanji():
