@@ -1,0 +1,7 @@
+flask
+pygame
+pylast
+werkzeug
+requests
+Pillow
+pytesseract
