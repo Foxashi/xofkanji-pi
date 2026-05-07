@@ -8,7 +8,7 @@ What started as "I wonder if I can show kanji on a small screen" turned into a f
 
 ## How it looks
 
-> *Screenshot below is slightly outdated — the UI has come a long way since.*
+> *Screenshot below is slightly outdated the UI has come a long way since.*
 
 <img width="700" alt="Display" src="https://github.com/user-attachments/assets/2a79e156-8d3c-4c03-ab60-91874cefb8a0" />
 
@@ -18,7 +18,7 @@ What started as "I wonder if I can show kanji on a small screen" turned into a f
 
 - Displays a random kanji with its meanings, on'yomi/kun'yomi readings, and JLPT level
 - Shows the currently playing (or last played) song via Last.fm integration
-- Lets you scan kanji from photos — books, manga, screenshots, anything
+- Lets you scan kanji from photos books, manga, screenshots, anything
 - Hosts a local dashboard accessible from any device on the network
 
 ---
