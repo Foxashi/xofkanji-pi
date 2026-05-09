@@ -1,11 +1,18 @@
 .DS_Store
 
-kanji.json
-stats.json
-lastfm_config_json
+# User data
+db/kanji.json
+db/stats.json
+db/themes.json
+db/lastfm_config.json
+
+# User-uploaded theme images
+themes_images/*
+!themes_images/.gitkeep
 
 # Python
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 .venv/
