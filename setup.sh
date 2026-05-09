@@ -25,4 +25,15 @@ else
 fi
 
 echo ""
+echo "=== Installing Node.js dependencies ==="
+
+if command -v node &> /dev/null; then
+    npm install
+    npm run build
+    echo "TypeScript compiled successfully."
+else
+    echo "Node.js not found — skipping TypeScript build. Install Node.js and run 'npm install && npm run build' manually."
+fi
+
+echo ""
 echo "Setup complete. Run the project with: python3 main.py (for the kanji display) or python3 scanner_server.py (for the web server)"

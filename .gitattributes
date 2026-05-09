@@ -1,2 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Mark compiled JS as generated (TypeScript is the source of truth)
+static/*.js linguist-generated=true
+static/dash/*.js linguist-generated=true
+
+# Mark JSON data files as non-code
+db/*.json linguist-documentation=true

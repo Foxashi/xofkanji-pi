@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XOFKanji-pi Scanner</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script src="{{ url_for('static', filename='notifications.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='file-handler.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='results.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='api.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='app.js') }}"></script>
 </head>
 <body>
     <div class="scanner-page">

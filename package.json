@@ -1,0 +1,25 @@
+{
+  "name": "xofkanji-pi",
+  "version": "1.0.0",
+  "description": "A Raspberry Pi-powered kanji learning display and companion dashboard built as a personal project and presented at school as a year-end showcase.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Foxashi/xofkanji-pi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Foxashi/xofkanji-pi/issues"
+  },
+  "homepage": "https://github.com/Foxashi/xofkanji-pi#readme",
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}

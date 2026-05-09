@@ -1,4 +1,4 @@
-function showError(message) {
+function showError(message: string): void {
     removeNotification();
     const notification = document.createElement('div');
     notification.className = 'notification error';
@@ -6,7 +6,8 @@ function showError(message) {
     document.body.appendChild(notification);
     setTimeout(() => removeNotification(), 4000);
 }
-function showSuccess(message) {
+
+function showSuccess(message: string): void {
     removeNotification();
     const notification = document.createElement('div');
     notification.className = 'notification success';
@@ -14,10 +15,12 @@ function showSuccess(message) {
     document.body.appendChild(notification);
     setTimeout(() => removeNotification(), 4000);
 }
-function removeNotification() {
+
+function removeNotification(): void {
     const existing = document.querySelector('.notification');
     if (existing) {
         existing.remove();
     }
 }
+
 export const Notifications = { showError, showSuccess, removeNotification };
