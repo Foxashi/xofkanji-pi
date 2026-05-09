@@ -6,18 +6,40 @@ function escapeHtml(str) {
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#39;');
 }
-function getIntValue(id, fallback, min, max) {
-    const input = document.getElementById(id);
-    if (!input)
-        return fallback;
-    const parsed = parseInt(input.value, 10);
-    if (Number.isNaN(parsed))
-        return fallback;
-    return Math.max(min, Math.min(max, parsed));
+let allVocab = [];
+let activeLevel = 'all';
+let searchQuery = '';
+let isLoading = false;
+function getFiltered() {
+    let list = allVocab;
+    if (activeLevel !== 'all') {
+        list = list.filter(item => (item.levels ?? []).includes(activeLevel));
+    }
+    if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        list = list.filter(item => (item.word ?? '').toLowerCase().includes(q) ||
+            (item.reading ?? '').toLowerCase().includes(q) ||
+            (item.meaning ?? '').toLowerCase().includes(q));
+    }
+    return list;
+}
+function updateMeta() {
+    const meta = document.getElementById('vocab-meta');
+    if (!meta)
+        return;
+    if (allVocab.length === 0) {
+        meta.textContent = 'Words from your kanji database';
+        return;
+    }
+    const shown = getFiltered().length;
+    const total = allVocab.length;
+    meta.textContent = shown === total
+        ? total + ' words in your database'
+        : shown + ' of ' + total + ' words';
 }
 function renderVocabularyRows(list) {
     if (!Array.isArray(list) || list.length === 0) {
-        return '<p class="recent-empty">No matching vocabulary found yet for the kanji in your database.</p>';
+        return '<p class="recent-empty">No vocabulary matches your current filters.</p>';
     }
     let html = '<div class="vocab-grid">';
     list.forEach(item => {
@@ -25,88 +47,136 @@ function renderVocabularyRows(list) {
             const cls = 'recent-level-' + String(lvl ?? 'unknown').toLowerCase();
             return '<span class="recent-level ' + cls + '">' + escapeHtml(lvl ?? '?') + '</span>';
         }).join('');
-        const strokes = (item.stroke_order ?? []).map(stroke => {
-            const label = escapeHtml(stroke.kanji);
-            const url = escapeHtml(stroke.svg_url);
-            return '<a class="stroke-chip" href="' + url + '" target="_blank" rel="noopener noreferrer" title="Open stroke order for ' + label + '">' +
-                '<img class="stroke-preview" src="' + url + '" alt="Stroke order ' + label + '">' +
-                '<span class="stroke-label">' + label + '</span>' +
-                '</a>';
-        }).join('');
+        const kanjiChips = (item.stroke_order ?? []).map(stroke => '<button class="kanji-stroke-chip" data-kanji="' + escapeHtml(stroke.kanji) +
+            '" data-svg="' + escapeHtml(stroke.svg_url) + '">' + escapeHtml(stroke.kanji) + '</button>').join('');
         html += '<article class="vocab-card">' +
             '<div class="vocab-main">' +
-            '<div class="vocab-word">' + escapeHtml(item.word) + '</div>' +
-            '<div class="vocab-reading">' + escapeHtml(item.reading) + '</div>' +
+            '<ruby class="vocab-word">' + escapeHtml(item.word) + '<rt>' + escapeHtml(item.reading) + '</rt></ruby>' +
             '<div class="vocab-meaning">' + escapeHtml(item.meaning) + '</div>' +
             '</div>' +
             '<div class="vocab-meta-row">' +
             '<div class="vocab-levels">' + levelBadges + '</div>' +
-            '<div class="vocab-strokes">' + strokes + '</div>' +
+            (kanjiChips ? '<div class="vocab-kanji-chips">' + kanjiChips + '</div>' : '') +
             '</div>' +
             '</article>';
     });
     html += '</div>';
     return html;
 }
+function applyFilter() {
+    const container = document.getElementById('vocab-list');
+    if (!container)
+        return;
+    const filtered = getFiltered();
+    container.innerHTML = renderVocabularyRows(filtered);
+    container.querySelectorAll('.kanji-stroke-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+            openStrokeModal(chip.dataset.kanji ?? '', chip.dataset.svg ?? '');
+        });
+    });
+    updateMeta();
+}
+async function openStrokeModal(kanji, svgUrl) {
+    const modal = document.getElementById('stroke-modal');
+    const svgContainer = document.getElementById('stroke-modal-svg');
+    const title = document.getElementById('stroke-modal-kanji');
+    if (!modal || !svgContainer)
+        return;
+    modal.style.display = 'flex';
+    if (title)
+        title.textContent = kanji;
+    svgContainer.innerHTML = '<p class="stroke-modal-loading">Loading stroke order…</p>';
+    try {
+        const res = await fetch(svgUrl);
+        if (!res.ok)
+            throw new Error('SVG fetch failed');
+        const svgText = await res.text();
+        const clean = svgText.replace(/<\?xml[^>]*\?>/, '').trim();
+        svgContainer.innerHTML = clean;
+        const svgEl = svgContainer.querySelector('svg');
+        if (svgEl) {
+            svgEl.removeAttribute('width');
+            svgEl.removeAttribute('height');
+            svgEl.style.width = '100%';
+            svgEl.style.height = '100%';
+        }
+    }
+    catch {
+        svgContainer.innerHTML = '<p class="stroke-modal-loading">Could not load stroke order.</p>';
+    }
+}
 export async function loadVocabulary() {
+    if (isLoading)
+        return;
+    isLoading = true;
     const container = document.getElementById('vocab-list');
     const meta = document.getElementById('vocab-meta');
-    const button = document.getElementById('vocab-generate-btn');
-    if (!container || !meta || !button)
+    const refreshBtn = document.getElementById('vocab-refresh-btn');
+    if (!container || !meta) {
+        isLoading = false;
         return;
-    const limit = getIntValue('vocab-limit', 40, 5, 120);
-    const perKanji = getIntValue('vocab-per-kanji', 8, 2, 15);
-    button.disabled = true;
-    button.textContent = 'Generating...';
-    container.innerHTML = '<p class="recent-empty">Building vocabulary from your kanji list...</p>';
+    }
+    if (refreshBtn) {
+        refreshBtn.disabled = true;
+    }
+    container.innerHTML = '<p class="recent-empty">Loading vocabulary from your database…</p>';
+    meta.textContent = 'Loading…';
     try {
-        const url = '/api/vocabulary?limit=' + encodeURIComponent(limit) + '&per_kanji=' + encodeURIComponent(perKanji);
-        const res = await fetch(url);
+        const res = await fetch('/api/vocabulary');
         const data = await res.json();
-        const generated = new Date((data.generated_at ?? 0) * 1000);
-        const generatedLabel = Number.isNaN(generated.getTime())
-            ? 'just now'
-            : generated.toLocaleTimeString();
-        meta.textContent =
-            (data.vocabulary ? data.vocabulary.length : 0) + ' words from ' +
-                (data.source_kanji_count ?? 0) + ' known kanji • updated ' + generatedLabel;
-        container.innerHTML = renderVocabularyRows(data.vocabulary ?? []);
+        allVocab = data.vocabulary ?? [];
+        applyFilter();
     }
     catch (err) {
         console.error('Vocabulary fetch failed:', err);
         meta.textContent = '';
-        container.innerHTML = '<p class="recent-empty">Failed to generate vocabulary. Please try again.</p>';
+        container.innerHTML = '<p class="recent-empty">Failed to load vocabulary. Please try again.</p>';
     }
     finally {
-        button.disabled = false;
-        button.textContent = 'Generate';
+        isLoading = false;
+        if (refreshBtn) {
+            refreshBtn.disabled = false;
+        }
     }
 }
 export function initVocabulary() {
-    const button = document.getElementById('vocab-generate-btn');
-    const limitInput = document.getElementById('vocab-limit');
-    const perInput = document.getElementById('vocab-per-kanji');
-    if (!button || !limitInput || !perInput)
-        return;
-    button.addEventListener('click', () => {
+    // Stroke order modal
+    const strokeModal = document.getElementById('stroke-modal');
+    document.getElementById('stroke-modal-close')?.addEventListener('click', () => {
+        if (strokeModal)
+            strokeModal.style.display = 'none';
+    });
+    strokeModal?.addEventListener('click', (e) => {
+        if (e.target === strokeModal)
+            strokeModal.style.display = 'none';
+    });
+    // Refresh button
+    document.getElementById('vocab-refresh-btn')?.addEventListener('click', () => {
+        allVocab = [];
         loadVocabulary();
     });
-    [limitInput, perInput].forEach(input => {
-        input.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                loadVocabulary();
-            }
+    // Search
+    const searchInput = document.getElementById('vocab-search');
+    searchInput?.addEventListener('input', () => {
+        searchQuery = searchInput.value.trim();
+        applyFilter();
+    });
+    // Level pills
+    document.querySelectorAll('#vocab-level-pills .level-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+            document.querySelectorAll('#vocab-level-pills .level-pill')
+                .forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            activeLevel = pill.dataset.level ?? 'all';
+            applyFilter();
         });
     });
+    // Auto-load on nav click
     const vocabNav = document.querySelector('.nav-item[data-section="vocabulary"]');
     if (vocabNav) {
         vocabNav.addEventListener('click', () => {
-            const listEl = document.getElementById('vocab-list');
-            if (!listEl || listEl.dataset.loaded === '1')
-                return;
-            listEl.dataset.loaded = '1';
-            loadVocabulary();
+            if (allVocab.length === 0 && !isLoading)
+                loadVocabulary();
         });
     }
 }

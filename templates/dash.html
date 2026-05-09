@@ -214,29 +214,26 @@
             <section id="vocabulary" class="dash-section" style="display:none;">
                 <header class="top-header container">
                     <div class="header-title">
-                        <h2 style="margin-bottom: 0;">Vocabulary Builder</h2>
-                        <span class="header-sub">Generate words from your saved kanji and inspect stroke order</span>
+                        <h2 style="margin-bottom: 0;">Vocabulary</h2>
+                        <span class="header-sub" id="vocab-meta">Words from your kanji database</span>
                     </div>
+                    <button type="button" class="vocab-refresh-btn" id="vocab-refresh-btn" title="Refresh vocabulary">↺</button>
                 </header>
 
-                <div class="vocab-controls container">
-                    <p class="settings-description">This pulls vocabulary from your current kanji database and only keeps words that use kanji you already have.</p>
-                    <div class="vocab-controls-row">
-                        <div class="form-group">
-                            <label for="vocab-limit">Total Words</label>
-                            <input type="number" id="vocab-limit" min="5" max="120" value="40">
-                        </div>
-                        <div class="form-group">
-                            <label for="vocab-per-kanji">Words Per Kanji</label>
-                            <input type="number" id="vocab-per-kanji" min="2" max="15" value="8">
-                        </div>
-                        <button type="button" class="control-btn accent-btn" id="vocab-generate-btn">Generate</button>
+                <div class="vocab-toolbar container">
+                    <input type="search" id="vocab-search" class="vocab-search-input" placeholder="Search words, readings, meanings…" autocomplete="off">
+                    <div class="vocab-level-pills" id="vocab-level-pills">
+                        <button type="button" class="level-pill active" data-level="all">All</button>
+                        <button type="button" class="level-pill" data-level="N5">N5</button>
+                        <button type="button" class="level-pill" data-level="N4">N4</button>
+                        <button type="button" class="level-pill" data-level="N3">N3</button>
+                        <button type="button" class="level-pill" data-level="N2">N2</button>
+                        <button type="button" class="level-pill" data-level="N1">N1</button>
                     </div>
-                    <div id="vocab-meta" class="vocab-meta"></div>
                 </div>
 
                 <div class="vocab-list container" id="vocab-list">
-                    <p class="recent-empty">Open this page and click Generate to build vocabulary.</p>
+                    <p class="recent-empty">Open this section to load vocabulary.</p>
                 </div>
             </section>
 
@@ -442,6 +439,18 @@
             <div class="form-actions">
                 <button type="button" id="create-theme-cancel" class="btn-secondary">Cancel</button>
                 <button type="submit" form="create-theme-form" class="control-btn create-btn">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="stroke-modal" class="level-modal-overlay" style="display:none;">
+        <div class="level-modal stroke-order-modal">
+            <div class="level-modal-header">
+                <h3 id="stroke-modal-kanji" class="stroke-modal-kanji-title"></h3>
+                <button id="stroke-modal-close" class="level-modal-close">&times;</button>
+            </div>
+            <div class="stroke-modal-body">
+                <div id="stroke-modal-svg" class="stroke-modal-svg"></div>
             </div>
         </div>
     </div>

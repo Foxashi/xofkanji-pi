@@ -187,10 +187,11 @@ def api_recent_kanji():
 
 @bp.route('/api/vocabulary')
 def api_vocabulary():
-    limit = request.args.get("limit", default=40, type=int)
-    per_kanji = request.args.get("per_kanji", default=8, type=int)
-    limit = max(5, min(limit, 120))
-    per_kanji = max(2, min(per_kanji, 15))
+    limit = request.args.get("limit", default=200, type=int)
+    per_kanji = request.args.get("per_kanji", default=6, type=int)
+    kanji_filter = request.args.get("kanji", default="", type=str).strip()
+    limit = max(5, min(limit, 500))
+    per_kanji = max(1, min(per_kanji, 20))
 
     db = load_kanji_db()
     kanji_entries = db.get("kanji", [])
@@ -208,7 +209,14 @@ def api_vocabulary():
             "generated_at": int(time.time())
         })
 
-    cache_key = (tuple(sorted(known_kanji)), limit, per_kanji)
+    # If the caller passed a specific kanji, only fetch words for that character.
+    # We still require all kanji in a word to be known so results stay relevant.
+    if kanji_filter and KANJI_RANGE_RE.match(kanji_filter[0]):
+        target_kanji = {kanji_filter[0]}
+    else:
+        target_kanji = known_kanji
+
+    cache_key = (tuple(sorted(target_kanji)), limit, per_kanji)
     now = time.time()
     if (
         VOCAB_CACHE["data"] is not None
@@ -220,7 +228,7 @@ def api_vocabulary():
     dedup = {}
     ordered = []
 
-    for kanji_char in sorted(known_kanji):
+    for kanji_char in sorted(target_kanji):
         words = _fetch_words_for_kanji(kanji_char)
         added_for_kanji = 0
 
@@ -277,7 +285,7 @@ def api_vocabulary():
 
     payload = {
         "vocabulary": ordered[:limit],
-        "source_kanji_count": len(known_kanji),
+        "source_kanji_count": len(target_kanji),
         "generated_at": int(time.time())
     }
 
