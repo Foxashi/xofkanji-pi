@@ -1,0 +1,145 @@
+/* Vocabulary builder */
+.vocab-controls {
+    padding: 24px 30px;
+}
+
+.vocab-controls-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.vocab-controls .form-group {
+    margin-bottom: 0;
+    min-width: 160px;
+}
+
+.vocab-controls input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 2px solid rgba(91, 96, 120, 0.4);
+    border-radius: 8px;
+    background: rgba(30, 32, 48, 0.6);
+    color: #cad3f5;
+}
+
+.vocab-controls input[type="number"]:focus {
+    outline: none;
+    border-color: #c6a0f6;
+    box-shadow: 0 0 0 3px rgba(198, 160, 246, 0.12);
+}
+
+.vocab-meta {
+    margin-top: 14px;
+    color: rgb(147, 154, 183);
+    font-size: 13px;
+}
+
+.vocab-list {
+    padding: 24px 30px;
+}
+
+.vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+.vocab-card {
+    border: 1px solid rgba(91, 96, 120, 0.2);
+    border-radius: 10px;
+    padding: 16px 18px;
+    background: rgba(30, 32, 48, 0.35);
+}
+
+.vocab-main {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.vocab-word {
+    font-size: 34px;
+    font-weight: 700;
+    color: #cad3f5;
+    line-height: 1;
+}
+
+.vocab-reading {
+    font-size: 16px;
+    color: #c6a0f6;
+    font-weight: 600;
+}
+
+.vocab-meaning {
+    font-size: 14px;
+    color: rgb(147, 154, 183);
+}
+
+.vocab-meta-row {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.vocab-levels {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.vocab-strokes {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.stroke-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(91, 96, 120, 0.35);
+    border-radius: 999px;
+    padding: 4px 10px 4px 4px;
+    text-decoration: none;
+    color: #cad3f5;
+    background: rgba(91, 96, 120, 0.12);
+}
+
+.stroke-chip:hover {
+    border-color: rgba(198, 160, 246, 0.4);
+    background: rgba(198, 160, 246, 0.1);
+}
+
+.stroke-preview {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 999px;
+    padding: 3px;
+}
+
+.stroke-label {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+@media (max-width: 720px) {
+    .vocab-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .vocab-word {
+        font-size: 30px;
+    }
+}

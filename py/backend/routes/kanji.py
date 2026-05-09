@@ -2,6 +2,8 @@ import json
 import os
 import random
 import time
+import re
+import requests
 from flask import Blueprint, jsonify, request
 from PIL import Image
 from py.config import STATS_FILE
@@ -9,6 +11,84 @@ from py.backend.db import load_kanji_db, save_kanji_db
 from py.backend.ocr import extract_kanji_from_image, fetch_kanji_info
 
 bp = Blueprint('kanji', __name__)
+
+KANJI_RANGE_RE = re.compile(r'[\u4E00-\u9FFF]')
+VOCAB_CACHE = {
+    "key": None,
+    "data": None,
+    "timestamp": 0.0
+}
+VOCAB_CACHE_TTL = 60
+
+
+def _extract_kanji_chars(text):
+    return KANJI_RANGE_RE.findall(text or "")
+
+
+def _is_vocab_supported(word, known_kanji):
+    chars = _extract_kanji_chars(word)
+    if not chars:
+        return False
+    return all(c in known_kanji for c in chars)
+
+
+def _kanjivg_stroke_url(kanji_char):
+    code = format(ord(kanji_char), 'x').zfill(5)
+    return f"https://raw.githubusercontent.com/KanjiVG/kanjivg/master/kanji/{code}.svg"
+
+
+def _fetch_words_for_kanji(kanji_char):
+    try:
+        url = f"https://kanjiapi.dev/v1/words/{kanji_char}"
+        resp = requests.get(url, timeout=8)
+        if resp.status_code == 200:
+            data = resp.json()
+            return data if isinstance(data, list) else []
+    except Exception as e:
+        print(f"Error fetching words for {kanji_char}: {e}")
+    return []
+
+
+def _normalize_vocab_entry(raw_entry):
+    variants = raw_entry.get("variants") or []
+    if not variants:
+        return None
+
+    best_variant = variants[0]
+    written = best_variant.get("written") or ""
+    pronounced = best_variant.get("pronounced") or ""
+    meanings = raw_entry.get("meanings") or []
+
+    if not written:
+        return None
+
+    meaning_texts = []
+    for m in meanings:
+        if isinstance(m, str):
+            meaning_texts.append(m)
+            continue
+
+        if isinstance(m, dict):
+            glosses = m.get("glosses")
+            if isinstance(glosses, list):
+                for g in glosses:
+                    if isinstance(g, str) and g:
+                        meaning_texts.append(g)
+            text = m.get("text")
+            if isinstance(text, str) and text:
+                meaning_texts.append(text)
+            continue
+
+        if isinstance(m, list):
+            for item in m:
+                if isinstance(item, str) and item:
+                    meaning_texts.append(item)
+
+    return {
+        "word": written,
+        "reading": pronounced,
+        "meaning": ", ".join(meaning_texts[:3])
+    }
 
 
 @bp.route('/api/stats')
@@ -103,6 +183,108 @@ def api_recent_kanji():
     kanji_list = db.get("kanji", [])
     recent = kanji_list[-10:][::-1]
     return jsonify({"recent": recent})
+
+
+@bp.route('/api/vocabulary')
+def api_vocabulary():
+    limit = request.args.get("limit", default=40, type=int)
+    per_kanji = request.args.get("per_kanji", default=8, type=int)
+    limit = max(5, min(limit, 120))
+    per_kanji = max(2, min(per_kanji, 15))
+
+    db = load_kanji_db()
+    kanji_entries = db.get("kanji", [])
+    known_kanji = {entry.get("kanji") for entry in kanji_entries if entry.get("kanji")}
+    level_map = {
+        entry.get("kanji"): entry.get("level", "Unknown")
+        for entry in kanji_entries
+        if entry.get("kanji")
+    }
+
+    if not known_kanji:
+        return jsonify({
+            "vocabulary": [],
+            "source_kanji_count": 0,
+            "generated_at": int(time.time())
+        })
+
+    cache_key = (tuple(sorted(known_kanji)), limit, per_kanji)
+    now = time.time()
+    if (
+        VOCAB_CACHE["data"] is not None
+        and VOCAB_CACHE["key"] == cache_key
+        and now - VOCAB_CACHE["timestamp"] < VOCAB_CACHE_TTL
+    ):
+        return jsonify(VOCAB_CACHE["data"])
+
+    dedup = {}
+    ordered = []
+
+    for kanji_char in sorted(known_kanji):
+        words = _fetch_words_for_kanji(kanji_char)
+        added_for_kanji = 0
+
+        for raw in words:
+            normalized = _normalize_vocab_entry(raw)
+            if not normalized:
+                continue
+
+            word = normalized["word"]
+            if not _is_vocab_supported(word, known_kanji):
+                continue
+
+            key = normalized["word"] + "|" + normalized["reading"]
+            word_kanji = _extract_kanji_chars(word)
+            unique_word_kanji = []
+            for c in word_kanji:
+                if c not in unique_word_kanji:
+                    unique_word_kanji.append(c)
+
+            if key in dedup:
+                existing = dedup[key]
+                existing_levels = set(existing["levels"])
+                for c in unique_word_kanji:
+                    lvl = level_map.get(c, "Unknown")
+                    if lvl not in existing_levels:
+                        existing["levels"].append(lvl)
+                        existing_levels.add(lvl)
+                continue
+
+            vocab_entry = {
+                "word": normalized["word"],
+                "reading": normalized["reading"],
+                "meaning": normalized["meaning"],
+                "kanji": unique_word_kanji,
+                "levels": [level_map.get(c, "Unknown") for c in unique_word_kanji],
+                "stroke_order": [
+                    {
+                        "kanji": c,
+                        "svg_url": _kanjivg_stroke_url(c)
+                    }
+                    for c in unique_word_kanji
+                ]
+            }
+
+            dedup[key] = vocab_entry
+            ordered.append(vocab_entry)
+            added_for_kanji += 1
+
+            if added_for_kanji >= per_kanji:
+                break
+
+        if len(ordered) >= limit:
+            break
+
+    payload = {
+        "vocabulary": ordered[:limit],
+        "source_kanji_count": len(known_kanji),
+        "generated_at": int(time.time())
+    }
+
+    VOCAB_CACHE["key"] = cache_key
+    VOCAB_CACHE["data"] = payload
+    VOCAB_CACHE["timestamp"] = now
+    return jsonify(payload)
 
 
 @bp.route('/upload', methods=['POST'])

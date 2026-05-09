@@ -31,6 +31,9 @@
                 <a href="#themes" class="nav-item" data-section="themes">
                     <span class="nav-icon">彩</span> Themes
                 </a>
+                <a href="#vocabulary" class="nav-item" data-section="vocabulary">
+                    <span class="nav-icon">語</span> Vocabulary
+                </a>
                 <a href="#recent" class="nav-item" data-section="recent">
                     <span class="nav-icon">新</span> Recent
                 </a>
@@ -197,7 +200,7 @@
                         <span class="header-sub">Customize the kanji display appearance</span>
                     </div>
                     <div class="header-actions">
-                        <button id="btn-create-theme" class="control-btn">Create Theme</button>
+                        <button id="btn-create-theme" class="control-btn accent-btn">Create Theme</button>
                     </div>
                 </header>
 
@@ -206,6 +209,35 @@
                 </div>
                 
                 
+            </section>
+
+            <section id="vocabulary" class="dash-section" style="display:none;">
+                <header class="top-header container">
+                    <div class="header-title">
+                        <h2 style="margin-bottom: 0;">Vocabulary Builder</h2>
+                        <span class="header-sub">Generate words from your saved kanji and inspect stroke order</span>
+                    </div>
+                </header>
+
+                <div class="vocab-controls container">
+                    <p class="settings-description">This pulls vocabulary from your current kanji database and only keeps words that use kanji you already have.</p>
+                    <div class="vocab-controls-row">
+                        <div class="form-group">
+                            <label for="vocab-limit">Total Words</label>
+                            <input type="number" id="vocab-limit" min="5" max="120" value="40">
+                        </div>
+                        <div class="form-group">
+                            <label for="vocab-per-kanji">Words Per Kanji</label>
+                            <input type="number" id="vocab-per-kanji" min="2" max="15" value="8">
+                        </div>
+                        <button type="button" class="control-btn accent-btn" id="vocab-generate-btn">Generate</button>
+                    </div>
+                    <div id="vocab-meta" class="vocab-meta"></div>
+                </div>
+
+                <div class="vocab-list container" id="vocab-list">
+                    <p class="recent-empty">Open this page and click Generate to build vocabulary.</p>
+                </div>
             </section>
 
             <section id="recent" class="dash-section" style="display:none;">

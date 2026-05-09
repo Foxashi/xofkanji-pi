@@ -1,5 +1,9 @@
 .DS_Store
 
+kanji.json
+stats.json
+lastfm_config_json
+
 # Python
 __pycache__/
 *.pyc
