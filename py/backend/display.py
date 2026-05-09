@@ -6,7 +6,7 @@ import subprocess
 import time
 from py.config import DISPLAY_STATE_FILE
 
-DISPLAY_SCRIPT = "main.py"
+DISPLAY_SCRIPT = "main/main.py"
 
 
 def is_display_process(pid):

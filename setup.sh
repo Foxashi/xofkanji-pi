@@ -36,4 +36,4 @@ else
 fi
 
 echo ""
-echo "Setup complete. Run the project with: python3 main.py (for the kanji display) or python3 scanner_server.py (for the web server)"
+echo "Setup complete. Run the project with: python3 main/main.py (for the kanji display) or python3 main/scanner_server.py (for the web server)"

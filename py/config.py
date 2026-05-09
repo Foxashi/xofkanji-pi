@@ -5,6 +5,8 @@ import os
 os.environ["DISPLAY"] = ":0"
 # for some reason the touchscreen I'm using on the GPIO pins doesn't work with wayland so I have to force xorg to run the app properly
 
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # ---------- CONFIG ----------
 SCREEN_WIDTH = 480
 SCREEN_HEIGHT = 320
@@ -18,12 +20,12 @@ MAX_INTERVAL = 7 * 24 * 3600
 KANJI_RELOAD_INTERVAL = 30
 THEME_RELOAD_INTERVAL = 5
 
-STATS_FILE = "db/stats.json"
-KANJI_FILE = "db/kanji.json"
-THEMES_FILE = "db/themes.json"
-LASTFM_CONFIG_FILE = "db/lastfm_config.json"
-DISPLAY_STATE_FILE = "display_state.json"
-THEME_STATE_FILE = "theme_state.json"
+STATS_FILE = os.path.join(_ROOT, "db", "stats.json")
+KANJI_FILE = os.path.join(_ROOT, "db", "kanji.json")
+THEMES_FILE = os.path.join(_ROOT, "db", "themes.json")
+LASTFM_CONFIG_FILE = os.path.join(_ROOT, "db", "lastfm_config.json")
+DISPLAY_STATE_FILE = os.path.join(_ROOT, "display_state.json")
+THEME_STATE_FILE = os.path.join(_ROOT, "theme_state.json")
 
 # ---------- DEFAULT COLORS ----------
 WHITE = (255, 255, 255)
