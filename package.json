@@ -6,6 +6,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
+    "deploy": "bash deploy.sh",
+    "deploy:setup": "bash deploy.sh --setup",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
