@@ -1,4 +1,5 @@
 import { fetchJson } from './utils.js';
+import { lookupJisho } from './jisho.js';
 import type { RecentKanjiData, KanjiItem } from '../types.js';
 
 export async function loadRecent(): Promise<void> {
@@ -27,6 +28,12 @@ export async function loadRecent(): Promise<void> {
         });
         html += '</div>';
         container.innerHTML = html;
+
+        container.querySelectorAll<HTMLElement>('.recent-char').forEach(el => {
+            el.classList.add('jisho-clickable');
+            el.title = 'Look up on Jisho';
+            el.addEventListener('click', () => lookupJisho(el.textContent ?? ''));
+        });
     } catch (err) {
         console.error('Recent kanji fetch failed:', err);
     }

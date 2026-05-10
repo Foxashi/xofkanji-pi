@@ -1,4 +1,5 @@
 import type { VocabItem, VocabData } from '../types.js';
+import { lookupJisho } from './jisho.js';
 
 function escapeHtml(str: string | undefined | null): string {
     return String(str ?? '')
@@ -63,7 +64,7 @@ function renderVocabularyRows(list: VocabItem[]): string {
 
         html += '<article class="vocab-card">' +
             '<div class="vocab-main">' +
-                '<ruby class="vocab-word">' + escapeHtml(item.word) + '<rt>' + escapeHtml(item.reading) + '</rt></ruby>' +
+                '<ruby class="vocab-word jisho-clickable" data-word="' + escapeHtml(item.word) + '">' + escapeHtml(item.word) + '<rt>' + escapeHtml(item.reading) + '</rt></ruby>' +
                 '<div class="vocab-meaning">' + escapeHtml(item.meaning) + '</div>' +
             '</div>' +
             '<div class="vocab-meta-row">' +
@@ -85,6 +86,10 @@ function applyFilter(): void {
         chip.addEventListener('click', () => {
             openStrokeModal(chip.dataset.kanji ?? '', chip.dataset.svg ?? '');
         });
+    });
+    container.querySelectorAll<HTMLElement>('.vocab-word').forEach(el => {
+        el.title = 'Look up on Jisho';
+        el.addEventListener('click', () => lookupJisho(el.dataset.word ?? ''));
     });
     updateMeta();
 }

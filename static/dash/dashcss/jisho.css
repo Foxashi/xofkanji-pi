@@ -1,0 +1,255 @@
+/* Jisho lookup modal */
+.jisho-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.jisho-modal-box {
+    background: #1e2030;
+    border: 1px solid rgba(91, 96, 120, 0.4);
+    border-radius: 16px;
+    min-width: 360px;
+    max-width: 560px;
+    width: 100%;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 28px 80px rgba(3, 7, 18, 0.6), 0 6px 20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.jisho-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    border-bottom: 1px solid rgba(91, 96, 120, 0.12);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+    flex-shrink: 0;
+}
+
+.jisho-modal-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #cad3f5;
+    margin: 0;
+    letter-spacing: 0.05em;
+}
+
+.jisho-modal-close {
+    background: none;
+    border: none;
+    color: rgb(147, 154, 183);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, background 0.2s;
+    box-shadow: none;
+    margin: 0;
+}
+
+.jisho-modal-close:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.jisho-modal-body {
+    padding: 20px 24px 24px;
+    overflow-y: auto;
+    max-height: calc(80vh - 76px);
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Entry list */
+.jisho-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.jisho-entry {
+    padding: 14px 16px;
+    background: #14161f;
+    border-radius: 10px;
+    border: 1px solid rgba(91, 96, 120, 0.15);
+}
+
+.jisho-entry-header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.jisho-word {
+    font-size: 22px;
+    font-weight: 700;
+    color: #cad3f5;
+    letter-spacing: 0.02em;
+}
+
+.jisho-reading {
+    font-size: 14px;
+    color: rgb(147, 154, 183);
+}
+
+.jisho-tag {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.jisho-jlpt {
+    background: rgba(166, 218, 149, 0.12);
+    color: #a6da95;
+    border: 1px solid rgba(166, 218, 149, 0.2);
+}
+
+.jisho-common {
+    background: rgba(138, 173, 244, 0.12);
+    color: #8aadf4;
+    border: 1px solid rgba(138, 173, 244, 0.2);
+}
+
+.jisho-senses {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    counter-reset: sense-counter;
+}
+
+.jisho-sense {
+    counter-increment: sense-counter;
+    font-size: 13px;
+    color: #b8c0e0;
+    line-height: 1.5;
+    padding-left: 20px;
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.jisho-sense::before {
+    content: counter(sense-counter) ".";
+    position: absolute;
+    left: 0;
+    color: rgb(147, 154, 183);
+    font-size: 12px;
+}
+
+.jisho-pos {
+    font-size: 10px;
+    color: #c6a0f6;
+    background: rgba(198, 160, 246, 0.1);
+    border: 1px solid rgba(198, 160, 246, 0.15);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.jisho-info {
+    color: rgb(147, 154, 183);
+    font-size: 12px;
+    font-style: italic;
+}
+
+.jisho-link {
+    margin: 14px 0 0;
+    font-size: 12px;
+    text-align: right;
+}
+
+.jisho-link a {
+    color: #8aadf4;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.jisho-link a:hover {
+    color: #cad3f5;
+    text-decoration: underline;
+}
+
+.jisho-loading,
+.jisho-empty {
+    color: rgb(147, 154, 183);
+    font-size: 14px;
+    margin: 0;
+    padding: 24px 0;
+    text-align: center;
+}
+
+/* Stroke order strip */
+.jisho-strokes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(91, 96, 120, 0.12);
+}
+
+.jisho-stroke-item {
+    width: 88px;
+    height: 88px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid rgba(91, 96, 120, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.jisho-stroke-item svg {
+    width: 100%;
+    height: 100%;
+}
+
+.jisho-stroke-loading {
+    color: rgb(147, 154, 183);
+    font-size: 18px;
+}
+
+/* Clickable kanji/word elements */
+.jisho-clickable {
+    cursor: pointer;
+    transition: color 0.15s, opacity 0.15s;
+}
+
+.jisho-clickable:hover {
+    color: #8aadf4;
+    opacity: 0.85;
+}
+
+@media (max-width: 480px) {
+    .jisho-modal-box {
+        min-width: unset;
+    }
+}

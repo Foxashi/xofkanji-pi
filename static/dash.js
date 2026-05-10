@@ -5,6 +5,7 @@ import { loadThemes, initCreateTheme } from './dash/themes.js';
 import { loadRecent } from './dash/recent.js';
 import { initPractice } from './dash/practice.js';
 import { initVocabulary } from './dash/vocab.js';
+import { initJishoModal } from './dash/jisho.js';
 const REFRESH_INTERVAL = 5000;
 document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll('.nav-item[data-section]');
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCreateTheme();
     initPractice();
     initVocabulary();
+    initJishoModal();
     setInterval(loadStats, REFRESH_INTERVAL);
     setInterval(loadDisplay, REFRESH_INTERVAL);
 });

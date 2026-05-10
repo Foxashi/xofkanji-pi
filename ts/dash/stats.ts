@@ -1,4 +1,5 @@
 import { fetchJson, updateValue } from './utils.js';
+import { lookupJisho } from './jisho.js';
 import type { StatsData, KanjiItem, LevelKanjiData } from '../types.js';
 
 export async function loadStats(): Promise<void> {
@@ -105,6 +106,12 @@ export async function openLevelModal(level: string): Promise<void> {
         });
         html += '</div>';
         body.innerHTML = html;
+
+        body.querySelectorAll<HTMLElement>('.modal-kanji-char').forEach(el => {
+            el.classList.add('jisho-clickable');
+            el.title = 'Look up on Jisho';
+            el.addEventListener('click', () => lookupJisho(el.textContent ?? ''));
+        });
     } catch (err) {
         body.innerHTML = '<p class="recent-empty">Failed to load kanji.</p>';
         console.error('Level kanji fetch failed:', err);

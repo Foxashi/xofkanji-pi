@@ -4,8 +4,8 @@
   "description": "A Raspberry Pi-powered kanji learning display and companion dashboard built as a personal project and presented at school as a year-end showcase.",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch",
+    "build": "node node_modules/typescript/bin/tsc",
+    "watch": "node node_modules/typescript/bin/tsc --watch",
     "deploy": "bash deploy.sh",
     "deploy:setup": "bash deploy.sh --setup",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,5 +23,8 @@
   "homepage": "https://github.com/Foxashi/xofkanji-pi#readme",
   "devDependencies": {
     "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "tsc": "^2.0.4"
   }
 }

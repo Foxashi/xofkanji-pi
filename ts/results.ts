@@ -1,9 +1,11 @@
 import type { UploadResponse } from './types.js';
+import { initJishoModal, lookupJisho } from './dash/jisho.js';
 
 let form: HTMLFormElement | null = null;
 
 export function init(formElement: HTMLFormElement): void {
     form = formElement;
+    initJishoModal();
 }
 
 export function displayResults(data: UploadResponse): void {
@@ -22,8 +24,10 @@ export function displayResults(data: UploadResponse): void {
 
     data.kanji.forEach(kanji => {
         const badge = document.createElement('span');
-        badge.className = 'results-kanji-badge';
+        badge.className = 'results-kanji-badge jisho-clickable';
         badge.textContent = kanji;
+        badge.title = 'Look up on Jisho';
+        badge.addEventListener('click', () => lookupJisho(kanji));
         kanjiList.appendChild(badge);
     });
 
@@ -55,8 +59,10 @@ export function displayPartialResults(data: UploadResponse): void {
 
     data.kanji.forEach(kanji => {
         const badge = document.createElement('span');
-        badge.className = 'results-kanji-badge';
+        badge.className = 'results-kanji-badge jisho-clickable';
         badge.textContent = kanji;
+        badge.title = 'Look up on Jisho';
+        badge.addEventListener('click', () => lookupJisho(kanji));
         kanjiList.appendChild(badge);
     });
 

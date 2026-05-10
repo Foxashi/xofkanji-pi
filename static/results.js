@@ -1,6 +1,8 @@
+import { initJishoModal, lookupJisho } from './dash/jisho.js';
 let form = null;
 export function init(formElement) {
     form = formElement;
+    initJishoModal();
 }
 export function displayResults(data) {
     removeResultsContainer();
@@ -14,8 +16,10 @@ export function displayResults(data) {
     kanjiList.className = 'results-kanji-list';
     data.kanji.forEach(kanji => {
         const badge = document.createElement('span');
-        badge.className = 'results-kanji-badge';
+        badge.className = 'results-kanji-badge jisho-clickable';
         badge.textContent = kanji;
+        badge.title = 'Look up on Jisho';
+        badge.addEventListener('click', () => lookupJisho(kanji));
         kanjiList.appendChild(badge);
     });
     const timeInfo = document.createElement('p');
@@ -39,8 +43,10 @@ export function displayPartialResults(data) {
     kanjiList.className = 'results-kanji-list';
     data.kanji.forEach(kanji => {
         const badge = document.createElement('span');
-        badge.className = 'results-kanji-badge';
+        badge.className = 'results-kanji-badge jisho-clickable';
         badge.textContent = kanji;
+        badge.title = 'Look up on Jisho';
+        badge.addEventListener('click', () => lookupJisho(kanji));
         kanjiList.appendChild(badge);
     });
     resultsContainer.appendChild(notice);

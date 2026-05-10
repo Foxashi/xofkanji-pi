@@ -295,6 +295,24 @@ def api_vocabulary():
     return jsonify(payload)
 
 
+@bp.route('/api/jisho')
+def api_jisho():
+    keyword = request.args.get('keyword', '').strip()
+    if not keyword:
+        return jsonify({'error': 'keyword required'}), 400
+    try:
+        resp = requests.get(
+            'https://jisho.org/api/v1/search/words',
+            params={'keyword': keyword},
+            timeout=8,
+            headers={'User-Agent': 'xofkanji-pi/1.0'}
+        )
+        return jsonify(resp.json()), resp.status_code
+    except requests.RequestException as e:
+        print(f'Jisho API error: {e}')
+        return jsonify({'error': 'Failed to reach Jisho API'}), 502
+
+
 @bp.route('/upload', methods=['POST'])
 def upload_image():
     start_time = time.time()
