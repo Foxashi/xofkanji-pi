@@ -1,5 +1,5 @@
 import { fetchJson } from './utils.js';
-import { lookupJisho } from './jisho.js';
+import { openKanjiDetail } from './kanji-detail.js';
 export async function loadRecent() {
     try {
         const data = await fetchJson('/api/recent-kanji');
@@ -27,8 +27,8 @@ export async function loadRecent() {
         container.innerHTML = html;
         container.querySelectorAll('.recent-char').forEach(el => {
             el.classList.add('jisho-clickable');
-            el.title = 'Look up on Jisho';
-            el.addEventListener('click', () => lookupJisho(el.textContent ?? ''));
+            el.title = 'View details';
+            el.addEventListener('click', () => openKanjiDetail(el.textContent ?? ''));
         });
     }
     catch (err) {

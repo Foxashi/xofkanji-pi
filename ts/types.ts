@@ -77,6 +77,18 @@ export interface StrokeOrderItem {
     svg_url?: string;
 }
 
+export interface KanjiDetailData {
+    kanji: string;
+    meaning?: string;
+    onyomi?: string;
+    kunyomi?: string;
+    level?: string;
+    shown: number;
+    remembered: number;
+    failed: number;
+    due?: number | null;
+}
+
 export interface VocabItem {
     word: string;
     reading?: string;

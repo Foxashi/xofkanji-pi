@@ -1,0 +1,186 @@
+/* Kanji Detail Modal */
+.kanji-detail-modal {
+    max-width: 480px;
+    min-width: 340px;
+}
+
+.kanji-detail-title {
+    font-size: 28px;
+    letter-spacing: 0.05em;
+}
+
+.kanji-detail-body {
+    padding: 0 !important;
+}
+
+.kd-loading {
+    padding: 40px 24px;
+    color: rgb(147, 154, 183);
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Top section: big char + meta */
+.kd-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 24px 24px 20px;
+}
+
+.kd-char {
+    font-size: 80px;
+    line-height: 1;
+    color: #cad3f5;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: color 0.2s;
+    user-select: none;
+}
+
+.kd-char:hover {
+    color: #c6a0f6;
+}
+
+.kd-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 6px;
+    min-width: 0;
+}
+
+.kd-level {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    align-self: flex-start;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.kd-meaning {
+    font-size: 15px;
+    color: #cad3f5;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.kd-readings {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 4px;
+}
+
+.kd-reading-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.kd-reading-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: rgb(110, 115, 141);
+    font-weight: 600;
+    width: 56px;
+    flex-shrink: 0;
+}
+
+.kd-onyomi {
+    color: #a6da95;
+}
+
+.kd-kunyomi {
+    color: #8aadf4;
+}
+
+.kd-reading-value {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Stats row */
+.kd-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(91, 96, 120, 0.12);
+    border-bottom: 1px solid rgba(91, 96, 120, 0.12);
+}
+
+.kd-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 8px;
+    gap: 4px;
+    border-right: 1px solid rgba(91, 96, 120, 0.12);
+}
+
+.kd-stat:last-child {
+    border-right: none;
+}
+
+.kd-stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #cad3f5;
+    font-variant-numeric: tabular-nums;
+}
+
+.kd-stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: rgb(110, 115, 141);
+    font-weight: 600;
+}
+
+.kd-correct { color: #a6da95; }
+.kd-wrong   { color: #ed8796; }
+.kd-acc-good { color: #a6da95; }
+.kd-acc-mid  { color: #eed49f; }
+.kd-acc-bad  { color: #ed8796; }
+
+/* Footer */
+.kd-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    gap: 12px;
+}
+
+.kd-due {
+    font-size: 12px;
+    color: rgb(110, 115, 141);
+    font-weight: 500;
+}
+
+.kd-due-now {
+    color: #eed49f;
+}
+
+.kd-jisho-btn {
+    background: rgba(198, 160, 246, 0.1);
+    border: 1px solid rgba(198, 160, 246, 0.25);
+    color: #c6a0f6;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    box-shadow: none;
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+.kd-jisho-btn:hover {
+    background: rgba(198, 160, 246, 0.18);
+    border-color: rgba(198, 160, 246, 0.45);
+}
