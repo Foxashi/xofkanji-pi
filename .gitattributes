@@ -7,3 +7,7 @@ static/dash/*.js linguist-generated=true
 
 # Mark JSON data files as non-code
 db/*.json linguist-documentation=true
+
+# Hide HTML and CSS from language stats
+*.html linguist-detectable=false
+*.css linguist-detectable=false
