@@ -12,7 +12,7 @@ PI_USER="${PI_USER:-pi}"
 
 read -rp "Pi hostname (e.g. raspberrypi.local) [raspberrypi.local]: " PI_HOST
 PI_HOST="${PI_HOST:-raspberrypi.local}"
-# Append .local if no dot given (e.g. user typed "foxashi" instead of "foxashi.local")
+
 if [[ "$PI_HOST" != *.* ]]; then
     PI_HOST="${PI_HOST}.local"
 fi
