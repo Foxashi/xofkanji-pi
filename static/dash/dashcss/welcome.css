@@ -1,0 +1,196 @@
+/* Daily card */
+.welcome-daily-card {
+    padding: 32px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.welcome-daily-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgb(110, 115, 141);
+}
+
+.welcome-kotd-body {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+/* Kanji of the day */
+.welcome-kotd-char {
+    font-size: 96px;
+    font-weight: 700;
+    color: #c6a0f6;
+    line-height: 1;
+    letter-spacing: -2px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: color 0.2s ease, transform 0.15s ease;
+    user-select: none;
+}
+
+.welcome-kotd-char:hover {
+    color: #e5d0ff;
+    transform: scale(1.06);
+}
+
+.welcome-kotd-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.welcome-kotd-level {
+    font-size: 11px;
+    font-weight: 700;
+    color: #eed49f;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    min-height: 16px;
+}
+
+.welcome-kotd-reading {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 14px;
+    color: #cad3f5;
+}
+
+.welcome-reading-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgb(110, 115, 141);
+    width: 14px;
+    flex-shrink: 0;
+}
+
+.welcome-kotd-meaning {
+    font-size: 15px;
+    color: rgb(147, 154, 183);
+    font-style: italic;
+}
+
+/* Status bar */
+.welcome-status-row {
+    display: flex;
+    align-items: center;
+    padding: 20px 28px;
+}
+
+.welcome-status-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.welcome-status-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(91, 96, 120, 0.25);
+}
+
+.welcome-status-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgb(110, 115, 141);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.welcome-status-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #cad3f5;
+    transition: color 0.3s ease;
+}
+
+.welcome-status-value.status-online {
+    color: #a6da95;
+}
+
+.welcome-status-value.status-offline {
+    color: #ed8796;
+}
+
+/* Navigation cards */
+.welcome-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.welcome-card {
+    display: flex;
+    text-decoration: none;
+    overflow: hidden;
+    padding: 0 !important;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.welcome-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(198, 160, 246, 0.35);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+}
+
+.welcome-card-accent {
+    width: 4px;
+    align-self: stretch;
+    flex-shrink: 0;
+}
+
+.welcome-card-body {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 28px;
+    flex: 1;
+}
+
+.welcome-card-icon {
+    font-size: 34px;
+    color: rgba(91, 96, 120, 0.35);
+    flex-shrink: 0;
+    line-height: 1;
+    transition: color 0.2s ease;
+    user-select: none;
+    display: flex;
+    align-items: center;
+}
+
+.welcome-card-icon svg {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+}
+
+.welcome-card:hover .welcome-card-icon {
+    color: rgba(198, 160, 246, 0.55);
+}
+
+.welcome-card-text h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #cad3f5;
+    margin-bottom: 4px;
+}
+
+.welcome-card-text p {
+    font-size: 13px;
+    color: rgb(110, 115, 141);
+    line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+    .welcome-daily-row {
+        grid-template-columns: 1fr;
+    }
+}

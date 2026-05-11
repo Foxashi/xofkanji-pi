@@ -19,7 +19,10 @@
                 <span class="sidebar-subtitle">Dashboard</span>
             </div>
             <nav class="sidebar-nav">
-                <a href="#overview" class="nav-item active" data-section="overview">
+                <a href="#welcome" class="nav-item active" data-section="welcome">
+                    <img class="nav-icon-svg" src="{{ url_for('static', filename='icons/dashboard.svg') }}" alt=""> Home
+                </a>
+                <a href="#overview" class="nav-item" data-section="overview">
                     <img class="nav-icon-svg" src="{{ url_for('static', filename='icons/overview.svg') }}" alt=""> Overview
                 </a>
                 <a href="#lastfm" class="nav-item" data-section="lastfm">
@@ -49,7 +52,135 @@
 
         <main class="main-content">
 
-            <section id="overview" class="dash-section">
+            <section id="welcome" class="dash-section">
+                <header class="top-header container">
+                    <div class="header-title">
+                        <h2 style="margin-bottom: 0;">Home</h2>
+                        <span class="header-sub">Welcome to your kanji dashboard</span>
+                    </div>
+                </header>
+
+                <div class="welcome-daily-card container" id="welcome-kotd-card">
+                    <div class="welcome-daily-label">漢字 of the Day</div>
+                    <div class="welcome-kotd-body">
+                        <div class="welcome-kotd-char" id="welcome-kotd-char" title="Look up in Jisho">—</div>
+                        <div class="welcome-kotd-details">
+                            <div class="welcome-kotd-level" id="welcome-kotd-level"></div>
+                            <div class="welcome-kotd-reading">
+                                <span class="welcome-reading-tag">音</span>
+                                <span id="welcome-kotd-on">—</span>
+                            </div>
+                            <div class="welcome-kotd-reading">
+                                <span class="welcome-reading-tag">訓</span>
+                                <span id="welcome-kotd-kun">—</span>
+                            </div>
+                            <div class="welcome-kotd-meaning" id="welcome-kotd-meaning">—</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="welcome-status-row container">
+                    <div class="welcome-status-item">
+                        <span class="welcome-status-label">Display</span>
+                        <span class="welcome-status-value" id="welcome-display-status">—</span>
+                    </div>
+                    <div class="welcome-status-divider"></div>
+                    <div class="welcome-status-item">
+                        <span class="welcome-status-label">Total Kanji</span>
+                        <span class="welcome-status-value" id="welcome-total-kanji">—</span>
+                    </div>
+                    <div class="welcome-status-divider"></div>
+                    <div class="welcome-status-item">
+                        <span class="welcome-status-label">Accuracy</span>
+                        <span class="welcome-status-value" id="welcome-accuracy">—</span>
+                    </div>
+                </div>
+
+                <div class="welcome-grid">
+                    <a href="#overview" class="welcome-card container" data-section="overview">
+                        <div class="welcome-card-accent accent-purple"></div>
+                        <div class="welcome-card-body">
+                            <span class="welcome-card-icon">
+                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19,10.5714286 L19,18 C19,19.1045695 18.1045695,20 17,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,7 C4,5.8954305 4.8954305,5 6,5 L13.4285714,5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M18,7 C18.5522847,7 19,6.55228475 19,6 C19,5.44771525 18.5522847,5 18,5 C17.4477153,5 17,5.44771525 17,6 C17,6.55228475 17.4477153,7 18,7 Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M8,15 L11,11 L13.000781,13 L16,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                            <div class="welcome-card-text">
+                                <h3>Overview</h3>
+                                <p>Stats, accuracy and JLPT distribution</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#display" class="welcome-card container" data-section="display">
+                        <div class="welcome-card-accent accent-blue"></div>
+                        <div class="welcome-card-body">
+                            <span class="welcome-card-icon">画</span>
+                            <div class="welcome-card-text">
+                                <h3>Display</h3>
+                                <p>Control the kanji display on your Pi</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#practice" class="welcome-card container" data-section="practice">
+                        <div class="welcome-card-accent accent-green"></div>
+                        <div class="welcome-card-body">
+                            <span class="welcome-card-icon">打</span>
+                            <div class="welcome-card-text">
+                                <h3>Practice</h3>
+                                <p>Test your reading knowledge</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#vocabulary" class="welcome-card container" data-section="vocabulary">
+                        <div class="welcome-card-accent accent-orange"></div>
+                        <div class="welcome-card-body">
+                            <span class="welcome-card-icon">語</span>
+                            <div class="welcome-card-text">
+                                <h3>Vocabulary</h3>
+                                <p>Browse words from your kanji database</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#themes" class="welcome-card container" data-section="themes">
+                        <div class="welcome-card-accent accent-yellow"></div>
+                        <div class="welcome-card-body">
+                            <span class="welcome-card-icon">彩</span>
+                            <div class="welcome-card-text">
+                                <h3>Themes</h3>
+                                <p>Customize the display appearance</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#recent" class="welcome-card container" data-section="recent">
+                        <div class="welcome-card-accent accent-red"></div>
+                        <div class="welcome-card-body">
+                            <span class="welcome-card-icon">新</span>
+                            <div class="welcome-card-text">
+                                <h3>Recent</h3>
+                                <p>Last kanji added by the scanner</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/" class="welcome-card container">
+                        <div class="welcome-card-accent" style="background: rgb(147, 154, 183);"></div>
+                        <div class="welcome-card-body">
+                            <span class="welcome-card-icon">
+                                <svg width="34" height="34" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M162 120v30a12 12 135 0 1-12 12H42a12 12 45 0 1-12-12v-30m0-48V42a12 12 135 0 1 12-12h108a12 12 45 0 1 12 12v30M30 96h132"/>
+                                </svg>
+                            </span>
+                            <div class="welcome-card-text">
+                                <h3>Scanner</h3>
+                                <p>Scan and add new kanji</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section id="overview" class="dash-section" style="display:none;">
                 <header class="top-header container">
                     <div class="header-title">
                         <h2 style="margin-bottom: 0;">Overview</h2>

@@ -6,6 +6,7 @@ import { loadRecent } from './dash/recent.js';
 import { initPractice } from './dash/practice.js';
 import { initVocabulary } from './dash/vocab.js';
 import { initJishoModal } from './dash/jisho.js';
+import { loadWelcome, initWelcomeJisho } from './dash/welcome.js';
 
 const REFRESH_INTERVAL = 5000;
 
@@ -13,15 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll<HTMLElement>('.nav-item[data-section]');
     const sections = document.querySelectorAll<HTMLElement>('.dash-section');
 
+    function navigateTo(target: string): void {
+        navItems.forEach(n => n.classList.remove('active'));
+        const matching = document.querySelector<HTMLElement>(`.nav-item[data-section="${target}"]`);
+        if (matching) matching.classList.add('active');
+        sections.forEach(s => {
+            s.style.display = s.id === target ? 'flex' : 'none';
+        });
+    }
+
     navItems.forEach(item => {
         item.addEventListener('click', (e: Event) => {
             e.preventDefault();
             const target = item.dataset.section;
-            navItems.forEach(n => n.classList.remove('active'));
-            item.classList.add('active');
-            sections.forEach(s => {
-                s.style.display = s.id === target ? 'flex' : 'none';
-            });
+            if (target) navigateTo(target);
+        });
+    });
+
+    document.querySelectorAll<HTMLElement>('.welcome-card[data-section]').forEach(card => {
+        card.addEventListener('click', (e: Event) => {
+            e.preventDefault();
+            const target = card.dataset.section;
+            if (target) navigateTo(target);
         });
     });
 
@@ -34,6 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initialize modules
+    loadWelcome();
+    initWelcomeJisho();
     loadStats();
     loadLastfm();
     initLastfmForm();
@@ -46,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initVocabulary();
     initJishoModal();
 
+    setInterval(loadWelcome, REFRESH_INTERVAL);
     setInterval(loadStats, REFRESH_INTERVAL);
     setInterval(loadDisplay, REFRESH_INTERVAL);
 });
