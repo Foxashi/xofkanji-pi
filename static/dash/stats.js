@@ -1,5 +1,5 @@
 import { fetchJson, updateValue } from './utils.js';
-import { lookupJisho } from './jisho.js';
+import { openKanjiDetail } from './kanji-detail.js';
 export async function loadStats() {
     try {
         const data = await fetchJson('/api/stats');
@@ -98,8 +98,8 @@ export async function openLevelModal(level) {
         body.innerHTML = html;
         body.querySelectorAll('.modal-kanji-char').forEach(el => {
             el.classList.add('jisho-clickable');
-            el.title = 'Look up on Jisho';
-            el.addEventListener('click', () => lookupJisho(el.textContent ?? ''));
+            el.title = 'View details';
+            el.addEventListener('click', () => openKanjiDetail(el.textContent ?? ''));
         });
     }
     catch (err) {

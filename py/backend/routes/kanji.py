@@ -295,6 +295,36 @@ def api_vocabulary():
     return jsonify(payload)
 
 
+@bp.route('/api/kanji/<char>')
+def api_kanji_detail(char):
+    if len(char) != 1 or not KANJI_RANGE_RE.match(char):
+        return jsonify({"error": "Invalid kanji character"}), 400
+
+    db = load_kanji_db()
+    entry = next((k for k in db.get("kanji", []) if k.get("kanji") == char), None)
+
+    if not entry:
+        return jsonify({"error": "Kanji not found"}), 404
+
+    stats = {}
+    if os.path.exists(STATS_FILE) and os.path.getsize(STATS_FILE) > 0:
+        with open(STATS_FILE, "r", encoding="utf-8") as f:
+            stats = json.load(f)
+
+    s = stats.get(char, {})
+    return jsonify({
+        "kanji": char,
+        "meaning": entry.get("meaning", ""),
+        "onyomi": entry.get("onyomi", ""),
+        "kunyomi": entry.get("kunyomi", ""),
+        "level": entry.get("level", "Unknown"),
+        "shown": s.get("shown", 0),
+        "remembered": s.get("remembered", 0),
+        "failed": s.get("failed", 0),
+        "due": s.get("due", None),
+    })
+
+
 @bp.route('/api/jisho')
 def api_jisho():
     keyword = request.args.get('keyword', '').strip()
