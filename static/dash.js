@@ -8,6 +8,7 @@ import { initVocabulary } from './dash/vocab.js';
 import { initJishoModal } from './dash/jisho.js';
 import { loadWelcome, initWelcomeJisho } from './dash/welcome.js';
 import { initKanjiDetailModal } from './dash/kanji-detail.js';
+import { loadChangelogs } from './dash/changelogs.js';
 const REFRESH_INTERVAL = 5000;
 document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll('.nav-item[data-section]');
@@ -25,8 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
             const target = item.dataset.section;
-            if (target)
+            if (target) {
                 navigateTo(target);
+                if (target === 'changelog')
+                    loadChangelogs();
+            }
         });
     });
     document.querySelectorAll('.welcome-card[data-section]').forEach(card => {
@@ -61,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initVocabulary();
     initJishoModal();
     initKanjiDetailModal();
+    document.getElementById('changelog-refresh-btn')?.addEventListener('click', loadChangelogs);
     setInterval(loadWelcome, REFRESH_INTERVAL);
     setInterval(loadStats, REFRESH_INTERVAL);
     setInterval(loadDisplay, REFRESH_INTERVAL);

@@ -20,7 +20,7 @@
             </div>
             <nav class="sidebar-nav">
                 <a href="#welcome" class="nav-item active" data-section="welcome">
-                    <img class="nav-icon-svg" src="{{ url_for('static', filename='icons/dashboard.svg') }}" alt=""> Home
+                    <img class="nav-icon-svg" src="{{ url_for('static', filename='icons/home.svg') }}" alt=""> Home
                 </a>
                 <a href="#overview" class="nav-item" data-section="overview">
                     <img class="nav-icon-svg" src="{{ url_for('static', filename='icons/overview.svg') }}" alt=""> Overview
@@ -43,6 +43,9 @@
                 <a href="#practice" class="nav-item" data-section="practice">
                     <span class="nav-icon">打</span> Practice
                 </a>
+                <a href="#changelog" class="nav-item" data-section="changelog">
+                    <span class="nav-icon">更</span> Changelog
+                </a>
                 <div class="nav-divider"></div>
                 <a href="/" class="nav-item">
                     <img class="nav-icon-svg" src="{{ url_for('static', filename='icons/scanner.svg') }}" alt=""> Scanner
@@ -56,12 +59,12 @@
                 <header class="top-header container">
                     <div class="header-title">
                         <h2 style="margin-bottom: 0;">Home</h2>
-                        <span class="header-sub">Welcome to your kanji dashboard</span>
+                        <span class="header-sub">Welcome to your XOFKanji-pi dashboard</span>
                     </div>
                 </header>
 
                 <div class="welcome-daily-card container" id="welcome-kotd-card">
-                    <div class="welcome-daily-label">漢字 of the Day</div>
+                    <div class="welcome-daily-label">Kanji of the Day</div>
                     <div class="welcome-kotd-body">
                         <div class="welcome-kotd-char" id="welcome-kotd-char" title="Look up in Jisho">—</div>
                         <div class="welcome-kotd-details">
@@ -379,6 +382,24 @@
 
                 <div class="recent-list container" id="recent-list">
                     <p class="recent-empty">Loading...</p>
+                </div>
+            </section>
+
+            <section id="changelog" class="dash-section" style="display:none;">
+                <header class="top-header container">
+                    <div class="header-title">
+                        <h2 style="margin-bottom: 0;">Changelog</h2>
+                        <span class="header-sub">Latest commits from GitHub</span>
+                    </div>
+                    <div class="header-actions">
+                        <button type="button" class="control-btn" id="changelog-refresh-btn">Refresh</button>
+                    </div>
+                </header>
+
+                <div class="container">
+                    <div class="changelog-container" id="changelog-list">
+                        <p class="changelog-loading">Open this section to load commits.</p>
+                    </div>
                 </div>
             </section>
 

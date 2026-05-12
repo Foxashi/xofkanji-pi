@@ -1,0 +1,138 @@
+.changelog-container {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0 8px 0;
+    position: relative;
+}
+
+/* Timeline vertical line — left must equal item-padding-left + half dot-width */
+/* item padding-left = 20px, dot width = 8px → center = 24px */
+.changelog-container::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(91, 96, 120, 0.2);
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.changelog-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+    position: relative;
+}
+
+.changelog-item:hover {
+    background: rgba(91, 96, 120, 0.1);
+}
+
+.changelog-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c6a0f6;
+    flex-shrink: 0;
+    margin-top: 6px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 5px rgba(198, 160, 246, 0.5);
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.changelog-item:hover .changelog-dot {
+    background: #e5d0ff;
+    box-shadow: 0 0 8px rgba(198, 160, 246, 0.7);
+}
+
+.changelog-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+/* Title on its own line */
+.changelog-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #cad3f5;
+    line-height: 1.45;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Meta always on a second line */
+.changelog-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+.changelog-author {
+    font-size: 11px;
+    color: rgb(110, 115, 141);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.changelog-author::after {
+    content: '·';
+    margin-left: 8px;
+    color: rgba(91, 96, 120, 0.5);
+}
+
+.changelog-time {
+    font-size: 11px;
+    color: rgb(110, 115, 141);
+    white-space: nowrap;
+}
+
+.changelog-sha {
+    font-size: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #8aadf4;
+    text-decoration: none;
+    background: rgba(138, 173, 244, 0.1);
+    padding: 1px 5px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+}
+
+.changelog-sha:hover {
+    background: rgba(138, 173, 244, 0.22);
+    color: #b5ccff;
+}
+
+.changelog-body {
+    margin-top: 4px;
+    font-size: 11.5px;
+    color: rgb(110, 115, 141);
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.changelog-loading,
+.changelog-empty,
+.changelog-error {
+    font-size: 13px;
+    color: rgb(110, 115, 141);
+    padding: 24px 0;
+    text-align: center;
+}
+
+.changelog-error {
+    color: #ed8796;
+}
+
