@@ -4,7 +4,7 @@ function showError(message) {
     notification.className = 'notification error';
     notification.textContent = '✕ ' + message;
     document.body.appendChild(notification);
-    setTimeout(() => removeNotification(), 4000);
+    setTimeout(() => removeNotification(), 6000);
 }
 function showSuccess(message) {
     removeNotification();
@@ -12,7 +12,7 @@ function showSuccess(message) {
     notification.className = 'notification success';
     notification.textContent = '✓ ' + message;
     document.body.appendChild(notification);
-    setTimeout(() => removeNotification(), 4000);
+    setTimeout(() => removeNotification(), 6000);
 }
 function removeNotification() {
     const existing = document.querySelector('.notification');

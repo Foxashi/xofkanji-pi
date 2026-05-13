@@ -1,5 +1,4 @@
-const REPO = 'Foxashi/xofkanji-pi';
-const COMMITS_URL = `https://api.github.com/repos/${REPO}/commits?per_page=30`;
+const COMMITS_URL = `https://api.github.com/repos/Foxashi/xofkanji-pi/commits?per_page=30`;
 function timeAgo(dateStr) {
     const diff = Date.now() - new Date(dateStr).getTime();
     const mins = Math.floor(diff / 60000);

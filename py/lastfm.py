@@ -2,7 +2,6 @@
 import hashlib
 import json
 import os
-import ssl
 import threading
 import time
 import urllib.request
@@ -34,8 +33,6 @@ ALBUM_ART_SIZE = 48
 ALBUM_CACHE_DIR = "album_cache"
 os.makedirs(ALBUM_CACHE_DIR, exist_ok=True)
 
-ssl_context = ssl._create_unverified_context()
-
 def download_and_load(url):
     if not url:
         return None
@@ -46,7 +43,7 @@ def download_and_load(url):
     if not os.path.exists(path):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, context=ssl_context, timeout=10) as r:
+            with urllib.request.urlopen(req, timeout=10) as r:
                 open(path, "wb").write(r.read())
         except:
             return None

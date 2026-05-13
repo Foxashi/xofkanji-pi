@@ -35,14 +35,44 @@ export async function loadThemes() {
                     '</div>' +
                     '<div class="theme-info">' +
                     '<span class="theme-name">' + theme.name + '</span>' +
-                    (isActive ? '<span class="theme-active-badge">Active</span>' : '') +
+                    (isActive
+                        ? '<span class="theme-active-badge">Active</span>'
+                        : '<button class="theme-delete-btn" data-theme="' + theme.name + '" title="Delete theme" aria-label="Delete theme">&#x1F5D1;</button>') +
                     '</div>';
-            card.addEventListener('click', () => setTheme(theme.name));
+            card.addEventListener('click', (e) => {
+                const target = e.target;
+                if (target.classList.contains('theme-delete-btn'))
+                    return;
+                setTheme(theme.name);
+            });
+            const deleteBtn = card.querySelector('.theme-delete-btn');
+            deleteBtn?.addEventListener('click', (e) => {
+                e.stopPropagation();
+                deleteTheme(theme.name);
+            });
             container.appendChild(card);
         });
     }
     catch (err) {
         console.error('Themes fetch failed:', err);
+    }
+}
+export async function deleteTheme(name) {
+    if (!confirm(`Delete theme "${name}"?`))
+        return;
+    try {
+        const res = await fetch('/api/themes/' + encodeURIComponent(name), { method: 'DELETE' });
+        const data = await res.json();
+        if (data.success) {
+            loadThemes();
+        }
+        else {
+            alert(data.message ?? 'Failed to delete theme');
+        }
+    }
+    catch (err) {
+        console.error('Delete theme failed:', err);
+        alert('Failed to delete theme');
     }
 }
 export async function setTheme(name) {

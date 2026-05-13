@@ -155,3 +155,64 @@ def api_create_theme():
         return jsonify({"success": False, "message": f"Failed to save theme: {e}"}), 500
 
     return jsonify({"success": True, "message": "Theme created"})
+
+
+@bp.route('/api/themes/<name>', methods=['DELETE'])
+def api_delete_theme(name: str):
+    themes = {}
+    if os.path.exists(THEMES_FILE) and os.path.getsize(THEMES_FILE) > 0:
+        try:
+            with open(THEMES_FILE, 'r', encoding='utf-8') as f:
+                themes = json.load(f)
+        except json.JSONDecodeError:
+            pass
+
+    if name not in themes:
+        return jsonify({"success": False, "message": "Theme not found"}), 404
+
+    theme_obj = themes.pop(name)
+
+    # Delete background image file if it exists
+    bg_path = theme_obj.get("background_image")
+    if bg_path:
+        project_root = os.path.normpath(
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..')
+        )
+        abs_bg = os.path.join(project_root, bg_path)
+        if os.path.exists(abs_bg):
+            try:
+                os.remove(abs_bg)
+            except OSError:
+                pass
+
+    dir_name = os.path.dirname(THEMES_FILE) or '.'
+    try:
+        with tempfile.NamedTemporaryFile('w', dir=dir_name, suffix='.tmp',
+                                         delete=False, encoding='utf-8') as f:
+            json.dump(themes, f, ensure_ascii=False, indent=2)
+            f.flush()
+            os.fsync(f.fileno())
+            tmp_path = f.name
+        os.replace(tmp_path, THEMES_FILE)
+    except Exception as e:
+        return jsonify({"success": False, "message": f"Failed to save themes: {e}"}), 500
+
+    # If the deleted theme was active, reset to default
+    if os.path.exists(THEME_STATE_FILE):
+        try:
+            with open(THEME_STATE_FILE, 'r', encoding='utf-8') as f:
+                state = json.load(f)
+            if state.get("theme") == name:
+                state["theme"] = "default"
+                state_dir = os.path.dirname(THEME_STATE_FILE) or '.'
+                with tempfile.NamedTemporaryFile('w', dir=state_dir, suffix='.tmp',
+                                                 delete=False, encoding='utf-8') as f:
+                    json.dump(state, f)
+                    f.flush()
+                    os.fsync(f.fileno())
+                    tmp_path = f.name
+                os.replace(tmp_path, THEME_STATE_FILE)
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    return jsonify({"success": True, "message": f"Theme '{name}' deleted"})
