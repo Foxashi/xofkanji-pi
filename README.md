@@ -4,6 +4,9 @@ A Raspberry Pi-powered kanji learning display and companion dashboard built as a
 
 What started as "I wonder if I can show kanji on a small screen" turned into a full local-network web app with scanning, stats, themes, and practice modes. It runs on a Pi Zero 2 W sitting on my desk and has been a core part of my Japanese study routine.
 
+As of 13.05.2026 I've presented this project at school. The verdict is... THAT IT'S AMAZING!!! (that's what the teachers said)
+Updates in the future will bring more nice stuff from now on.
+
 ---
 
 ## How to setup the project
