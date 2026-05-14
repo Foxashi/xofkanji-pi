@@ -37,7 +37,7 @@ export async function loadThemes() {
                     '<span class="theme-name">' + theme.name + '</span>' +
                     (isActive
                         ? '<span class="theme-active-badge">Active</span>'
-                        : '<button class="theme-delete-btn" data-theme="' + theme.name + '" title="Delete theme" aria-label="Delete theme">&#x1F5D1;</button>') +
+                        : '<button class="theme-delete-btn" data-theme="' + theme.name + '" title="Delete theme" aria-label="Delete theme"><img src="/static/icons/trash.svg" alt="Delete" class="theme-delete-icon"></button>') +
                     '</div>';
             card.addEventListener('click', (e) => {
                 const target = e.target;

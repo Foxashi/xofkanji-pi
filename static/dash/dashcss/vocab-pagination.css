@@ -1,0 +1,40 @@
+.vocab-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin: 20px 0 8px 0;
+    padding: 0;
+}
+
+.vocab-pagination button {
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(91, 96, 120, 0.3);
+    border-radius: 20px;
+    background: transparent;
+    color: rgb(147, 154, 183);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+    box-shadow: none;
+}
+
+.vocab-pagination button:hover:not(:disabled) {
+    border-color: rgba(198, 160, 246, 0.4);
+    color: #cad3f5;
+}
+
+.vocab-pagination button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.vocab-pagination span {
+    color: rgb(147, 154, 183);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}

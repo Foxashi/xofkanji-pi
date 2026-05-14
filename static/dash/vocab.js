@@ -4,6 +4,8 @@ let allVocab = [];
 let activeLevel = 'all';
 let searchQuery = '';
 let isLoading = false;
+let currentPage = 1;
+const PAGE_SIZE = 24;
 function getFiltered() {
     let list = allVocab;
     if (activeLevel !== 'all') {
@@ -17,6 +19,13 @@ function getFiltered() {
     }
     return list;
 }
+function getPageCount(filtered) {
+    return Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+}
+function getCurrentPageItems(filtered) {
+    const start = (currentPage - 1) * PAGE_SIZE;
+    return filtered.slice(start, start + PAGE_SIZE);
+}
 function updateMeta() {
     const meta = document.getElementById('vocab-meta');
     if (!meta)
@@ -25,11 +34,13 @@ function updateMeta() {
         meta.textContent = 'Words from your kanji database';
         return;
     }
-    const shown = getFiltered().length;
+    const filtered = getFiltered();
+    const shown = filtered.length;
     const total = allVocab.length;
-    meta.textContent = shown === total
-        ? total + ' words in your database'
-        : shown + ' of ' + total + ' words';
+    const pageCount = getPageCount(filtered);
+    meta.textContent = (shown === total
+        ? `${total} words in your database`
+        : `${shown} of ${total} words`) + (pageCount > 1 ? ` | Page ${currentPage} of ${pageCount}` : '');
 }
 function renderVocabularyRows(list) {
     if (!Array.isArray(list) || list.length === 0) {
@@ -62,7 +73,13 @@ function applyFilter() {
     if (!container)
         return;
     const filtered = getFiltered();
-    container.innerHTML = renderVocabularyRows(filtered);
+    const pageCount = getPageCount(filtered);
+    if (currentPage > pageCount)
+        currentPage = pageCount;
+    if (currentPage < 1)
+        currentPage = 1;
+    const pageItems = getCurrentPageItems(filtered);
+    container.innerHTML = renderVocabularyRows(pageItems) + renderPagination(filtered);
     container.querySelectorAll('.kanji-stroke-chip').forEach(chip => {
         chip.addEventListener('click', () => {
             openStrokeModal(chip.dataset.kanji ?? '', chip.dataset.svg ?? '');
@@ -72,7 +89,38 @@ function applyFilter() {
         el.title = 'Look up on Jisho';
         el.addEventListener('click', () => lookupJisho(el.dataset.word ?? ''));
     });
+    // Pagination controls
+    const prevBtn = document.getElementById('vocab-page-prev');
+    const nextBtn = document.getElementById('vocab-page-next');
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                applyFilter();
+            }
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            if (currentPage < getPageCount(filtered)) {
+                currentPage++;
+                applyFilter();
+            }
+        });
+    }
     updateMeta();
+}
+function renderPagination(filtered) {
+    const pageCount = getPageCount(filtered);
+    if (pageCount <= 1)
+        return '';
+    return `
+        <div class="vocab-pagination">
+            <button id="vocab-page-prev" ${currentPage === 1 ? 'disabled' : ''}>&lt; Prev</button>
+            <span>Page ${currentPage} of ${pageCount}</span>
+            <button id="vocab-page-next" ${currentPage === pageCount ? 'disabled' : ''}>Next &gt;</button>
+        </div>
+    `;
 }
 async function openStrokeModal(kanji, svgUrl) {
     const modal = document.getElementById('stroke-modal');
@@ -157,6 +205,7 @@ export function initVocabulary() {
     const searchInput = document.getElementById('vocab-search');
     searchInput?.addEventListener('input', () => {
         searchQuery = searchInput.value.trim();
+        currentPage = 1;
         applyFilter();
     });
     // Level pills
@@ -166,6 +215,7 @@ export function initVocabulary() {
                 .forEach(p => p.classList.remove('active'));
             pill.classList.add('active');
             activeLevel = pill.dataset.level ?? 'all';
+            currentPage = 1;
             applyFilter();
         });
     });

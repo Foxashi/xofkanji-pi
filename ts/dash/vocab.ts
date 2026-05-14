@@ -2,10 +2,13 @@ import type { VocabItem, VocabData } from '../types.js';
 import { lookupJisho } from './jisho.js';
 import { escapeHtml } from './utils.js';
 
+
 let allVocab: VocabItem[] = [];
 let activeLevel = 'all';
 let searchQuery = '';
 let isLoading = false;
+let currentPage = 1;
+const PAGE_SIZE = 24;
 
 function getFiltered(): VocabItem[] {
     let list = allVocab;
@@ -23,6 +26,15 @@ function getFiltered(): VocabItem[] {
     return list;
 }
 
+function getPageCount(filtered: VocabItem[]): number {
+    return Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+}
+
+function getCurrentPageItems(filtered: VocabItem[]): VocabItem[] {
+    const start = (currentPage - 1) * PAGE_SIZE;
+    return filtered.slice(start, start + PAGE_SIZE);
+}
+
 function updateMeta(): void {
     const meta = document.getElementById('vocab-meta');
     if (!meta) return;
@@ -30,11 +42,13 @@ function updateMeta(): void {
         meta.textContent = 'Words from your kanji database';
         return;
     }
-    const shown = getFiltered().length;
+    const filtered = getFiltered();
+    const shown = filtered.length;
     const total = allVocab.length;
-    meta.textContent = shown === total
-        ? total + ' words in your database'
-        : shown + ' of ' + total + ' words';
+    const pageCount = getPageCount(filtered);
+    meta.textContent = (shown === total
+        ? `${total} words in your database`
+        : `${shown} of ${total} words`) + (pageCount > 1 ? ` | Page ${currentPage} of ${pageCount}` : '');
 }
 
 function renderVocabularyRows(list: VocabItem[]): string {
@@ -73,7 +87,11 @@ function applyFilter(): void {
     const container = document.getElementById('vocab-list');
     if (!container) return;
     const filtered = getFiltered();
-    container.innerHTML = renderVocabularyRows(filtered);
+    const pageCount = getPageCount(filtered);
+    if (currentPage > pageCount) currentPage = pageCount;
+    if (currentPage < 1) currentPage = 1;
+    const pageItems = getCurrentPageItems(filtered);
+    container.innerHTML = renderVocabularyRows(pageItems) + renderPagination(filtered);
     container.querySelectorAll<HTMLButtonElement>('.kanji-stroke-chip').forEach(chip => {
         chip.addEventListener('click', () => {
             openStrokeModal(chip.dataset.kanji ?? '', chip.dataset.svg ?? '');
@@ -83,7 +101,38 @@ function applyFilter(): void {
         el.title = 'Look up on Jisho';
         el.addEventListener('click', () => lookupJisho(el.dataset.word ?? ''));
     });
+    // Pagination controls
+    const prevBtn = document.getElementById('vocab-page-prev');
+    const nextBtn = document.getElementById('vocab-page-next');
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                applyFilter();
+            }
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            if (currentPage < getPageCount(filtered)) {
+                currentPage++;
+                applyFilter();
+            }
+        });
+    }
     updateMeta();
+}
+
+function renderPagination(filtered: VocabItem[]): string {
+    const pageCount = getPageCount(filtered);
+    if (pageCount <= 1) return '';
+    return `
+        <div class="vocab-pagination">
+            <button id="vocab-page-prev" ${currentPage === 1 ? 'disabled' : ''}>&lt; Prev</button>
+            <span>Page ${currentPage} of ${pageCount}</span>
+            <button id="vocab-page-next" ${currentPage === pageCount ? 'disabled' : ''}>Next &gt;</button>
+        </div>
+    `;
 }
 
 async function openStrokeModal(kanji: string, svgUrl: string): Promise<void> {
@@ -162,6 +211,7 @@ export function initVocabulary(): void {
     const searchInput = document.getElementById('vocab-search') as HTMLInputElement | null;
     searchInput?.addEventListener('input', () => {
         searchQuery = searchInput.value.trim();
+        currentPage = 1;
         applyFilter();
     });
 
@@ -172,6 +222,7 @@ export function initVocabulary(): void {
                 .forEach(p => p.classList.remove('active'));
             pill.classList.add('active');
             activeLevel = pill.dataset.level ?? 'all';
+            currentPage = 1;
             applyFilter();
         });
     });
