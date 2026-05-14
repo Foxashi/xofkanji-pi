@@ -3,7 +3,9 @@ export async function loadLastfm() {
     try {
         const data = await fetchJson('/api/lastfm');
         document.getElementById('lastfm-key').value = data.api_key ?? '';
-        document.getElementById('lastfm-secret').value = data.api_secret ?? '';
+        const secretInput = document.getElementById('lastfm-secret');
+        secretInput.value = '';
+        secretInput.placeholder = data.has_api_secret ? 'Leave blank to keep existing secret' : 'Enter API secret';
         document.getElementById('lastfm-user').value = data.username ?? '';
     }
     catch (err) {

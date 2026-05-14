@@ -5,7 +5,9 @@ export async function loadLastfm(): Promise<void> {
     try {
         const data = await fetchJson<LastfmConfig>('/api/lastfm');
         (document.getElementById('lastfm-key') as HTMLInputElement).value = data.api_key ?? '';
-        (document.getElementById('lastfm-secret') as HTMLInputElement).value = data.api_secret ?? '';
+        const secretInput = document.getElementById('lastfm-secret') as HTMLInputElement;
+        secretInput.value = '';
+        secretInput.placeholder = data.has_api_secret ? 'Leave blank to keep existing secret' : 'Enter API secret';
         (document.getElementById('lastfm-user') as HTMLInputElement).value = data.username ?? '';
     } catch (err) {
         console.error('Last.fm config fetch failed:', err);

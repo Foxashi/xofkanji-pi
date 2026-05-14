@@ -60,7 +60,7 @@ export interface ThemesData {
 
 export interface LastfmConfig {
     api_key?: string;
-    api_secret?: string;
+    has_api_secret?: boolean;
     username?: string;
 }
 

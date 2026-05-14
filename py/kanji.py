@@ -10,7 +10,8 @@ def load_kanji():
     try:
         with open(KANJI_FILE, "r", encoding="utf-8") as f:
             return json.load(f)["kanji"]
-    except:
+    except Exception as e:
+        print(f"[kanji] Error loading kanji: {e}")
         return []
 
 # ---------- PICK KANJI ----------

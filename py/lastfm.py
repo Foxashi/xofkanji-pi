@@ -45,13 +45,15 @@ def download_and_load(url):
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
             with urllib.request.urlopen(req, timeout=10) as r:
                 open(path, "wb").write(r.read())
-        except:
+        except Exception as e:
+            print(f"[lastfm] Album art download failed: {e}")
             return None
 
     try:
         img = pygame.image.load(path).convert_alpha()
         return pygame.transform.smoothscale(img, (ALBUM_ART_SIZE, ALBUM_ART_SIZE))
-    except:
+    except Exception as e:
+        print(f"[lastfm] Album art load failed: {e}")
         return None
 
 def get_album_art(track):
@@ -59,13 +61,14 @@ def get_album_art(track):
         album = track.get_album()
         if album:
             return download_and_load(album.get_cover_image(3))
-    except:
-        pass
+    except Exception as e:
+        print(f"[lastfm] get_album_art error: {e}")
 
     return None
 
 def lastfm_thread():
     global current_song
+    _last_error: str | None = None
 
     while True:
         try:
@@ -81,9 +84,13 @@ def lastfm_thread():
                     "is_playing": bool(now),
                     "album_art": art
                 }
+            _last_error = None
 
-        except:
-            pass
+        except Exception as e:
+            err_msg = str(e)
+            if err_msg != _last_error:
+                print(f"[lastfm] Thread error: {e}")
+                _last_error = err_msg
 
         time.sleep(LASTFM_UPDATE_TIME)
 
