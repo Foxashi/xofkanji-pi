@@ -48,3 +48,12 @@ export function readingsMatch(input: string, expected: string): boolean {
 }
 
 export const rgb = (c: number[]): string => `rgb(${c[0]},${c[1]},${c[2]})`;
+
+export function escapeHtml(str: string | undefined | null): string {
+    return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}

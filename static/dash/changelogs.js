@@ -1,3 +1,4 @@
+import { escapeHtml } from './utils.js';
 const COMMITS_URL = `https://api.github.com/repos/Foxashi/xofkanji-pi/commits?per_page=30`;
 function timeAgo(dateStr) {
     const diff = Date.now() - new Date(dateStr).getTime();
@@ -69,11 +70,4 @@ export async function loadChangelogs() {
         container.innerHTML = '<p class="changelog-error">Could not reach GitHub. Check your connection.</p>';
         console.error('Changelog fetch failed:', err);
     }
-}
-function escapeHtml(str) {
-    return str
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
 }

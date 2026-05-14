@@ -22,14 +22,7 @@ interface JishoResponse {
     data: JishoEntry[];
 }
 
-function escapeHtml(str: string | undefined | null): string {
-    return String(str ?? '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-}
+import { escapeHtml } from './utils.js';
 
 const KANJI_RE = /[\u4E00-\u9FFF]/g;
 

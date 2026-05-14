@@ -6,8 +6,6 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import argparse
 import json
-import math
-import os
 import signal
 import pygame
 import time

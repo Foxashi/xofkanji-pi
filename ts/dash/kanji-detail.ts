@@ -1,15 +1,6 @@
-import { fetchJson } from './utils.js';
+import { fetchJson, escapeHtml } from './utils.js';
 import { lookupJisho } from './jisho.js';
 import type { KanjiDetailData } from '../types.js';
-
-function escapeHtml(str: string | undefined | null): string {
-    return String(str ?? '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-}
 
 function formatDue(due: number | null | undefined): string {
     if (due == null) return 'Never reviewed';

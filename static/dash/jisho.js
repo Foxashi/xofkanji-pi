@@ -1,11 +1,4 @@
-function escapeHtml(str) {
-    return String(str ?? '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-}
+import { escapeHtml } from './utils.js';
 const KANJI_RE = /[\u4E00-\u9FFF]/g;
 function kanjiVgUrl(char) {
     const code = (char.codePointAt(0) ?? 0).toString(16).padStart(5, '0');

@@ -1,14 +1,6 @@
 import type { VocabItem, VocabData } from '../types.js';
 import { lookupJisho } from './jisho.js';
-
-function escapeHtml(str: string | undefined | null): string {
-    return String(str ?? '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-}
+import { escapeHtml } from './utils.js';
 
 let allVocab: VocabItem[] = [];
 let activeLevel = 'all';

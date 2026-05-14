@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import os
 import pygame
-from py.config import SCREEN_WIDTH, SCREEN_HEIGHT
 from py.themes import T, current_theme, load_font
 
 # ---------- PYGAME UTILITIES ----------

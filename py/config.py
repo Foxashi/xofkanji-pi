@@ -24,7 +24,6 @@ STATS_FILE = os.path.join(_ROOT, "db", "stats.json")
 KANJI_FILE = os.path.join(_ROOT, "db", "kanji.json")
 THEMES_FILE = os.path.join(_ROOT, "db", "themes.json")
 LASTFM_CONFIG_FILE = os.path.join(_ROOT, "db", "lastfm_config.json")
-PHRASES_FILE = os.path.join(_ROOT, "db", "phrases.json")
 DISPLAY_STATE_FILE = os.path.join(_ROOT, "display_state.json")
 THEME_STATE_FILE = os.path.join(_ROOT, "theme_state.json")
 

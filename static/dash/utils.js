@@ -39,3 +39,11 @@ export function readingsMatch(input, expected) {
     return inputParts.some(ip => expectedParts.some(ep => normalizeScript(ip) === normalizeScript(ep)));
 }
 export const rgb = (c) => `rgb(${c[0]},${c[1]},${c[2]})`;
+export function escapeHtml(str) {
+    return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}

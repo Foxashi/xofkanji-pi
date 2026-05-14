@@ -1,4 +1,6 @@
 
+import { escapeHtml } from './utils.js';
+
 const COMMITS_URL = `https://api.github.com/repos/Foxashi/xofkanji-pi/commits?per_page=30`;
 
 interface GitHubCommit {
@@ -89,10 +91,4 @@ export async function loadChangelogs(): Promise<void> {
     }
 }
 
-function escapeHtml(str: string): string {
-    return str
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-}
+
