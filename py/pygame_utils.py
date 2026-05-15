@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-import os
-import pygame
 from py.themes import T, current_theme, load_font
 
 # ---------- PYGAME UTILITIES ----------
