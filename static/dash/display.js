@@ -6,6 +6,8 @@ export async function loadDisplay() {
         const label = document.getElementById('display-status-text');
         const kanjiCard = document.getElementById('current-kanji-card');
         const offlineCard = document.getElementById('display-offline-card');
+        const startBtn = document.getElementById('btn-restart');
+        const stopBtn = document.getElementById('btn-stop');
         if (!dot || !label)
             return;
         if (data.running) {
@@ -20,6 +22,10 @@ export async function loadDisplay() {
             document.getElementById('current-onyomi').textContent = data.onyomi ?? '';
             document.getElementById('current-kunyomi').textContent = data.kunyomi ?? '';
             document.getElementById('current-meaning').textContent = data.meaning ?? '';
+            if (startBtn)
+                startBtn.disabled = true;
+            if (stopBtn)
+                stopBtn.disabled = false;
         }
         else {
             dot.className = 'status-dot offline';
@@ -28,6 +34,10 @@ export async function loadDisplay() {
                 kanjiCard.style.display = 'none';
             if (offlineCard)
                 offlineCard.style.display = 'block';
+            if (startBtn)
+                startBtn.disabled = false;
+            if (stopBtn)
+                stopBtn.disabled = true;
         }
     }
     catch (err) {
@@ -35,12 +45,23 @@ export async function loadDisplay() {
     }
 }
 export async function sendDisplayAction(action) {
+    const startBtn = document.getElementById('btn-restart');
+    const stopBtn = document.getElementById('btn-stop');
+    if (action === 'restart' && startBtn)
+        startBtn.disabled = true;
+    if (action === 'stop' && stopBtn)
+        stopBtn.disabled = true;
     try {
         await fetch('/api/display/' + action, { method: 'POST' });
         setTimeout(loadDisplay, 1500);
     }
     catch (err) {
         console.error('Display action failed:', err);
+        // Re-enable buttons if request failed
+        if (action === 'restart' && startBtn)
+            startBtn.disabled = false;
+        if (action === 'stop' && stopBtn)
+            stopBtn.disabled = false;
     }
 }
 export function initDisplayButtons() {
