@@ -26,9 +26,6 @@
                 <a href="#overview" class="nav-item" data-section="overview">
                     <img class="nav-icon-svg" src="{{ url_for('static', filename='icons/overview.svg') }}" alt=""> Overview
                 </a>
-                <a href="#lastfm" class="nav-item" data-section="lastfm">
-                    <img class="nav-icon-svg" src="{{ url_for('static', filename='icons/lastfm.svg') }}" alt=""> Last.fm
-                </a>
                 <a href="#display" class="nav-item" data-section="display">
                     <span class="nav-icon">画</span> Display
                 </a>
@@ -44,12 +41,15 @@
                 <a href="#practice" class="nav-item" data-section="practice">
                     <span class="nav-icon">打</span> Practice
                 </a>
-                <a href="#changelog" class="nav-item" data-section="changelog">
-                    <span class="nav-icon">更</span> Changelog
-                </a>
                 <div class="nav-divider"></div>
                 <a href="/" class="nav-item">
                     <img class="nav-icon-svg" src="{{ url_for('static', filename='icons/scanner.svg') }}" alt=""> Scanner
+                </a>
+                <a href="#changelog" class="nav-item" data-section="changelog">
+                    <span class="nav-icon">更</span> Changelog
+                </a>
+                <a href="#settings" class="nav-item" data-section="settings">
+                    <span class="nav-icon">設</span> Settings
                 </a>
             </nav>
         </aside>
@@ -249,33 +249,156 @@
                 </section>
             </section>
 
-            <section id="lastfm" class="dash-section" style="display:none;">
+            <section id="settings" class="dash-section" style="display:none;">
                 <header class="top-header container">
                     <div class="header-title">
-                        <h2 style="margin-bottom: 0;">Last.fm Integration</h2>
-                        <span class="header-sub">Now playing on your kanji display</span>
+                        <h2 style="margin-bottom: 0;">Settings</h2>
+                        <span class="header-sub">Configure your XOFKanji-pi application</span>
                     </div>
                 </header>
 
-                <div class="settings-card container">
-                    <p class="settings-description">Connect your Last.fm account to show the currently playing track on the kanji display. You'll need to restart the display app after saving.</p>
-                    <form id="lastfm-form">
-                        <div class="form-group">
-                            <label for="lastfm-key">API Key</label>
-                            <input type="text" id="lastfm-key" placeholder="e.g. a1b2c3d4e5f6..." autocomplete="off">
+                <div class="settings-layout">
+
+                <div class="settings-nav container">
+                    <button class="settings-cat active" data-tab="lastfm">
+                        <img class="settings-cat-icon nav-icon-svg" src="{{ url_for('static', filename='icons/lastfm.svg') }}" alt="">
+                        <div class="settings-cat-text">
+                            <span class="settings-cat-title">Last.fm</span>
+                            <span class="settings-cat-sub">Integration &amp; credentials</span>
                         </div>
-                        <div class="form-group">
-                            <label for="lastfm-secret">API Secret</label>
-                            <input type="password" id="lastfm-secret" placeholder="e.g. f6e5d4c3b2a1..." autocomplete="off">
+                    </button>
+                    <button class="settings-cat" data-tab="timing">
+                        <span class="settings-cat-icon">時</span>
+                        <div class="settings-cat-text">
+                            <span class="settings-cat-title">Timing</span>
+                            <span class="settings-cat-sub">Display intervals</span>
                         </div>
-                        <div class="form-group">
-                            <label for="lastfm-user">Username</label>
-                            <input type="text" id="lastfm-user" placeholder="Your Last.fm username" autocomplete="off">
+                    </button>
+                    <button class="settings-cat" data-tab="srs">
+                        <span class="settings-cat-icon">脳</span>
+                        <div class="settings-cat-text">
+                            <span class="settings-cat-title">SRS</span>
+                            <span class="settings-cat-sub">Spaced repetition</span>
                         </div>
-                        <button type="submit">Save Settings</button>
-                    </form>
-                    <div id="lastfm-msg" class="form-message" style="display:none;"></div>
+                    </button>
+                    <button class="settings-cat" data-tab="display-cfg">
+                        <span class="settings-cat-icon">画</span>
+                        <div class="settings-cat-text">
+                            <span class="settings-cat-title">Display</span>
+                            <span class="settings-cat-sub">Screen settings</span>
+                        </div>
+                    </button>
                 </div>
+
+                <div class="settings-content">
+
+                <!-- Last.fm Panel -->
+                <div class="settings-panel" id="settings-panel-lastfm">
+                    <div class="settings-card container">
+                        <h3 class="settings-section-title">Last.fm Integration</h3>
+                        <p class="settings-description">Connect your Last.fm account to show the currently playing track on the kanji display. You'll need to restart the display app after saving.</p>
+                        <form id="lastfm-form">
+                            <div class="form-group">
+                                <label for="lastfm-key">API Key</label>
+                                <input type="text" id="lastfm-key" placeholder="e.g. a1b2c3d4e5f6..." autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastfm-secret">API Secret</label>
+                                <input type="password" id="lastfm-secret" placeholder="e.g. f6e5d4c3b2a1..." autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastfm-user">Username</label>
+                                <input type="text" id="lastfm-user" placeholder="Your Last.fm username" autocomplete="off">
+                            </div>
+                            <button type="submit">Save Settings</button>
+                        </form>
+                        <div id="lastfm-msg" class="form-message" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <!-- Timing Panel -->
+                <div class="settings-panel" id="settings-panel-timing" style="display:none;">
+                    <div class="settings-card container">
+                        <h3 class="settings-section-title">Display Timing</h3>
+                        <p class="settings-description">Control how long kanji are shown and how frequently background tasks run. Changes take effect after restarting the display app.</p>
+                        <form id="timing-form">
+                            <div class="form-group">
+                                <label for="setting-kanji-change-time">Kanji Display Duration (seconds)</label>
+                                <input type="number" id="setting-kanji-change-time" min="1" placeholder="900">
+                                <span class="form-hint">How long each kanji stays on screen before being marked as failed.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="setting-failed-interval">Failed Kanji Cooldown (seconds)</label>
+                                <input type="number" id="setting-failed-interval" min="1" placeholder="900">
+                                <span class="form-hint">How soon a failed kanji reappears for review.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="setting-max-interval">Max Review Interval (seconds)</label>
+                                <input type="number" id="setting-max-interval" min="1" placeholder="604800">
+                                <span class="form-hint">Maximum time before a kanji is shown again (default is 7 days).</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="setting-lastfm-update-time">Last.fm Polling Interval (seconds)</label>
+                                <input type="number" id="setting-lastfm-update-time" min="1" placeholder="10">
+                                <span class="form-hint">How often the Now Playing track is refreshed.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="setting-kanji-reload-interval">Kanji Reload Interval (seconds)</label>
+                                <input type="number" id="setting-kanji-reload-interval" min="1" placeholder="30">
+                                <span class="form-hint">How often the kanji list is reloaded from disk.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="setting-theme-reload-interval">Theme Reload Interval (seconds)</label>
+                                <input type="number" id="setting-theme-reload-interval" min="1" placeholder="5">
+                                <span class="form-hint">How often the active theme is checked for changes.</span>
+                            </div>
+                            <button type="submit">Save Settings</button>
+                        </form>
+                        <div id="timing-msg" class="form-message" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <!-- SRS Panel -->
+                <div class="settings-panel" id="settings-panel-srs" style="display:none;">
+                    <div class="settings-card container">
+                        <h3 class="settings-section-title">Spaced Repetition</h3>
+                        <p class="settings-description">Tune the algorithm that decides when each kanji is shown again. Changes take effect after restarting the display app.</p>
+                        <form id="srs-form">
+                            <div class="form-group">
+                                <label for="setting-srs-ease-factor">Ease Factor</label>
+                                <input type="number" id="setting-srs-ease-factor" min="1.1" step="0.1" placeholder="2.0">
+                                <span class="form-hint">Multiplier applied to a kanji's review interval each time you tap it correctly. Higher = grows faster (default: 2.0).</span>
+                            </div>
+                            <button type="submit">Save Settings</button>
+                        </form>
+                        <div id="srs-msg" class="form-message" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <!-- Display Config Panel -->
+                <div class="settings-panel" id="settings-panel-display-cfg" style="display:none;">
+                    <div class="settings-card container">
+                        <h3 class="settings-section-title">Screen Settings</h3>
+                        <p class="settings-description">Set the resolution of your Pi's display. Changes take effect after restarting the display app.</p>
+                        <form id="display-cfg-form">
+                            <div class="form-group">
+                                <label for="setting-screen-width">Screen Width (px)</label>
+                                <input type="number" id="setting-screen-width" min="1" placeholder="480">
+                                <span class="form-hint">Horizontal resolution of your display (default: 480).</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="setting-screen-height">Screen Height (px)</label>
+                                <input type="number" id="setting-screen-height" min="1" placeholder="320">
+                                <span class="form-hint">Vertical resolution of your display (default: 320).</span>
+                            </div>
+                            <button type="submit">Save Settings</button>
+                        </form>
+                        <div id="display-cfg-msg" class="form-message" style="display:none;"></div>
+                    </div>
+                </div>
+
+                </div><!-- /.settings-content -->
+                </div><!-- /.settings-layout -->
             </section>
 
             <section id="display" class="dash-section" style="display:none;">

@@ -1,3 +1,102 @@
+/* Settings two-column layout */
+.settings-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    flex: 1;
+    min-height: 0;
+    padding-bottom: 20px;
+}
+
+/* Left category nav panel */
+.settings-nav {
+    width: 200px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    align-self: flex-start;
+}
+
+.settings-cat {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    border: 2px solid rgba(91, 96, 120, 0.3);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+}
+
+.settings-cat:hover {
+    border-color: rgba(198, 160, 246, 0.5);
+    background: rgba(198, 160, 246, 0.05);
+}
+
+.settings-cat.active {
+    border-color: #c6a0f6;
+    background: rgba(198, 160, 246, 0.1);
+}
+
+.settings-cat-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    width: 28px;
+    text-align: center;
+}
+
+.settings-cat-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.settings-cat-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #cad3f5;
+}
+
+.settings-cat.active .settings-cat-title {
+    color: #c6a0f6;
+}
+
+.settings-cat-sub {
+    font-size: 11px;
+    color: rgb(91, 96, 120);
+}
+
+/* Right content area */
+.settings-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Small hint text below form inputs */
+.form-hint {
+    display: block;
+    font-size: 12px;
+    color: rgb(91, 96, 120);
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+/* Settings section title inside a card */
+.settings-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #cad3f5;
+    margin: 0 0 8px 0;
+}
+
 /* Settings card */
 .settings-card {
     padding: 30px;
@@ -15,7 +114,8 @@
 }
 
 .settings-card input[type="text"],
-.settings-card input[type="password"] {
+.settings-card input[type="password"],
+.settings-card input[type="number"] {
     width: 100%;
     padding: 12px 14px;
     font-size: 14px;
@@ -28,7 +128,8 @@
 }
 
 .settings-card input[type="text"]:focus,
-.settings-card input[type="password"]:focus {
+.settings-card input[type="password"]:focus,
+.settings-card input[type="number"]:focus {
     outline: none;
     border-color: #c6a0f6;
     background: rgba(30, 32, 48, 0.8);
@@ -37,6 +138,62 @@
 
 .settings-card input::placeholder {
     color: rgb(91, 96, 120);
+}
+
+/* Inline label + number input row */
+.settings-input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.settings-input-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+    min-width: 0;
+}
+
+.settings-input-info label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #cad3f5;
+    margin: 0;
+}
+
+.settings-input-desc {
+    font-size: 12px;
+    color: rgb(91, 96, 120);
+}
+
+.settings-number-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.settings-number-wrap input[type="number"] {
+    width: 90px;
+    text-align: right;
+    padding: 10px 12px;
+    -moz-appearance: textfield;
+}
+
+.settings-number-wrap input[type="number"]::-webkit-outer-spin-button,
+.settings-number-wrap input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.settings-unit {
+    font-size: 12px;
+    color: rgb(91, 96, 120);
+    white-space: nowrap;
+    min-width: 24px;
 }
 
 /* Form message */

@@ -1,5 +1,6 @@
 import { loadStats } from './dash/stats.js';
 import { loadLastfm, initLastfmForm } from './dash/lastfm.js';
+import { initSettingsTabs, loadTimingSettings, initTimingForm, initSrsForm, initDisplayCfgForm } from './dash/settings.js';
 import { loadDisplay, initDisplayButtons } from './dash/display.js';
 import { loadThemes, initCreateTheme } from './dash/themes.js';
 import { loadRecent } from './dash/recent.js';
@@ -56,6 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
     loadStats();
     loadLastfm();
     initLastfmForm();
+    loadTimingSettings();
+    initSettingsTabs();
+    initTimingForm();
+    initSrsForm();
+    initDisplayCfgForm();
     loadDisplay();
     initDisplayButtons();
     loadRecent();

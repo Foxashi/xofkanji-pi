@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import json
 import os
 
 # ---------- FORCE X11 ----------
@@ -7,25 +8,37 @@ os.environ["DISPLAY"] = ":0"
 
 _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# ---------- CONFIG ----------
-SCREEN_WIDTH = 480
-SCREEN_HEIGHT = 320
+# screen's loaded from settings.json so it no longer needs hardcoding here
+# (actual values are set below after settings load)
 
-KANJI_CHANGE_TIME = 900
-LASTFM_UPDATE_TIME = 10
-
-FAILED_INTERVAL = 15 * 60
-MAX_INTERVAL = 7 * 24 * 3600
-
-KANJI_RELOAD_INTERVAL = 30
-THEME_RELOAD_INTERVAL = 5
-
+# ---------- PATHS ----------
 STATS_FILE = os.path.join(_ROOT, "db", "stats.json")
 KANJI_FILE = os.path.join(_ROOT, "db", "kanji.json")
 THEMES_FILE = os.path.join(_ROOT, "db", "themes.json")
 LASTFM_CONFIG_FILE = os.path.join(_ROOT, "db", "lastfm_config.json")
+SETTINGS_FILE = os.path.join(_ROOT, "db", "settings.json")
 DISPLAY_STATE_FILE = os.path.join(_ROOT, "display_state.json")
 THEME_STATE_FILE = os.path.join(_ROOT, "theme_state.json")
+
+# ---------- TIMING (loaded from settings.json with defaults as fallback) ----------
+_settings = {}
+if os.path.exists(SETTINGS_FILE):
+    try:
+        with open(SETTINGS_FILE, "r") as _f:
+            _settings = json.load(_f)
+    except (json.JSONDecodeError, OSError):
+        pass
+
+SCREEN_WIDTH  = int(_settings.get("screen_width",  480))
+SCREEN_HEIGHT = int(_settings.get("screen_height", 320))
+
+KANJI_CHANGE_TIME     = int(_settings.get("kanji_change_time", 900))
+LASTFM_UPDATE_TIME    = int(_settings.get("lastfm_update_time", 10))
+FAILED_INTERVAL       = int(_settings.get("failed_interval", 15 * 60))
+MAX_INTERVAL          = int(_settings.get("max_interval", 7 * 24 * 3600))
+KANJI_RELOAD_INTERVAL = int(_settings.get("kanji_reload_interval", 30))
+THEME_RELOAD_INTERVAL = int(_settings.get("theme_reload_interval", 5))
+SRS_EASE_FACTOR       = float(_settings.get("srs_ease_factor", 2.0))
 
 # ---------- DEFAULT COLORS ----------
 WHITE = (255, 255, 255)

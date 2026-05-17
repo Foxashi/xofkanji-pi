@@ -15,7 +15,7 @@ from py.config import (
     SCREEN_WIDTH, SCREEN_HEIGHT, KANJI_CHANGE_TIME, THEME_RELOAD_INTERVAL,
     KANJI_RELOAD_INTERVAL, FAILED_INTERVAL, MAX_INTERVAL, BLACK, DARK_GRAY,
     MEDIUM_GRAY, WHITE, YELLOW, GREEN, BLUE, LIGHT_GRAY, LEVEL_COLORS,
-    DISPLAY_STATE_FILE, THEME_STATE_FILE
+    DISPLAY_STATE_FILE, THEME_STATE_FILE, SRS_EASE_FACTOR
 )
 import py.themes as themes
 from py.themes import T, set_theme, load_themes
@@ -144,7 +144,7 @@ while running:
             s = stats[current["kanji"]]
             s["shown"] += 1
             s["remembered"] += 1
-            s["interval"] = min(s["interval"] * 2, MAX_INTERVAL)
+            s["interval"] = min(s["interval"] * SRS_EASE_FACTOR, MAX_INTERVAL)
             s["due"] = time.time() + s["interval"]
 
             current = pick_due_kanji(KANJI_LIST, stats)
