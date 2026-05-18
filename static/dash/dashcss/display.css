@@ -242,3 +242,36 @@
 .recent-level-n2 { background: rgba(245, 169, 127, 0.15); color: #f5a97f; }
 .recent-level-n1 { background: rgba(237, 135, 150, 0.15); color: #ed8796; }
 .recent-level-unknown { background: rgba(110, 115, 141, 0.15); color: #b8c0e0; }
+
+@media (max-width: 640px) {
+    .current-kanji-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .current-kanji-char {
+        font-size: 72px;
+    }
+
+    .display-panel { padding: 16px 20px; }
+
+    .display-status-row {
+        flex-wrap: wrap;
+    }
+
+    .display-controls {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .control-btn {
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .recent-list { padding: 20px; }
+
+    .recent-char { font-size: 28px; width: 44px; }
+}

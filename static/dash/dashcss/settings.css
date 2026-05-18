@@ -216,3 +216,46 @@
     color: #ed8796;
     border: 1px solid rgba(237, 135, 150, 0.25);
 }
+
+@media (max-width: 640px) {
+    .settings-layout {
+        flex-direction: column;
+    }
+
+    .settings-nav {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 16px;
+    }
+
+    .settings-cat {
+        flex: 1;
+        min-width: 120px;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        padding: 12px 10px;
+        text-align: center;
+    }
+
+    .settings-cat-sub { display: none; }
+
+    .settings-card { padding: 20px; }
+
+    .settings-input-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .settings-number-wrap {
+        width: 100%;
+    }
+
+    .settings-number-wrap input[type="number"] {
+        width: 100%;
+        text-align: left;
+    }
+}

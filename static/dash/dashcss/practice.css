@@ -324,3 +324,39 @@
 .practice-kanji-display.animate {
     animation: practice-fade-in 0.3s ease;
 }
+
+@media (max-width: 640px) {
+    .dashboard-wrapper .practice-area {
+        padding: 20px 16px 24px;
+    }
+
+    .practice-kanji-char {
+        font-size: 80px;
+    }
+
+    .practice-stats-bar {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .practice-inputs {
+        flex-direction: column;
+        gap: 14px;
+        max-width: 100%;
+    }
+
+    .practice-btn {
+        padding: 12px 20px;
+        flex: 1;
+    }
+
+    .practice-actions {
+        flex-wrap: wrap;
+    }
+
+    .practice-answer {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}

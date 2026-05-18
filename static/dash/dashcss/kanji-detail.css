@@ -184,3 +184,32 @@
     background: rgba(198, 160, 246, 0.18);
     border-color: rgba(198, 160, 246, 0.45);
 }
+
+@media (max-width: 480px) {
+    .kanji-detail-modal {
+        min-width: unset;
+        max-width: 100%;
+    }
+
+    .kd-top {
+        gap: 16px;
+        padding: 18px 18px 14px;
+    }
+
+    .kd-char {
+        font-size: 60px;
+    }
+
+    .kd-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kd-stat:nth-child(2) {
+        border-right: none;
+    }
+
+    .kd-stat:nth-child(3),
+    .kd-stat:nth-child(4) {
+        border-top: 1px solid rgba(91, 96, 120, 0.12);
+    }
+}

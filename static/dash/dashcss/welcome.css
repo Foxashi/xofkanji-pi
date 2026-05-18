@@ -194,3 +194,44 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 640px) {
+    .welcome-daily-card {
+        padding: 20px;
+        gap: 14px;
+    }
+
+    .welcome-kotd-body {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .welcome-kotd-char {
+        font-size: 72px;
+    }
+
+    .welcome-status-row {
+        padding: 14px 16px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .welcome-status-item {
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .welcome-status-value {
+        font-size: 18px;
+    }
+
+    .welcome-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-card-body {
+        padding: 18px 20px;
+        gap: 14px;
+    }
+}

@@ -9,6 +9,13 @@
     background-attachment: fixed;
 }
 
+@supports (-webkit-touch-callout: none) {
+    /* iOS Safari — fixed attachment causes blank/broken bg */
+    .dashboard-body {
+        background-attachment: scroll;
+    }
+}
+
 .dashboard-wrapper {
     display: flex;
     min-height: 100vh;
@@ -203,5 +210,56 @@
         flex-direction: row;
         width: 100%;
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 4px;
     }
+
+    .sidebar-nav::-webkit-scrollbar { display: none; }
+
+    .nav-item {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .nav-divider { display: none; }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .dashboard-wrapper {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .sidebar {
+        padding: 14px 12px;
+    }
+
+    .sidebar-header {
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+    }
+
+    .nav-item {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+    .top-header {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recent-scans { padding: 20px; }
+
+    .section-title { font-size: 16px; }
 }

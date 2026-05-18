@@ -251,5 +251,28 @@
 @media (max-width: 480px) {
     .jisho-modal-box {
         min-width: unset;
+        border-radius: 12px;
+    }
+
+    .jisho-modal-overlay {
+        padding: 12px;
+        align-items: flex-end;
+    }
+
+    .jisho-modal-box {
+        max-height: 92vh;
+    }
+
+    .jisho-modal-body {
+        max-height: calc(92vh - 76px);
+    }
+
+    .jisho-strokes {
+        gap: 8px;
+    }
+
+    .jisho-stroke-item {
+        width: 72px;
+        height: 72px;
     }
 }

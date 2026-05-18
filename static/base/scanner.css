@@ -11,6 +11,12 @@
     background-attachment: fixed;
 }
 
+@supports (-webkit-touch-callout: none) {
+    .scanner-page {
+        background-attachment: scroll;
+    }
+}
+
 .scanner-card {
     max-width: 520px;
     width: 100%;
@@ -139,4 +145,23 @@
     width: 16px;
     height: 16px;
     filter: brightness(0) saturate(100%) invert(83%) sepia(10%) saturate(476%) hue-rotate(194deg) brightness(96%) contrast(92%);
+}
+
+@media (max-width: 560px) {
+    .scanner-page {
+        padding: 12px;
+        align-items: flex-start;
+        padding-top: 24px;
+    }
+
+    .scanner-card {
+        padding: 24px 20px;
+    }
+
+    .scanner-header {
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 24px;
+        padding-bottom: 18px;
+    }
 }
