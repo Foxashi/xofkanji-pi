@@ -72,6 +72,15 @@ export interface LevelKanjiData {
     kanji: KanjiItem[];
 }
 
+export interface DueKanjiItem extends KanjiItem {
+    new: boolean;
+}
+
+export interface DueKanjiData {
+    due: DueKanjiItem[];
+    count: number;
+}
+
 export interface StrokeOrderItem {
     kanji?: string;
     svg_url?: string;

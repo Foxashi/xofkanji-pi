@@ -1,9 +1,16 @@
 /* Daily card */
+.welcome-top-row {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+}
+
 .welcome-daily-card {
-    padding: 32px 36px;
+    flex: 1;
+    padding: 22px 26px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 12px;
 }
 
 .welcome-daily-label {
@@ -17,12 +24,12 @@
 .welcome-kotd-body {
     display: flex;
     align-items: center;
-    gap: 36px;
+    gap: 22px;
 }
 
 /* Kanji of the day */
 .welcome-kotd-char {
-    font-size: 96px;
+    font-size: 64px;
     font-weight: 700;
     color: #c6a0f6;
     line-height: 1;
@@ -76,24 +83,34 @@
 }
 
 /* Status bar */
-.welcome-status-row {
-    display: flex;
-    align-items: center;
-    padding: 20px 28px;
-}
-
 .welcome-status-item {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 5px;
 }
 
-.welcome-status-divider {
-    width: 1px;
-    height: 36px;
-    background: rgba(91, 96, 120, 0.25);
+.welcome-status-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px 28px;
+    min-width: 155px;
+    flex-shrink: 0;
+}
+
+.welcome-status-panel .welcome-status-item {
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(91, 96, 120, 0.15);
+}
+
+.welcome-status-panel .welcome-status-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.welcome-status-panel .welcome-status-item:first-child {
+    padding-top: 0;
 }
 
 .welcome-status-label {

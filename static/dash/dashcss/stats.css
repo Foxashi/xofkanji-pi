@@ -64,3 +64,118 @@
     user-select: none;
     pointer-events: none;
 }
+
+/* Due for Review card (home) */
+.due-review-card {
+    padding: 24px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.due-review-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.due-review-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgb(110, 115, 141);
+}
+
+.due-badge {
+    background: rgba(238, 212, 159, 0.15);
+    color: #eed49f;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+    font-variant-numeric: tabular-nums;
+    min-width: 20px;
+    text-align: center;
+}
+
+.due-review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.due-kanji-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 7px 6px;
+    border-radius: 6px;
+    transition: background 0.15s;
+}
+
+.due-kanji-row:hover {
+    background: rgba(91, 96, 120, 0.1);
+}
+
+.due-kanji-char {
+    font-size: 22px;
+    font-weight: 700;
+    color: #cad3f5;
+    width: 30px;
+    text-align: center;
+    flex-shrink: 0;
+    transition: color 0.15s;
+}
+
+.due-kanji-char:hover {
+    color: #c6a0f6;
+}
+
+.due-kanji-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.due-kanji-meaning {
+    font-size: 13px;
+    color: #cad3f5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.due-kanji-readings {
+    font-size: 11px;
+    color: rgb(110, 115, 141);
+}
+
+.due-kanji-new {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #c6a0f6;
+    background: rgba(198, 160, 246, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+/* Due for Review section (overview) */
+.due-review-breakdown {
+    padding: 30px;
+}
+
+.due-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}

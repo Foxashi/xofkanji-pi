@@ -64,39 +64,49 @@
                     </div>
                 </header>
 
-                <div class="welcome-daily-card container" id="welcome-kotd-card">
-                    <div class="welcome-daily-label">Kanji of the Day</div>
-                    <div class="welcome-kotd-body">
-                        <div class="welcome-kotd-char" id="welcome-kotd-char" title="Look up in Jisho">—</div>
-                        <div class="welcome-kotd-details">
-                            <div class="welcome-kotd-level" id="welcome-kotd-level"></div>
-                            <div class="welcome-kotd-reading">
-                                <span class="welcome-reading-tag">音</span>
-                                <span id="welcome-kotd-on">—</span>
+                <div class="welcome-top-row">
+                    <div class="welcome-daily-card container" id="welcome-kotd-card">
+                        <div class="welcome-daily-label">Kanji of the Day</div>
+                        <div class="welcome-kotd-body">
+                            <div class="welcome-kotd-char" id="welcome-kotd-char" title="Look up in Jisho">—</div>
+                            <div class="welcome-kotd-details">
+                                <div class="welcome-kotd-level" id="welcome-kotd-level"></div>
+                                <div class="welcome-kotd-reading">
+                                    <span class="welcome-reading-tag">音</span>
+                                    <span id="welcome-kotd-on">—</span>
+                                </div>
+                                <div class="welcome-kotd-reading">
+                                    <span class="welcome-reading-tag">訓</span>
+                                    <span id="welcome-kotd-kun">—</span>
+                                </div>
+                                <div class="welcome-kotd-meaning" id="welcome-kotd-meaning">—</div>
                             </div>
-                            <div class="welcome-kotd-reading">
-                                <span class="welcome-reading-tag">訓</span>
-                                <span id="welcome-kotd-kun">—</span>
-                            </div>
-                            <div class="welcome-kotd-meaning" id="welcome-kotd-meaning">—</div>
+                        </div>
+                    </div>
+
+                    <div class="welcome-status-panel container">
+                        <div class="welcome-status-item">
+                            <span class="welcome-status-label">Display</span>
+                            <span class="welcome-status-value" id="welcome-display-status">—</span>
+                        </div>
+                        <div class="welcome-status-item">
+                            <span class="welcome-status-label">Total Kanji</span>
+                            <span class="welcome-status-value" id="welcome-total-kanji">—</span>
+                        </div>
+                        <div class="welcome-status-item">
+                            <span class="welcome-status-label">Accuracy</span>
+                            <span class="welcome-status-value" id="welcome-accuracy">—</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="welcome-status-row container">
-                    <div class="welcome-status-item">
-                        <span class="welcome-status-label">Display</span>
-                        <span class="welcome-status-value" id="welcome-display-status">—</span>
+                <div class="due-review-card container">
+                    <div class="due-review-header">
+                        <span class="due-review-title">Due for Review</span>
+                        <span class="due-badge" id="welcome-due-count">—</span>
                     </div>
-                    <div class="welcome-status-divider"></div>
-                    <div class="welcome-status-item">
-                        <span class="welcome-status-label">Total Kanji</span>
-                        <span class="welcome-status-value" id="welcome-total-kanji">—</span>
-                    </div>
-                    <div class="welcome-status-divider"></div>
-                    <div class="welcome-status-item">
-                        <span class="welcome-status-label">Accuracy</span>
-                        <span class="welcome-status-value" id="welcome-accuracy">—</span>
+                    <div class="due-review-list" id="welcome-due-list">
+                        <p class="recent-empty">Loading...</p>
                     </div>
                 </div>
 
@@ -246,6 +256,16 @@
                 <section class="level-breakdown container">
                     <h3 class="section-title">JLPT Distribution</h3>
                     <div id="level-bars" class="level-bars"></div>
+                </section>
+
+                <section class="due-review-breakdown container">
+                    <div class="due-section-header">
+                        <h3 class="section-title" style="margin-bottom:0;">Due for Review</h3>
+                        <span class="due-badge" id="overview-due-badge">—</span>
+                    </div>
+                    <div class="due-review-list" id="overview-due-list">
+                        <p class="recent-empty">Loading...</p>
+                    </div>
                 </section>
             </section>
 

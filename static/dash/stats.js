@@ -107,3 +107,52 @@ export async function openLevelModal(level) {
         console.error('Level kanji fetch failed:', err);
     }
 }
+export async function loadDueKanji() {
+    try {
+        const data = await fetchJson('/api/due-kanji?limit=100');
+        const welcomeBadge = document.getElementById('welcome-due-count');
+        const overviewBadge = document.getElementById('overview-due-badge');
+        if (welcomeBadge)
+            welcomeBadge.textContent = String(data.count);
+        if (overviewBadge)
+            overviewBadge.textContent = String(data.count);
+        const html = renderDueKanjiList(data.due);
+        const welcomeList = document.getElementById('welcome-due-list');
+        const overviewList = document.getElementById('overview-due-list');
+        if (welcomeList) {
+            welcomeList.innerHTML = html;
+            attachDueKanjiClicks(welcomeList);
+        }
+        if (overviewList) {
+            overviewList.innerHTML = html;
+            attachDueKanjiClicks(overviewList);
+        }
+    }
+    catch (err) {
+        console.error('Due kanji fetch failed:', err);
+    }
+}
+function renderDueKanjiList(due) {
+    if (due.length === 0) {
+        return '<p class="recent-empty">No kanji due for review.</p>';
+    }
+    return due.map(k => {
+        const lvl = (k.level ?? 'unknown').toLowerCase().replace(/\s+/g, '');
+        const readings = [k.onyomi, k.kunyomi].filter(Boolean).join(' ・ ');
+        return '<div class="due-kanji-row">' +
+            '<span class="due-kanji-char" title="View details">' + k.kanji + '</span>' +
+            '<div class="due-kanji-info">' +
+            '<span class="due-kanji-meaning">' + (k.meaning ?? '') + '</span>' +
+            '<span class="due-kanji-readings">' + readings + '</span>' +
+            '</div>' +
+            '<span class="recent-level recent-level-' + lvl + '">' + (k.level ?? 'Unknown') + '</span>' +
+            (k.new ? '<span class="due-kanji-new">New</span>' : '') +
+            '</div>';
+    }).join('');
+}
+function attachDueKanjiClicks(container) {
+    container.querySelectorAll('.due-kanji-char').forEach(el => {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', () => openKanjiDetail(el.textContent ?? ''));
+    });
+}

@@ -113,7 +113,10 @@ def api_stats():
     accuracy = round(total_remembered / total_reviews * 100, 1) if total_reviews > 0 else 0
 
     now = time.time()
-    due_count = sum(1 for s in stats.values() if s.get("due", 0) <= now)
+    stats_due = sum(1 for s in stats.values() if s.get("due", 0) <= now)
+    seen_chars = set(stats.keys())
+    unseen_due = sum(1 for k in db.get("kanji", []) if k["kanji"] not in seen_chars)
+    due_count = stats_due + unseen_due
 
     return jsonify({
         "total_kanji": total_kanji,
@@ -323,6 +326,44 @@ def api_kanji_detail(char):
         "failed": s.get("failed", 0),
         "due": s.get("due", None),
     })
+
+
+@bp.route('/api/due-kanji')
+def api_due_kanji():
+    limit = request.args.get("limit", default=100, type=int)
+    limit = max(1, min(limit, 500))
+
+    db = load_kanji_db()
+    kanji_list = db.get("kanji", [])
+
+    stats = {}
+    if os.path.exists(STATS_FILE) and os.path.getsize(STATS_FILE) > 0:
+        with open(STATS_FILE, "r", encoding="utf-8") as f:
+            try:
+                stats = json.load(f)
+            except json.JSONDecodeError:
+                pass
+
+    now = time.time()
+    due = []
+    for k in kanji_list:
+        char = k["kanji"]
+        s = stats.get(char)
+        if s is None or s.get("due", 0) <= now:
+            due.append({
+                "kanji": char,
+                "meaning": k.get("meaning", ""),
+                "onyomi": k.get("onyomi", ""),
+                "kunyomi": k.get("kunyomi", ""),
+                "level": k.get("level", "Unknown"),
+                "shown": s.get("shown", 0) if s else 0,
+                "remembered": s.get("remembered", 0) if s else 0,
+                "failed": s.get("failed", 0) if s else 0,
+                "new": s is None,
+            })
+
+    total = len(due)
+    return jsonify({"due": due[:limit], "count": total})
 
 
 @bp.route('/api/jisho')
