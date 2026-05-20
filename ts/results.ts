@@ -40,7 +40,6 @@ export function displayResults(data: UploadResponse): void {
     resultsContainer.appendChild(timeInfo);
 
     form?.appendChild(resultsContainer);
-    console.log('Results displayed');
 }
 
 export function displayPartialResults(data: UploadResponse): void {
@@ -70,13 +69,11 @@ export function displayPartialResults(data: UploadResponse): void {
     resultsContainer.appendChild(kanjiList);
 
     form?.appendChild(resultsContainer);
-    console.log('Partial results displayed');
 }
 
 export function removeResultsContainer(): void {
     const existing = document.getElementById('results-container');
     if (existing) {
         existing.remove();
-        console.log('Results removed');
     }
 }

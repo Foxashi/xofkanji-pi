@@ -29,7 +29,6 @@ export function displayResults(data) {
     resultsContainer.appendChild(kanjiList);
     resultsContainer.appendChild(timeInfo);
     form?.appendChild(resultsContainer);
-    console.log('Results displayed');
 }
 export function displayPartialResults(data) {
     removeResultsContainer();
@@ -52,12 +51,10 @@ export function displayPartialResults(data) {
     resultsContainer.appendChild(notice);
     resultsContainer.appendChild(kanjiList);
     form?.appendChild(resultsContainer);
-    console.log('Partial results displayed');
 }
 export function removeResultsContainer() {
     const existing = document.getElementById('results-container');
     if (existing) {
         existing.remove();
-        console.log('Results removed');
     }
 }

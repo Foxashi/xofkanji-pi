@@ -78,5 +78,4 @@ export function clearImage() {
     if (fileInput)
         fileInput.value = '';
     removePreview();
-    console.log('Image preview cleared');
 }

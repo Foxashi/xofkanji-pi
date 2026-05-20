@@ -43,12 +43,9 @@ export function createAPI(form: HTMLFormElement, fileInput: HTMLInputElement) {
         formData.append('image', file, file.name);
         formData.append('direction', direction);
 
-        console.log('Submitting with:', file.name, file.size, 'bytes');
-
         fetch('/upload', { method: 'POST', body: formData })
             .then(res => res.json() as Promise<UploadResponse>)
             .then(data => {
-                console.log('Response:', data);
                 handleResponse(data);
             })
             .catch(error => {
@@ -60,7 +57,6 @@ export function createAPI(form: HTMLFormElement, fileInput: HTMLInputElement) {
         function handleResponse(data: UploadResponse): void {
             if (data.success) {
                 Notifications.showSuccess('Kanji extracted successfully!');
-                console.log('Displaying results:', data.kanji);
                 displayResults(data);
                 clearImage();
                 fileInput.value = '';
@@ -68,7 +64,6 @@ export function createAPI(form: HTMLFormElement, fileInput: HTMLInputElement) {
             } else {
                 Notifications.showError(data.message ?? 'Error processing image');
                 if (data.kanji) {
-                    console.log('Displaying partial results:', data.kanji);
                     displayPartialResults(data);
                 }
                 resetForm();

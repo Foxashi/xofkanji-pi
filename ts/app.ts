@@ -3,7 +3,6 @@ import { init as initFileHandler } from './file-handler.js';
 import { createAPI } from './api.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('App initializing...');
     const fileInput = document.getElementById('image-input') as HTMLInputElement | null;
     const form = document.querySelector('form') as HTMLFormElement | null;
 
@@ -18,9 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', (e: Event) => {
         e.preventDefault();
-        console.log('Form submitted');
         api.submit();
     });
 
-    console.log('App initialized successfully');
 });

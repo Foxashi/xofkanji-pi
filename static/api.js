@@ -37,11 +37,9 @@ export function createAPI(form, fileInput) {
         const direction = directionSelect?.value ?? 'horizontal';
         formData.append('image', file, file.name);
         formData.append('direction', direction);
-        console.log('Submitting with:', file.name, file.size, 'bytes');
         fetch('/upload', { method: 'POST', body: formData })
             .then(res => res.json())
             .then(data => {
-            console.log('Response:', data);
             handleResponse(data);
         })
             .catch(error => {
@@ -52,7 +50,6 @@ export function createAPI(form, fileInput) {
         function handleResponse(data) {
             if (data.success) {
                 Notifications.showSuccess('Kanji extracted successfully!');
-                console.log('Displaying results:', data.kanji);
                 displayResults(data);
                 clearImage();
                 fileInput.value = '';
@@ -61,7 +58,6 @@ export function createAPI(form, fileInput) {
             else {
                 Notifications.showError(data.message ?? 'Error processing image');
                 if (data.kanji) {
-                    console.log('Displaying partial results:', data.kanji);
                     displayPartialResults(data);
                 }
                 resetForm();
