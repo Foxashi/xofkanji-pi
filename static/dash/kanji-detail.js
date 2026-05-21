@@ -57,7 +57,10 @@ function renderBody(data) {
         '</div>' +
         '<div class="kd-footer">' +
         '<span class="kd-due' + (isDueNow ? ' kd-due-now' : '') + '">' + escapeHtml(dueStr) + '</span>' +
+        '<div class="kd-footer-actions">' +
+        '<button class="kd-reset-btn" data-char="' + escapeHtml(data.kanji) + '">Reset Stats</button>' +
         '<button class="kd-jisho-btn" data-char="' + escapeHtml(data.kanji) + '">Look up on Jisho</button>' +
+        '</div>' +
         '</div>');
 }
 function closeKanjiDetailModal() {
@@ -92,16 +95,45 @@ export async function openKanjiDetail(char) {
     try {
         const data = await fetchJson('/api/kanji/' + encodeURIComponent(char));
         bodyEl.innerHTML = renderBody(data);
-        bodyEl.querySelector('.kd-char')?.addEventListener('click', () => {
-            closeKanjiDetailModal();
-            lookupJisho(char);
-        });
-        bodyEl.querySelector('.kd-jisho-btn')?.addEventListener('click', () => {
-            closeKanjiDetailModal();
-            lookupJisho(char);
-        });
+        attachBodyListeners(bodyEl, char);
     }
     catch {
         bodyEl.innerHTML = '<p class="kd-loading">Failed to load kanji details.</p>';
     }
+}
+function attachBodyListeners(bodyEl, char) {
+    bodyEl.querySelector('.kd-char')?.addEventListener('click', () => {
+        closeKanjiDetailModal();
+        lookupJisho(char);
+    });
+    bodyEl.querySelector('.kd-reset-btn')?.addEventListener('click', async () => {
+        const resetBtn = bodyEl.querySelector('.kd-reset-btn');
+        if (!resetBtn)
+            return;
+        const original = resetBtn.textContent;
+        resetBtn.textContent = 'Resetting…';
+        resetBtn.disabled = true;
+        try {
+            const res = await fetch('/api/kanji/' + encodeURIComponent(char) + '/reset-stats', { method: 'POST' });
+            const json = await res.json();
+            if (json.success) {
+                const fresh = await fetch('/api/kanji/' + encodeURIComponent(char));
+                const freshData = await fresh.json();
+                bodyEl.innerHTML = renderBody(freshData);
+                attachBodyListeners(bodyEl, char);
+            }
+            else {
+                resetBtn.textContent = original;
+                resetBtn.disabled = false;
+            }
+        }
+        catch {
+            resetBtn.textContent = original;
+            resetBtn.disabled = false;
+        }
+    });
+    bodyEl.querySelector('.kd-jisho-btn')?.addEventListener('click', () => {
+        closeKanjiDetailModal();
+        lookupJisho(char);
+    });
 }

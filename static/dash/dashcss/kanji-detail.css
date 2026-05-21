@@ -155,6 +155,12 @@
     gap: 12px;
 }
 
+.kd-footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .kd-due {
     font-size: 12px;
     color: rgb(110, 115, 141);
@@ -183,6 +189,32 @@
 .kd-jisho-btn:hover {
     background: rgba(198, 160, 246, 0.18);
     border-color: rgba(198, 160, 246, 0.45);
+}
+
+.kd-reset-btn {
+    background: rgba(237, 135, 150, 0.08);
+    border: 1px solid rgba(237, 135, 150, 0.25);
+    color: #ed8796;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    box-shadow: none;
+    margin: 0;
+    letter-spacing: 0.3px;
+    font-family: inherit;
+}
+
+.kd-reset-btn:hover {
+    background: rgba(237, 135, 150, 0.16);
+    border-color: rgba(237, 135, 150, 0.45);
+}
+
+.kd-reset-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 @media (max-width: 480px) {

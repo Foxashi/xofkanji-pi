@@ -366,6 +366,38 @@ def api_due_kanji():
     return jsonify({"due": due[:limit], "count": total})
 
 
+@bp.route('/api/kanji/<char>/reset-stats', methods=['POST'])
+def api_kanji_reset_stats(char):
+    if len(char) != 1 or not KANJI_RANGE_RE.match(char):
+        return jsonify({"success": False, "message": "Invalid kanji character"}), 400
+
+    db = load_kanji_db()
+    if not any(k.get("kanji") == char for k in db.get("kanji", [])):
+        return jsonify({"success": False, "message": "Kanji not found"}), 404
+
+    stats = {}
+    if os.path.exists(STATS_FILE) and os.path.getsize(STATS_FILE) > 0:
+        with open(STATS_FILE, "r", encoding="utf-8") as f:
+            try:
+                stats = json.load(f)
+            except json.JSONDecodeError:
+                pass
+
+    if char in stats:
+        del stats[char]
+        dir_name = os.path.dirname(STATS_FILE) or '.'
+        import tempfile as _tempfile
+        with _tempfile.NamedTemporaryFile('w', dir=dir_name, suffix='.tmp',
+                                         delete=False, encoding='utf-8') as f:
+            json.dump(stats, f, ensure_ascii=False, indent=2)
+            f.flush()
+            os.fsync(f.fileno())
+            tmp_path = f.name
+        os.replace(tmp_path, STATS_FILE)
+
+    return jsonify({"success": True, "message": f"Stats reset for {char}"})
+
+
 @bp.route('/api/jisho')
 def api_jisho():
     keyword = request.args.get('keyword', '').strip()

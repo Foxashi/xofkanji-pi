@@ -308,6 +308,13 @@
                             <span class="settings-cat-sub">Screen settings</span>
                         </div>
                     </button>
+                    <button class="settings-cat" data-tab="danger">
+                        <span class="settings-cat-icon">⚠</span>
+                        <div class="settings-cat-text">
+                            <span class="settings-cat-title">Danger</span>
+                            <span class="settings-cat-sub">Reset databases</span>
+                        </div>
+                    </button>
                 </div>
 
                 <div class="settings-content">
@@ -414,6 +421,48 @@
                             <button type="submit">Save Settings</button>
                         </form>
                         <div id="display-cfg-msg" class="form-message" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <!-- Danger Zone Panel -->
+                <div class="settings-panel" id="settings-panel-danger" style="display:none;">
+                    <div class="settings-card container">
+                        <h3 class="settings-section-title danger-zone-title">Danger Zone</h3>
+                        <p class="settings-description">These actions are irreversible. A confirmation code is required for each reset.</p>
+
+                        <div class="danger-item">
+                            <div class="danger-item-info">
+                                <span class="danger-item-name">Reset Stats Database</span>
+                                <span class="danger-item-desc">Clears all review history, intervals, and accuracy data. Kanji entries are kept.</span>
+                            </div>
+                            <button id="danger-reset-stats-btn" class="danger-btn">Reset Stats</button>
+                            <div id="danger-reset-stats-confirm" class="danger-confirm" style="display:none;">
+                                <p class="danger-confirm-text">Type <strong id="danger-reset-stats-code"></strong> to confirm:</p>
+                                <div class="danger-confirm-row">
+                                    <input type="text" id="danger-reset-stats-input" class="danger-input" placeholder="enter code" autocomplete="off" spellcheck="false">
+                                    <button id="danger-reset-stats-ok" class="danger-btn-confirm">Confirm</button>
+                                    <button id="danger-reset-stats-cancel" class="danger-btn-cancel">Cancel</button>
+                                </div>
+                            </div>
+                            <div id="danger-reset-stats-msg" class="form-message" style="display:none;"></div>
+                        </div>
+
+                        <div class="danger-item">
+                            <div class="danger-item-info">
+                                <span class="danger-item-name">Reset Kanji Database</span>
+                                <span class="danger-item-desc">Removes all kanji entries and wipes stats. The display will have nothing to show until you scan new kanji.</span>
+                            </div>
+                            <button id="danger-reset-kanji-btn" class="danger-btn">Reset Kanji DB</button>
+                            <div id="danger-reset-kanji-confirm" class="danger-confirm" style="display:none;">
+                                <p class="danger-confirm-text">Type <strong id="danger-reset-kanji-code"></strong> to confirm:</p>
+                                <div class="danger-confirm-row">
+                                    <input type="text" id="danger-reset-kanji-input" class="danger-input" placeholder="enter code" autocomplete="off" spellcheck="false">
+                                    <button id="danger-reset-kanji-ok" class="danger-btn-confirm">Confirm</button>
+                                    <button id="danger-reset-kanji-cancel" class="danger-btn-cancel">Cancel</button>
+                                </div>
+                            </div>
+                            <div id="danger-reset-kanji-msg" class="form-message" style="display:none;"></div>
+                        </div>
                     </div>
                 </div>
 

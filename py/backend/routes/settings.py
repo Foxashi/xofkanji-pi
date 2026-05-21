@@ -1,6 +1,6 @@
-import json, os
+import json, os, tempfile
 from flask import Blueprint, jsonify, request
-from py.config import SETTINGS_FILE
+from py.config import SETTINGS_FILE, STATS_FILE, KANJI_FILE
 
 bp = Blueprint('settings', __name__)
 
@@ -63,3 +63,42 @@ def api_settings_save():
         json.dump(current, f, indent=2)
 
     return jsonify({"success": True, "message": "Settings saved. Restart the display app to apply."})
+
+
+@bp.route('/api/reset/stats', methods=['POST'])
+def api_reset_stats():
+    empty = {}
+    dir_name = os.path.dirname(STATS_FILE) or '.'
+    os.makedirs(dir_name, exist_ok=True)
+    with tempfile.NamedTemporaryFile('w', dir=dir_name, suffix='.tmp',
+                                     delete=False, encoding='utf-8') as f:
+        json.dump(empty, f, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+        tmp_path = f.name
+    os.replace(tmp_path, STATS_FILE)
+    return jsonify({"success": True, "message": "Stats database has been reset."})
+
+
+@bp.route('/api/reset/kanji', methods=['POST'])
+def api_reset_kanji():
+    empty = {"kanji": []}
+    dir_name = os.path.dirname(KANJI_FILE) or '.'
+    os.makedirs(dir_name, exist_ok=True)
+    with tempfile.NamedTemporaryFile('w', dir=dir_name, suffix='.tmp',
+                                     delete=False, encoding='utf-8') as f:
+        json.dump(empty, f, ensure_ascii=False, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+        tmp_path = f.name
+    os.replace(tmp_path, KANJI_FILE)
+    # also wipe stats since kanji entries are gone
+    stats_empty = {}
+    with tempfile.NamedTemporaryFile('w', dir=os.path.dirname(STATS_FILE) or '.', suffix='.tmp',
+                                     delete=False, encoding='utf-8') as f:
+        json.dump(stats_empty, f, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+        tmp_path = f.name
+    os.replace(tmp_path, STATS_FILE)
+    return jsonify({"success": True, "message": "Kanji database (and stats) have been reset."})
